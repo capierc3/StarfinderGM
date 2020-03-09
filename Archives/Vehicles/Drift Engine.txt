@@ -1,0 +1,9 @@
+~https://www.aonsrd.com/Starship_DriftEngines.aspx
+<>Drift Engine?Engine_Rating?Minimum_PCU?Maximum_Size?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Signal Basic?1?75?—?2 x size category?
+Signal Booster?2?100?Huge?5 x size category?
+Signal Major?3?150?Large?10 x size category?
+Signal Superior?4?175?Large?15 x size category?
+Signal Ultra?5?200?Medium?20 x size category?
+

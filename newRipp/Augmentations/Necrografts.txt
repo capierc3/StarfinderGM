@@ -1,0 +1,30 @@
+https://www.aonsrd.com/Necrografts.aspx?ItemName=All&Family=None
+
+1
+Model?Level?Price?
+Mk 1?1?200?
+Mk 2?6?4,000?
+Mk 3?12?30,000?
+Mk 4?18?350,000?
+Mk 5?20?775,000?
+
+2
+Black Heart?Heart or Lungs?
+Bone Blade?Arm?
+Corpseskin?Skin?
+Crypt Marrow?All legs?
+Enervating Hand?Hand?
+Ghoul Glands?Skin?
+Grave Wind?Lungs?
+Keening Larynx?Throat?
+Moonlight Fibers?Spinal column?
+Necrocortex?Brain?
+Phantom Basal Ganglia?Brain?
+Shadow Nerves?Spinal Column?
+Squirming Entrails?Throat?
+Stench Glands?Skin?
+Undead Adrenal Gland?Endocrine?
+Vampire Voice?Throat?
+Whispering Gyrus?Brain?
+Wraith Motes?Eyes?
+

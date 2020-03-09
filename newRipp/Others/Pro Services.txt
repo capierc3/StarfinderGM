@@ -1,0 +1,25 @@
+https://www.aonsrd.com/OtherItems.aspx?Category=Professional%20Services
+
+1
+Communications?5 or 10 per minute?
+Professional Freelancer?Skill Bonus x 2 per day?
+Unskilled Labor?4 per day or 1 per hour?
+Grooming, Exotic?75?
+Grooming, Standard?3?
+Laundry, Magical?10?
+Laundry, Standard?1?
+Medical Treatment, Long-Term Care?100 per day?
+Medical Treatment, Long-Term Stability?15 per hour?
+Medical Treatment, Treat Deadly Wounds?75?
+Medical Treatment, Treat Disease?1,000?
+Medical Treatment, Treat Drugs or Poison?1,000?
+Spellcasting, 0-level Spell?20?
+Spellcasting, 1st-level Spell?100?
+Spellcasting, 2nd-level Spell?350?
+Spellcasting, 3rd-level Spell?1,000?
+Spellcasting, 4th-level Spell?3,000?
+Spellcasting, 5th-level Spell?9,000?
+Spellcasting, 6th-level Spell?30,000?
+Starship Crew, Officer?Skill bonus x 5 per week?
+Starship Crew, Standard?20 per week?
+

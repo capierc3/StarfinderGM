@@ -1,0 +1,300 @@
+http://www.starjammersrd.com/game-mastering/bestiary/creating-monsters-and-other-npcs/
+
+1
+CR?EAC?KAC?Fort?Ref?Will?Hit Points?Ability DC?Base Spell Dc?Ability Score Modifiers?Special Abilities?Master Skills?Good Skills?
+1/3?10?12?+1?+1?+0?6?8?8?+3, +1, +0?1?+7 (1)?+3 (2)?
+1/2?10?12?+2?+2?+0?13?9?9?+3, +2, +1?1?+9 (1)?+4 (2)?
+1?11?13?+3?+3?+1?20?10?9?+4, +2, +1?1?+10 (1)?+5 (2)?
+2?13?15?+4?+4?+1?25?11?10?+4, +2, +1?2?+12 (1)?+7 (2)?
+3?14?16?+5?+5?+2?40?12?11?+4, +2, +1?2?+13 (1)?+8 (2)?
+4?16?18?+6?+6?+3?50?13?11?+5, +3, +1?2?+15 (1)?+10 (2)?
+5?17?19?+7?+7?+4?70?13?11?+5, +3, +2?2?+16 (1)?+11 (2)?
+6?18?20?+8?+8?+5?90?14?12?+5, +3, +2?2?+18 (1)?+13 (2)?
+7?19?21?+9?+9?+6?105?15?13?+5, +4, +2?2?+19 (1)?+14 (2)?
+8?20?22?+10?+10?+7?125?16?13?+6, +4, +2?2?+21 (1)?+16 (2)?
+9?22?24?+11?+11?+8?145?16?13?+6, +4, +3?2?+22 (1)?+17 (2)?
+10?23?25?+12?+12?+9?165?17?14?+8, +5, +3?2?+24 (1)?+19 (2)?
+11?24?26?+13?+13?+10?180?18?14?+8, +5, +3?2?+25 (1)?+20 (2)?
+12?26?28?+14?+14?+11?200?19?15?+8, +5, +4?3?+27 (1)?+22 (2)?
+13?27?29?+15?+15?+12?225?19?15?+8, +6, +4?3?+28 (1)?+23 (2)?
+14?28?30?+16?+16?+12?250?20?15?+8, +6, +4?3?+30 (1)?+25 (2)?
+15?29?31?+17?+17?+13?275?21?16?+9, +7, +5?3?+31 (1)?+26 (2)?
+16?30?32?+18?+18?+14?300?22?16?+10, +7, +5?3?+33 (1)?+28 (2)?
+17?31?33?+19?+19?+15?340?22?16?+11, +8, +5?3?+34 (1)?+29 (2)?
+18?32?34?+19?+19?+16?375?23?17?+11, +8, +6?4?+36 (1)?+31 (2)?
+19?33?35?+20?+20?+16?415?24?18?+11, +9, +6?4?+37 (1)?+32 (2)?
+20?35?37?+21?+21?+17?465?25?19?+12, +9, +6?4?+39 (1)?+34 (2)?
+21?36?38?+22?+22?+18?500?25?19?+12, +10, +7?4?+40 (1)?+35 (2)?
+22?38?40?+22?+22?+18?550?26?20?+13, +10, +7?4?+42 (1)?+37 (2)?
+23?39?41?+23?+23?+19?600?27?21?+13, +11, +7?4?+43 (1)?+38 (2)?
+24?41?43?+24?+24?+20?650?28?22?+15, +11, +8?4?+45 (1)?+40 (2)?
+25?42?44?+25?+25?+21?700?28?22?+15, +12, +8?4?+46 (1)?+41 (2)?
+
+2
+CR?Attack Bonuses?Ranged Damage?Melee Damage?
+High?Low?Energy?Kinetic?Standard?Three Attacks?Four Attacks?
+1/3?+4?+1?1d4?1d4?1d6+Str?—?—?
+1/2?+6?+3?1d4?1d6?1d6+Str?—?—?
+1?+8?+5?1d4+1?1d6+1?1d6+1+Str?—?—?
+2?+10?+7?1d4+2?1d6+2?1d6+2+Str?—?—?
+3?+11?+8?1d4+3?1d6+3?1d6+3+Str?—?—?
+4?+12?+9?1d4+4?1d6+4?1d6+4+Str?—?—?
+5?+14?+11?1d6+5?1d8+5?1d6+5+Str?—?—?
+6?+16?+13?1d10+6?2d6+6?1d8+6+Str?1d4+6+Str?—?
+7?+17?+14?2d6+7?2d8+7?2d6+7+Str?1d8+7+Str?1d6+7+Str?
+8?+19?+16?2d8+8?3d6+8?3d4+8+Str?1d10+8+Str?1d6+8+Str?
+9?+21?+18?3d6+9?5d4+9?2d10+9+Str?2d6+9+Str?1d10+9+Str?
+10?+22?+19?2d10+10?4d6+10?2d10+10+Str?3d4+10+Str?1d10+10+Str?
+11?+23?+20?3d8+11?3d10+11?4d6+11+Str?2d8+11+Str?2d6+11+Str?
+12?+25?+22?6d4+12?4d8+12?6d4+12+Str?3d6+12+Str?3d4+12+Str?
+13?+26?+23?5d6+13?6d6+13?3d12+13+Str?2d12+13+Str?2d8+13+Str?
+14?+27?+24?3d12+14?5d10+14?8d6+14+Str?4d8+14+Str?4d6+14+Str?
+15?+28?+25?5d8+15?8d6+15?8d6+15+Str?3d12+15+Str?6d4+15+Str?
+16?+30?+27?7d6+16?6d10+16?6d10+16+Str?5d8+16+Str?3d10+16+Str?
+17?+31?+28?8d6+17?6d12+17?6d12+17+Str?4d12+17+Str?3d12+17+Str?
+18?+32?+29?6d10+18?8d10+18?13d6+18+Str?8d6+18+Str?5d8+18+Str?
+19?+33?+30?8d8+19?9d10+19?15d6+19+Str?6d10+19+Str?4d12+19+Str?
+20?+34?+31?12d6+20?16d6+20?11d10+20+Str?6d12+20+Str?8d6+20+Str?
+21?+35?+32?13d6+21?18d6+21?12d10+21+Str?8d10+21+Str?6d10+21+Str?
+22?+36?+33?12d8+22?20d6+22?21d6+22+Str?9d10+22+Str?8d8+22+Str?
+23?+37?+34?17d6+23?14d10+23?24d6+23+Str?10d10+23+Str?12d6+23+Str?
+24?+39?+36?10d12+24?19d8+24?14d12+24+Str?11d10+24+Str?13d6+24+Str?
+25?+40?+37?13d10+25?14d12+25?18d10+25+Str?12d10+25+Str?9d10+25+Str?
+
+3
+CR?EAC?KAC?Fort?Ref?Will?Hit Points?Ability DC?Base Spell DC?Ability Score Modifiers?Special Abilities?Master Skills?Good Skills?
+1/3?10?11?+0?+0?+2?6?10?10?+3, +1, +0?1?+7 (3)?+3 (2)?
+1/2?10?11?+0?+0?+3?12?11?11?+3, +2, +1?1?+9 (3)?+4 (2)?
+1?11?12?+1?+1?+4?17?12?11?+4, +2, +1?1?+10 (3)?+5 (2)?
+2?13?14?+1?+1?+5?23?13?12?+4, +2, +1?1?+12 (3)?+7 (2)?
+3?14?15?+2?+2?+6?35?14?13?+4, +2, +1?2?+13 (3)?+8 (2)?
+4?16?17?+3?+3?+7?45?15?13?+5, +3, +1?2?+15 (3)?+10 (2)?
+5?17?18?+4?+4?+8?65?15?13?+5, +3, +2?2?+16 (3)?+11 (2)?
+6?18?19?+5?+5?+9?80?16?14?+5, +3, +2?2?+18 (3)?+13 (2)?
+7?19?20?+6?+6?+10?100?17?15?+5, +4, +2?2?+19 (3)?+14 (2)?
+8?20?21?+7?+7?+11?115?18?15?+6, +4, +2?2?+21 (3)?+16 (2)?
+9?22?23?+8?+8?+12?135?18?15?+6, +4, +3?2?+22 (3)?+17 (2)?
+10?23?24?+9?+9?+13?150?19?16?+8, +5, +3?2?+24 (3)?+19 (2)?
+11?24?25?+10?+10?+14?170?20?16?+8, +5, +3?2?+25 (3)?+20 (2)?
+12?26?27?+11?+11?+15?185?21?17?+8, +5, +4?3?+27 (3)?+22 (2)?
+13?27?28?+12?+12?+16?210?21?17?+8, +6, +4?3?+28 (3)?+23 (2)?
+14?28?29?+12?+12?+17?235?22?17?+8, +6, +4?3?+30 (3)?+25 (2)?
+15?29?30?+13?+13?+18?255?23?18?+9, +7, +5?3?+31 (3)?+26 (2)?
+16?30?31?+14?+14?+19?280?24?18?+10, +7, +5?3?+33 (3)?+28 (2)?
+17?31?32?+15?+15?+20?315?24?18?+11, +8, +5?3?+34 (3)?+29 (2)?
+18?32?33?+16?+16?+20?350?25?19?+11, +8, +6?3?+36 (3)?+31 (2)?
+19?33?34?+16?+16?+21?385?26?20?+11, +9, +6?4?+37 (3)?+32 (2)?
+20?35?36?+17?+17?+22?430?27?21?+12, +9, +6?4?+39 (3)?+34 (2)?
+21?36?37?+18?+18?+23?465?27?21?+12, +10, +7?4?+40 (3)?+35 (2)?
+22?38?39?+18?+18?+23?500?28?22?+13, +10, +7?4?+42 (3)?+37 (2)?
+23?39?40?+19?+19?+24?550?29?23?+13, +11, +7?4?+43 (3)?+38 (2)?
+24?41?42?+20?+20?+25?600?30?24?+15, +11, +8?4?+45 (3)?+40 (2)?
+25?42?43?+21?+21?+26?650?30?24?+15, +12, +8?4?+46 (3)?+41 (2)?
+
+4
+CR?Attack Bonuses?Ranged Damage?Melee Damage?
+High?Low?Energy?Kinetic?Standard?Three Attacks?Four Attacks?
+1/3?+2?+0?1d4?1d4?1d4+Str?—?—?
+1/2?+4?+2?1d4?1d4?1d4+Str?—?—?
+1?+6?+4?1d4+1?1d4+1?1d4+1+Str?—?—?
+2?+8?+6?1d4+2?1d4+2?1d4+2+Str?—?—?
+3?+9?+7?1d4+3?1d4+3?1d4+3+Str?—?—?
+4?+10?+8?1d4+4?1d4+4?1d4+4+Str?—?—?
+5?+12?+10?1d4+5?1d6+5?1d4+5+Str?—?—?
+6?+14?+12?1d6+6?1d8+6?1d6+6+Str?1d4+6+Str?—?
+7?+15?+13?1d8+7?1d12+7?1d8+7+Str?1d4+7+Str?1d4+7+Str?
+8?+17?+15?1d10+8?2d6+8?1d12+8+Str?1d8+8+Str?1d4+8+Str?
+9?+19?+17?2d6+9?2d8+9?3d4+9+Str?1d10+9+Str?1d6+9+Str?
+10?+20?+18?3d4+10?2d8+10?2d8+10+Str?1d10+10+Str?1d8+10+Str?
+11?+21?+19?2d8+11?2d10+11?2d10+11+Str?3d4+11+Str?1d10+11+Str?
+12?+23?+21?2d8+12?2d10+12?2d12+12+Str?3d4+12+Str?1d12+12+Str?
+13?+24?+22?2d10+13?4d6+13?6d4+13+Str?3d6+13+Str?3d4+13+Str?
+14?+25?+23?5d4+14?4d8+14?6d6+14+Str?4d6+14+Str?3d6+14+Str?
+15?+26?+24?4d6+15?6d6+15?5d8+15+Str?6d4+15+Str?2d10+15+Str?
+16?+28?+26?6d4+16?5d8+16?6d8+16+Str?4d8+16+Str?3d8+16+Str?
+17?+29?+27?4d8+17?4d12+17?8d6+17+Str?3d12+17+Str?6d4+17+Str?
+18?+30?+28?3d12+18?8d6+18?8d8+18+Str?5d8+18+Str?4d8+18+Str?
+19?+31?+29?5d8+19?6d10+19?9d8+19+Str?6d8+19+Str?3d12+19+Str?
+20?+32?+30?4d12+20?8d8+20?13d6+20+Str?9d6+20+Str?5d8+20+Str?
+21?+33?+31?8d6+21?6d12+21?15d6+21+Str?10d6+21+Str?4d12+21+Str?
+22?+34?+32?6d10+22?8d10+22?17d6+22+Str?6d12+22+Str?8d6+22+Str?
+23?+35?+33?8d8+23?13d6+23?12d10+23+Str?8d10+23+Str?6d10+23+Str?
+24?+37?+35?9d8+24?15d6+24?21d6+24+Str?9d10+24+Str?8d8+24+Str?
+25?+38?+36?8d10+25?16d6+25?12d12+25+Str?15d6+25+Str?6d12+25+Str?
+
+5
+CR?EAC?KAC?Fort?Ref?Will?Hit Points?Ability DC?Base Spell Dc?Ability Score Modifiers?Special Abilities?Master Skills?Good Skills?
+1/3?9?10?+0?+0?+2?5?10?12?+3, +1, +0?1?+7 (2)?+3 (1)?
+1/2?9?10?+0?+0?+3?11?11?13?+3, +2, +1?1?+9 (2)?+4 (1)?
+1?10?11?+1?+1?+4?16?12?13?+4, +2, +1?1?+10 (2)?+5 (1)?
+2?12?13?+1?+1?+5?21?13?14?+4, +2, +1?2?+12 (2)?+7 (1)?
+3?13?14?+2?+2?+6?32?14?15?+4, +2, +1?2?+13 (2)?+8 (1)?
+4?15?16?+3?+3?+7?43?15?15?+5, +3, +1?2?+15 (2)?+10 (1)?
+5?16?17?+4?+4?+8?60?15?15?+5, +3, +2?2?+16 (2)?+11 (1)?
+6?17?18?+5?+5?+9?75?16?16?+5, +3, +2?2?+18 (2)?+13 (1)?
+7?18?19?+6?+6?+10?90?17?17?+5, +4, +2?2?+19 (2)?+14 (1)?
+8?19?20?+7?+7?+11?105?18?17?+6, +4, +2?2?+21 (2)?+16 (1)?
+9?21?22?+8?+8?+12?120?18?17?+6, +4, +3?2?+22 (2)?+17 (1)?
+10?22?23?+9?+9?+13?140?19?18?+8, +5, +3?2?+24 (2)?+19 (1)?
+11?23?24?+10?+10?+14?155?20?18?+8, +5, +3?2?+25 (2)?+20 (1)?
+12?25?26?+11?+11?+15?170?21?19?+8, +5, +4?3?+27 (2)?+22 (1)?
+13?26?27?+12?+12?+16?190?21?19?+8, +6, +4?3?+28 (2)?+23 (1)?
+14?27?28?+12?+12?+17?215?22?19?+8, +6, +4?3?+30 (2)?+25 (1)?
+15?28?29?+13?+13?+18?235?23?20?+9, +7, +5?3?+31 (2)?+26 (1)?
+16?29?30?+14?+14?+19?255?24?20?+10, +7, +5?3?+33 (2)?+28 (1)?
+17?30?31?+15?+15?+20?285?24?20?+11, +8, +5?3?+34 (2)?+29 (1)?
+18?31?32?+16?+16?+20?320?25?21?+11, +8, +6?4?+36 (2)?+31 (1)?
+19?32?33?+16?+16?+21?350?26?22?+11, +9, +6?4?+37 (2)?+32 (1)?
+20?34?35?+17?+17?+22?395?27?23?+12, +9, +6?4?+39 (2)?+34 (1)?
+21?35?36?+18?+18?+23?425?27?23?+12, +10, +7?4?+40 (2)?+35 (1)?
+22?37?38?+18?+18?+23?470?28?24?+13, +10, +7?4?+42 (2)?+37 (1)?
+23?38?39?+19?+19?+24?510?29?25?+13, +11, +7?4?+43 (2)?+38 (1)?
+24?40?41?+20?+20?+25?550?30?26?+15, +11, +8?4?+45 (2)?+40 (1)?
+25?41?42?+21?+21?+26?600?30?26?+15, +12, +8?4?+46 (2)?+41 (1)?
+
+6
+CR?Attack Bonuses?Ranged Damage?Melee Damage?
+High?Low?Energy?Kinetic?Standard?Three Attacks?Four Attacks?
+1/3?+0?–2?1d4?1d4?1d4+Str?—?—?
+1/2?+2?+0?1d4?1d4?1d4+Str?—?—?
+1?+4?+2?1d4+1?1d4+1?1d4+1+Str?—?—?
+2?+6?+4?1d4+2?1d4+2?1d4+2+Str?—?—?
+3?+7?+5?1d4+3?1d4+3?1d4+3+Str?—?—?
+4?+8?+6?1d4+4?1d4+4?1d4+4+Str?—?—?
+5?+10?+8?1d4+5?1d6+5?1d4+5+Str?—?—?
+6?+12?+10?1d6+6?1d8+6?1d6+6+Str?1d4+6+Str?—?
+7?+13?+11?1d8+7?1d12+7?1d8+7+Str?1d4+7+Str?1d4+7+Str?
+8?+15?+13?1d10+8?2d6+8?1d12+8+Str?1d8+8+Str?1d4+8+Str?
+9?+17?+15?2d6+9?2d8+9?3d4+9+Str?1d10+9+Str?1d6+9+Str?
+10?+18?+16?3d4+10?2d8+10?2d8+10+Str?1d10+10+Str?1d8+10+Str?
+11?+19?+17?2d8+11?2d10+11?2d10+11+Str?3d4+11+Str?1d10+11+Str?
+12?+21?+19?2d8+12?2d10+12?2d12+12+Str?3d4+12+Str?1d12+12+Str?
+13?+22?+20?2d10+13?4d6+13?6d4+13+Str?3d6+13+Str?3d4+13+Str?
+14?+23?+21?5d4+14?4d8+14?6d6+14+Str?4d6+14+Str?3d6+14+Str?
+15?+24?+22?4d6+15?6d6+15?5d8+15+Str?6d4+15+Str?2d10+15+Str?
+16?+26?+24?6d4+16?5d8+16?6d8+16+Str?4d8+16+Str?3d8+16+Str?
+17?+27?+25?4d8+17?4d12+17?8d6+17+Str?3d12+17+Str?6d4+17+Str?
+18?+28?+26?3d12+18?8d6+18?8d8+18+Str?5d8+18+Str?4d8+18+Str?
+19?+29?+27?5d8+19?6d10+19?9d8+19+Str?6d8+19+Str?3d12+19+Str?
+20?+30?+28?4d12+20?8d8+20?13d6+20+Str?9d6+20+Str?5d8+20+Str?
+21?+31?+29?8d6+21?6d12+21?15d6+21+Str?10d6+21+Str?4d12+21+Str?
+22?+32?+30?6d10+22?8d10+22?17d6+22+Str?6d12+22+Str?8d6+22+Str?
+23?+33?+31?8d8+23?13d6+23?12d10+23+Str?8d10+23+Str?6d10+23+Str?
+24?+35?+33?9d8+24?15d6+24?21d6+24+Str?9d10+24+Str?8d8+24+Str?
+25?+36?+34?8d10+25?16d6+25?12d12+25+Str?15d6+25+Str?6d12+25+Str?
+
+7
+CR?Abilities?
+1?One 1st-level envoy improvisation and one special ability.?
+2?Two 1st-level envoy improvisations and one special ability.?
+4?One 4th-level envoy improvisation, one 1st-level envoy improvisation, and one special ability.?
+6?One 6th-level envoy improvisation, one 4th-level envoy improvisation, one 1st-level envoy improvisation, and one special ability.?
+8?One 8th-level envoy improvisation, one 6th-level envoy improvisation, one 4th-level envoy improvisation, and one special ability.?
+9?One 8th-level envoy improvisation, one 6th-level envoy improvisation, one 4th-level envoy improvisation, skillful special ability, and one special ability.?
+10?Two 8th-level envoy improvisations, one 6th-level envoy improvisation, one 4th-level envoy improvisation, skillful special ability, and one special ability.?
+12?Three 8th-level envoy improvisations, one 6th-level envoy improvisation, skillful special ability, and one special ability.?
+16?Four 8th-level envoy improvisations, skillful special ability, and one special ability.?
+20?True expertise, four 8th-level envoy improvisations, skillful special ability, and one special ability.?
+
+8
+CR?Abilities?
+1?Artificial intelligence (see Special Rules above), custom rig, one special ability.?
+2?Artificial intelligence, custom rig, one 2ndlevel mechanic trick, and one special ability.?
+3?Artificial intelligence, custom rig, overload, and one 2ndlevel mechanic trick.?
+4?Artificial intelligence, custom rig, overload, and two 2ndlevel mechanic tricks.?
+5?Artificial intelligence, custom rig, overload, remote hack, and two 2nd-level mechanic tricks.?
+7?Artificial intelligence, overload, remote hack, expert rig, miracle worker 1/day, and two 2nd-level mechanic tricks.?
+8?Artificial intelligence, overload, remote hack, expert rig, miracle worker 1/day, one 8th-level mechanic trick, and one 2nd-level mechanic trick.?
+9?Artificial intelligence, overload, remote hack, expert rig, miracle worker 1/day, override, one 8th-level mechanic trick, and one 2nd-level mechanic trick.?
+11?Artificial intelligence, overload, remote hack, expert rig, miracle worker 2/day, override, and two 8th-level mechanic tricks.?
+13?Artificial intelligence, overload, remote hack, miracle worker 2/day, override, advanced rig, and two 8th-level mechanic tricks.?
+14?Artificial intelligence, overload, remote hack, miracle worker 2/day, override, advanced rig, one 14th-level mechanic trick, and one 8th-level mechanic trick.?
+16?Artificial intelligence, overload, remote hack, miracle worker 3/day, override, advanced rig, and two 14th-level mechanic tricks.?
+18?Artificial intelligence, overload, remote hack, miracle worker 3/day, override, advanced rig, and three 14th-level mechanic tricks.?
+19?Artificial intelligence, overload, remote hack, miracle worker 3/day, override, ghost in the machine, superior rig, and three 14th-level mechanic tricks.?
+20?Artificial intelligence, overload, remote hack, miracle worker 3/day, override, ghost in the machine, superior rig, and four 14th-level mechanic tricks.?
+
+9
+CR?Abilities?
+1?1st-level connection power and one special ability.?
+2?1st-level connection power, mindlink, and one special ability.?
+3?1st- and 3rd-level connection powers and mindlink.?
+6?1st-, 3rd-, and 6th-level connection powers and mindlink.?
+9?1st-, 3rd-, 6th-, and 9th-level connection powers and mindlink.?
+11?1st-, 3rd-, 6th-, and 9th-level connection powers; mindlink; and telepathic bond.?
+12?1st-, 3rd-, 6th-, 9th-, and 12th-level connection powers; mindlink; and telepathic bond.?
+15?1st-, 3rd-, 6th-, 9th-, 12th-, and 15th-level connection powers; mindlink; and telepathic bond.?
+18?All connection powers, mindlink, and telepathic bond.?
+19?All connection powers, mindlink, telepathic bond, and transcendence.?
+20?All connection powers, mindlink, telepathic bond, transcendence, and enlightenment.?
+
+10
+CR?Abilities?
+1?Trick attack +1d4 and one special ability.?
+2?Trick attack +1d4, evasion, one 2nd-level operative exploit, and one special ability.?
+3?Trick attack +1d8, evasion, quick movement +10 ft., one 2nd-level operative exploit, and one special ability.?
+4?Trick attack +1d8, evasion, quick movement +10 ft., debilitating trick, and two 2nd-level operative exploits.?
+5?Trick attack +3d8, evasion, quick movement +10 ft., debilitating trick, specialization exploit, and two 2nd-level operative exploits.?
+6?Trick attack +3d8, evasion, quick movement +10 ft., debilitating trick, specialization exploit, and one 6th-level operative exploit.?
+7?Trick attack +4d8, evasion, quick movement +10 ft., debilitating trick, uncanny agility, specialization exploit, and one 6th-level operative exploit.?
+8?Trick attack +4d8, evasion, quick movement +10 ft., debilitating trick, uncanny agility, triple attack, specialization exploit, and one 6th-level operative exploit.?
+9?Trick attack +5d8, evasion, quick movement +20 ft., debilitating trick, uncanny agility, triple attack, specialization exploit, and one 6th-level operative exploit.?
+10?Trick attack +5d8, evasion, quick movement +20 ft., debilitating trick, uncanny agility, triple attack, specialization exploit, and one 10th-level operative exploit.?
+11?Trick attack +6d8, evasion, quick movement +20 ft., debilitating trick, uncanny agility, triple attack, specialization power, specialization exploit, and one 10th-level operative exploit.?
+13?Trick attack +7d8, evasion, quick movement +20 ft., debilitating trick, uncanny agility, quad attack, specialization power, specialization exploit, and one 10th-level operative exploit.?
+14?Trick attack +7d8, evasion, quick movement +20 ft., debilitating trick, uncanny agility, quad attack, specialization power, specialization exploit, and one 14th-level operative exploit.?
+15?Trick attack +8d8, evasion, quick movement +30 ft., debilitating trick, uncanny agility, quad attack, specialization power, specialization exploit, and one 14th-level operative exploit.?
+17?Trick attack +9d8, evasion, quick movement +30 ft., debilitating trick, uncanny agility, quad attack, double debilitation, specialization power, specialization exploit, and one 14th-level operative exploit.?
+19?Trick attack +10d8, evasion, quick movement +30 ft., debilitating trick, uncanny agility, quad attack, double debilitation, specialization power, specialization exploit, and two 14th-level operative exploits.?
+20?Trick attack +10d8, evasion, quick movement +30 ft., debilitating trick, uncanny agility, quad attack, double debilitation, specialization power, specialization exploit, supreme operative, and two 14th-level operative exploits.?
+
+11
+CR?Abilities?
+1?Solar manifestation, stellar alignment, black hole, and supernova.?
+2?Solar manifestation, stellar alignment, black hole, supernova, and one 2nd-level stellar revelation.?
+4?Solar manifestation, stellar alignment, black hole, supernova, and two 2nd-level stellar revelations.?
+6?Solar manifestation, stellar alignment, black hole, supernova, one 6th-level stellar revelation, and one 2nd-level stellar revelation.?
+7?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, one 6th-level stellar revelation, and one 2nd-level stellar revelation.?
+8?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, and two 6th-level stellar revelations.?
+9?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, two 6th-level stellar revelations, and one zenith revelation.?
+10?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, one 10th-level stellar revelation, one 6th-level stellar revelation, and one zenith revelation.?
+13?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, solarian’s onslaught, two 10thlevel stellar revelations, and one zenith revelation.?
+14?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, solarian’s onslaught, one 14thlevel stellar revelation, one 10th-level stellar revelation, and one zenith revelation.?
+17?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, solarian’s onslaught, two 14thlevel stellar revelations, and two zenith revelations.?
+20?Solar manifestation, stellar alignment, black hole, supernova, flashing strikes, solarian’s onslaught, stellar apotheosis, two 14th-level stellar revelations, and two zenith revelations.?
+
+12
+CR?Abilities?
+1?1st-level style technique and one special ability.?
+2?1st-level style technique, one gear boost, and one special ability.?
+5?1st- and 5th-level style techniques, one gear boost, and one special ability.?
+7?1st- and 5th-level style techniques, two gear boosts, and one special ability.?
+9?1st-, 5th-, and 9th-level style techniques; secondary fighting style; 1st-level secondary style technique; two gear boosts; and one special ability.?
+11?1st-, 5th-, and 9th-level style techniques; secondary fighting style; 1st-level secondary style technique; soldier’s onslaught; two gear boosts; and one special ability.?
+13?1st-, 5th-, 9th-, and 13th-level style techniques; secondary fighting style; 1st- and 5th-level secondary style techniques; soldier’s onslaught; and three special abilities.?
+17?1st-, 5th-, 9th-, 13th-, and 17th-level style techniques; second style; 1st-, 5th-, and 9th-level secondary style techniques; soldier’s onslaught; two gear boosts; and one special ability.?
+20?1st-, 5th-, 9th-, 13th-, and 17th-level style techniques; second style; 1st-, 5th-, and 9th-level secondary style techniques; soldier’s onslaught; kill shot; two gear boosts; and one special ability.?
+
+13
+CR?Abilities?
+1?Spell cache and one special ability.?
+2?Spell cache, one 2nd-level magic hack, and one special ability.?
+5?Spell cache, one 5th-level magic hack, and one 2nd-level magic hack.?
+6?Spell cache, cache capacitor 1, one 5th-level magic hack, and one 2nd-level magic hack.?
+8?Spell cache, cache capacitor 1, one 8th-level magic hack, and one 5th-level magic hack.?
+11?Spell cache, cache capacitor 1, one 11th-level magic hack, and one 8th-level magic hack.?
+12?Spell cache, cache capacitor 2, one 11th-level magic hack, and one 8th-level magic hack.?
+14?Spell cache, cache capacitor 2, one 14th-level magic hack, and one 11th-level magic hack.?
+17?Spell cache, cache capacitor 2, and two 14th-level magic hacks.?
+18?Spell cache, cache capacitor 3, and two 14th-level magic hacks.?
+
+14
+CR?Spell-Like Abilities?Spellcaster?
+1/3–3?1/day—two 1st-level spells At will—two 0-level spells?1st (3/day)—two 1st-level spells 0 (at will)—two 0-level spells?
+4–6?1/day—two 2nd-level spells 3/day—three 1st-level spells At will—two 0-level spells?2nd (3/day)—two 2nd-level spells 1st (6/day)—three 1st-level spells 0 (at will)—two 0-level spells?
+7–9?1/day—two 3rd-level spells 3/day—four 2nd-level spells At will—two 1st-level spells?3rd (3/day)—two 3rd-level spells 2nd (6/day)—four 2nd-level spells 1st (at will)—two 1st-level spells?
+10–12?1/day—two 4th-level spells 3/day—four 3rd-level spells At will—two 2nd-level spells?4th (3/day)—two 4th-level spells 3rd (6/day)—four 3rd-level spells 2nd (at will)—two 2nd-level spells?
+13–15?1/day—two 5th-level spells 3/day—four 4th-level spells At will—two 3rd-level spells?5th (3/day)—two 5th-level spells 4th (6/day)—four 4th-level spells 3rd (at will)—two 3rd-level spells?
+16–18?1/day—two 6th-level spells 3/day—four 5th-level spells At will—two 4th-level spells?6th (3/day)—two 6th-level spells 5th (6/day)—four 5th-level spells 4th (at will)—two 4th-level spells?
+19+?1/day—four 6th-level spells 3/day—three 5th-level spells At will—two 4th-level spells?6th (3/day)—four 6th-level spells 5th (6/day)—three 5thlevel spells 4th (at will)—two 4th-level spells?
+

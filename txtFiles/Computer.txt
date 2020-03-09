@@ -1,0 +1,64 @@
+https://starfinder.dragonlash.com/equipment/computers/
+
+1
+Summon Creature?07/26/19?Antony?
+Polymorph?07/26/19?Antony?
+Polymorph, Mass?07/26/19?Antony?
+Greater Feint?05/31/19?daniel?
+
+2
+Void Ooze?07/27/19?DMNC?
+Tenebrous Worm?07/27/19?DMNC?
+Crate Fiend?07/27/19?DMNC?
+Aeon Guard?07/27/19?daniel?
+
+3
+1?50?17?
+2?250?21?
+3?1,250?25?
+4?5,000?29?
+5?10,000?33?
+6?20,000?37?
+7?40,000?41?
+8?80,000?45?
+9?160,000?49?
+10?320,000?53?
+
+4
+Control, complex?10% of controlled device Secure data, average 10 credits?
+Secure data, large?Varies?
+Secure data, specific?1 credit?
+Spell chip?110% of component Spell gem?
+
+5
+Artificial personality?10% of computer’s base price?
+Hardened?50% of computer’s base price?
+Miniaturization?10% of computer’s base price?
+Range I (100 feet)?5 credits?
+Range II (1 mile)?50 credits?
+Range III (planetwide)?100 credits?
+Security?Varies1?
+Self-charging?10% of computer’s base price?
+
+6
+Alarm?10 credits?
+Fake shell?50% of computer’s base price + 10% of price of control and data modules?
+Feedback?500 credits?
+Firewall?20% of computer’s base price?
+Lockout?100 credits?
+Shock grid?Varies2?
+Wipe?10 credits?
+
+7
+Security I?+1?25% of computer’s base price?
+Security II?+2?50% of computer’s base price?
+Security III?+3?75% of computer’s base price?
+Security IV?+4?100% of computer’s base price?
+
+8
+1?20?8d6?500?
+2?22?10d6?2,000?
+3?24?12d6?5,000?
+4?27?14d6?20,000?
+5?30?16d6?50,000?
+

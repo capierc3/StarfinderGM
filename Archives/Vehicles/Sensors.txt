@@ -1,0 +1,14 @@
+~https://www.aonsrd.com/Starship_Sensors.aspx
+<>Sensors?Range?Modifier?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Cut-Rate?Short?-2?1?
+Budget Short-Range?Short?+0?2?
+Basic Short-Range?Short?+2?3?
+Advanced Short-Range?Short?+4?4?
+Budget Medium-Range?Medium?+0?3?
+Basic Medium-Range?Medium?+2?5?
+Advanced Medium-Range?Medium?+4?8?
+Budget Long-Range?Long?+0?6?
+Basic Long-Range?Long?+2?10?
+Advanced Long-Range?Long?+4?14?
+

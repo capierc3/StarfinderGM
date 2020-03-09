@@ -1,0 +1,10 @@
+~https://www.aonsrd.com/OtherItems.aspx?Category=Trade Goods
+<>Name?Price?Bulk?
+:::-
+Fine Art?Varies?Varies?
+Gem?Varies?—?
+Grain?1?1?
+UPB (1000)?1,000?1?
+Textiles, Common?1?L?
+Textiles, Fine?100?L?
+

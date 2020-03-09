@@ -1,0 +1,8 @@
+~https://www.aonsrd.com/OtherItems.aspx?Category=Lodgings
+<>Name?Price?
+:::-
+Efficiency?3 per night?
+Sleep Pod?1 per night?
+Suite, 1-2 Beds?5 per night per bed?
+Suite, 3-4 Beds?10 per night per bed?
+

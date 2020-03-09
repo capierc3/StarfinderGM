@@ -1,0 +1,79 @@
+https://www.aonsrd.com/Cybernetics.aspx?ItemName=All&Family=None
+
+1
+Prosthetic Limb, Standard?1?100?Arm and hand, or leg and foot?
+Vocal Modulator?1?125?Throat?
+Voice Amplifier?1?125?Throat?
+Hideaway Limb, Standard?1?150?Arm or leg?
+Society Subdermal Graft, Single?1?150?Hand?
+Respiration Compounder?1?250?Lungs?
+Lightvision Shades?2?500?Eyes?
+Datajack, Standard?2?625?Brain?
+Spinal Struts, Minimal?3?1,260?Spinal column?
+Retinal Reflectors?3?1,350?Eyes?
+Prosthetic Limb, Storage?3?1,450?Arm and hand, or leg and foot?
+Optical Laser, Azimuth?3?1,530?Eye?
+Darkvision Capacitors, Standard?3?1,750?Eyes?
+Fortified Feet?4?1,850?All feet?
+Speed Suspension, Minimal?4?1,900?All legs?
+Threshold Buffer, Mk 1?4?2,080?Heart?
+Emotional Regulator?4?2,120?Brain?
+Weaponized Prosthesis, Mk 1?4?2,120?Arm and hand?
+Datajack, High-Density?5?2,600?Brains?
+Solar Overload Conduit, Mk 1?5?2,640?Skin?
+Bionic Knee?5?2,750?All legs?
+Wide-Spectrum Ocular Implant?5?2,825?Eyes?
+Antitoxin Membrane?5?3,000?Skin?
+Dermal Plating, Mk 1?5?3,025?Skin?
+Hideaway Limb, Quickdraw?5?3,050?Arm or leg?
+Force Matrix, Mk 1?5?3,300?Hand?
+Detoxifier, Standard?5?3,500?Heart?
+Cardiac Accelerator?6?3,850?Heart?
+Adaptive Fingerprints?6?4,030?All Hands?
+Spinal Struts, Standard?6?4,030?Spinal column?
+X-Legs, Basic?6?4,295?All legs and feet?
+Biosynthetic Nanties, Mk 1?6?4,450?Skin?
+Echolocators, Reactive?6?4,450?Ears?
+Polarizing Palm?7?5,850?Hand?
+Limning Palm?7?6,300?Hand?
+Shortwave Receiver-Transmitter?7?6,500?Brain?
+Dermal Plating, Mk 2?7?6,950?Skin?
+Optical Laser, Corona?7?7,140?Eye?
+Datajack, Accelerated?8?8,525?Brain?
+Recoil Stabilizer?8?8,550?Arm and hand?
+Speed Suspension, Standard?8?8,800?All legs?
+Adrenal Booster?8?8,900?Endocrine?
+Darkvision Capacitors, Advanced?8?9,000?Eyes?
+Weaponized Prosthesis, Mk 2?8?9,250?Arm and hand?
+Disquieting Nanites?8?10,000?Skin and Throat?
+Threshold Buffer, Mk 2?9?13,500?Heart?
+Biosynthetic Nanties, Mk 2?9?13,700?Skin?
+Echolocators, Active?9?13,700?Ears?
+Dermal Plating, Mk 3?9?17,975?Skin?
+Solar Overload Conduit, Mk 2?10?16,800?Skin?
+Spinal Struts, Reinforced?10?17,640?Spinal column?
+Artificial Third Eye?10?18,000?Brain and eyes?
+Cybernetic Arm, Single?11?24,750?Spinal column?
+Thorgothrel Armature?11?25,000?Spinal Column?
+Optical Laser, Aphelion?11?26,520?Eye?
+Force Matrix, Mk 2?11?26,750?Hand?
+Speed Suspension, Complete?12?32,900?All legs?
+Linguistic Capacitor?12?33,600?Brain?
+X-Legs, Climbing?12?35,600?All legs and feet?
+Detoxifier, Enhanced?12?39,500?Heart?
+Dermal Plating, Mk 4?12?48,850?Skin?
+Darkvision Capacitors, Long-Range?13?48,950?Eyes?
+Biosynthetic Nanties, Mk 3?13?50,900?Skin?
+Echolocators, Enhanced?13?50,900?Ears?
+Cybernetic Arm, Dual?14?70,150?Spinal column?
+Polyhand?14?71,000?Hand?
+Dermal Plating, Mk 5?14?105,000?Skin?
+Threshold Buffer, Mk 3?15?110,000?Heart?
+Solar Overload Conduit, Mk 3?15?120,000?Skin?
+Optical Laser, Parallax?15?122,400?Eye?
+Dermal Plating, Mk 6?16?163,500?Skin?
+Force Matrix, Mk 3?17?278,100?Hand?
+Dermal Plating, Mk 7?19?542,000?Skin?
+Detoxifier, Elite?19?612,000?Heart?
+Optical Laser, Zenith?19?612,000?Eye?
+

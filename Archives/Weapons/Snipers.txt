@@ -1,0 +1,53 @@
+~https://www.aonsrd.com/Weapons.aspx?Proficiency=Sniper
+<>Name?Category?Level?Price?Damage?Range?Critical?Capacity?Usage?Bulk?Special?
+:::Two-Handed Weapons
+Wraith-Sting Rifle, Yellow Jacket?—?1?375?—?40 ft.?injection DC +2?1 dart?1?1?injection, sniper (250 ft.), susbtle, unwieldy?
+Wraith-Sting Rifle, Wasp?—?5?2,980?—?60 ft.?injection dc +3?1 dart?1?1?injection, sniper (500 ft.), susbtle, unwieldy?
+Nanite Rifle, Tactical?—?10?20,100?2d12 A?60 ft.?wound?10 nanites?10?1?sniper (500 ft.), unwieldy?
+Wraith-Sting Rifle, Hornet?—?14?71,200?—?80 ft.?injection dc +4?1 dart?1?1?injection, sniper (750 ft.), susbtle, unwieldy?
+Nanite Rifle, Advanced?—?15?131,000?3d12 A?80 ft.?severe wound?10 nanites?5?1?sniper (750 ft.), unwieldy?
+Nanite Rifle, Elite?—?19?648,000?6d12 A?100 ft.?severe wound?10 nanites?2?1?sniper (1, 000 ft.), unwieldy?
+Gamma Rifle, Terrestrial?Flame?4?2,120?1d10 F?80 ft.?irradiate?40 charges?4?1?radioactive, sniper (500 ft.), unwieldy?
+Gamma Rifle, Ionizing?Flame?9?13,600?2d10 F?80 ft.?irradiate?40 charges?5?1?radioactive, sniper (500 ft.), unwieldy?
+Gamma Rifle, Fusion?Flame?12?36,600?3d10 F?100 ft.?irradiate?40 charges?8?1?radioactive, sniper (750 ft.), unwieldy?
+Gamma Rifle, Synchrotron?Flame?17?272,000?7d10 F?100 ft.?irradiate?40 charges?10?1?radioactive, sniper (1, 000 ft.), unwieldy?
+Diasporan Rifle, Tactical?Laser?1?350?1d8 F?70 ft.?—?10 charges?1?1?sniper (250 ft.), unwieldy?
+Focus Rifle, Dual?Laser?3?1,400?2d4 F?100 ft.?burn 1d4?20 charges?4?1?penetrating, sniper (500 ft.), unwieldy?
+Diasporan Rifle, Advanced?Laser?5?3,750?2d8 F?70 ft.?—?20 charges?1?2?sniper (500 ft.), unwieldy?
+Focus Rifle, Triple?Laser?7?6,460?3d4 F?120 ft.?burn 2d4?40 charges?4?1?penetrating, sniper (650 ft.), unwieldy?
+Diasporan Rifle, Elite?Laser?10?17,000?4d8 F?80 ft.?—?20 charges?1?2?sniper (750 ft.), unwieldy?
+Focus Rifle, Quad?Laser?13?50,800?7d4 F?120 ft.?burn 3d4?40 charges?8?1?penetrating, sniper (800 ft.), unwieldy?
+Diasporan Rifle, Ultra?Laser?15?110,000?6d8 F?80 ft.?—?30 charges?1?2?sniper (1, 000 ft.), unwieldy?
+Focus Rifle, Compound?Laser?18?375,000?13d4 F?150 ft.?burn 4d4?80 charges?8?1?penetrating, sniper (1, 000 ft.), unwieldy?
+Diasporan Rifle, Imperial?Laser?20?725,000?10d8 F?80 ft.?—?30 charges?1?2?sniper (1, 000 ft.), unwieldy?
+Plasma Guide, Series-21?Plasma?2?1,070?1d8 E & F?60 ft.?—?20 charges?5?2?guided, sniper (250 ft.), unwieldy?
+Plasma Guide, Series-28?Plasma?6?4,920?1d10 E & F?60 ft.?wound?40 charges?5?2?guided, sniper (250 ft.), unwieldy?
+Plasma Guide, Series-37?Plasma?8?10,800?2d8 E & F?70 ft.?wound?40 charges?8?2?guided, sniper (500 ft.), unwieldy?
+Plasma Guide, Series-42?Plasma?11?28,200?3d8 E & F?70 ft.?severe wound?80 charges?8?2?guided, sniper (500 ft.), unwieldy?
+Plasma Guide, Series-62?Plasma?16?193,000?5d8 E & F?80 ft.?severe wound?80 charges?10?2?guided, sniper (750 ft.), unwieldy?
+Plasma Guide, Series-73?Plasma?20?980,000?9d8 E & F?80 ft.?severe wound?100 charges?10?2?guided, sniper (1, 000 ft.), unwieldy?
+Coil Rifle, Precision?Projectile?1?390?1d6 P?60 ft.?—?4 rounds?1?2?sniper (250 ft.)?
+Shobhad Horizon Striker, Tactical?Projectile?1?440?2d4 P?100 ft.?—?2 rounds?1?2?analog, sniper (500 ft.), unwieldy?
+Shirren-Eye Rifle, Tactical?Projectile?2?755?1d10 P?70 ft.?—?1 round?1?1?analog, sniper (250 ft.), unwieldy?
+Assassin Rifle, Stalker?Projectile?3?1,510?1d10 P?60 ft.?—?1 round?1?1?breakdown, sniper (250 ft.), unwieldy?
+Multistage Rifle, Dual?Projectile?4?2,380?1d10 P?50 ft.?—?2 mini-rockets?2?2?indirect, sniper (500 ft.), unwieldy?
+Coil Rifle, Specialist?Projectile?5?3,120?2d6 P?70 ft.?bleed 1d6?6 rounds?1?2?sniper (250 ft.)?
+Assassin Rifle, Shadow?Projectile?6?4,550?2d6 P?60 ft.?—?1 round?1?1?breakdown, sniper (500 ft.), unwieldy?
+Shobhad Horizon Striker, Advanced?Projectile?6?4,750?3d4 P?120 ft.?—?2 rounds?1?2?analog, sniper (1, 000 ft.), unwieldy?
+Multistage Rifle, Dual-Plus?Projectile?7?7,500?2d8 P?50 ft.?—?2 mini-rockets?2?2?indirect, sniper (500 ft.), unwieldy?
+Shirren-Eye Rifle, Advanced?Projectile?8?9,350?2d10 P?70 ft.?—?4 rounds?1?2?analog, sniper (500 ft.), unwieldy?
+Assassin Rifle, Phantom?Projectile?9?14,900?3d6 P?60 ft.?—?1 round?1?1?breakdown, sniper (600 ft.), unwieldy?
+Coil Rifle, Rangefinder?Projectile?10?18,600?3d6 P?70 ft.?bleed 2d6?8 rounds?1?2?sniper (500 ft.)?
+Multistage Rifle, Triple?Projectile?11?27,900?3d8 P?60 ft.?—?3 mini-rockets?3?2?indirect, sniper (750 ft.), unwieldy?
+Shobhad Horizon Striker, Elite?Projectile?11?27,300?6d4 P?140 ft.?—?2 rounds?1?2?analog, sniper (1, 250 ft.), unwieldy?
+Assassin Rifle, Spectre?Projectile?12?29,500?5d6 P?70 ft.?—?1 round?1?1?breakdown, sniper (750 ft.), unwieldy?
+Shirren-Eye Rifle, Elite?Projectile?13?54,000?4d10 P?80 ft.?—?6 rounds?1?2?analog, sniper (750 ft.), unwieldy?
+Coil Rifle, Saboteur?Projectile?14?76,700?7d6 P?80 ft.?bleed 3d6?12 rounds?1?2?sniper (750 ft.)?
+Multistage Rifle, Triple-Plus?Projectile?15?124,000?7d8 P?70 ft.?—?3 mini-rockets?3?2?indirect, sniper (750 ft.), unwieldy?
+Shirren-Eye Rifle, Paragon?Projectile?16?147,200?6d10 P?80 ft.?—?6 rounds?1?1?analog, sniper (1000 ft.), unwieldy?
+Shobhad Horizon Striker, Paragon?Projectile?16?185,000?8d8 P?160 ft.?—?2 rounds?1?2?analog, sniper (1, 500 ft.), unwieldy?
+Assassin Rifle, Wraith?Projectile?17?278,000?11d6 P?70 ft.?—?1 round?1?1?breakdown, sniper (1, 000 ft.), unwieldy?
+Multistage Rifle, Quad?Projectile?18?627,000?9d8 P?80 ft.?—?4 mini-rockets?4?2?indirect, sniper (1, 000 ft.), unwieldy?
+Coil Rifle, Assassin?Projectile?19?590,000?12d6 P?90 ft.?bleed 4d6?16 rounds?1?2?sniper (750 ft.)?
+Shirren-Eye Rifle, Warpshot?Projectile?20?740,800?10d10 P?80 ft.?—?4 rounds?1?1?analog, sniper (1000 ft.), unwieldy?
+

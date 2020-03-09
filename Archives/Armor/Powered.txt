@@ -1,0 +1,30 @@
+~https://www.aonsrd.com/PoweredArmor.aspx?ItemName=All
+<>Armor Model?Level?Price?
+:::-
+Goblin Battle Jack?2?950?
+Cargo Lifter?4?2,150?
+Scrapper's Rig?4?2,150?
+Absorptive Shell?5?3,375?
+Battle Harness?5?3,450?
+Spacer Carapace?6?4,650?
+Laborer Frame?7?7,500?
+Personal Submersible?7?7,200?
+Spellcaster's Aegis?8?10,250?
+Brawler Frame?9?14,500?
+Ironclad Bulwark?10?19,250?
+Spider Harness?10?19,500?
+Flight Frame?11?27,100?
+Stag-Step Suit?11?26,400?
+Celerity Rigging?12?38,500?
+Winter Walker?13?52,100?
+Explorer's Cradle?14?79,000?
+Commander's Harness?15?122,500?
+Jarlslayer?15?125,500?
+Angel Frame?16?191,000?
+Kyton Bloodsuit?16?187,750?
+Extradimensional Armor?17?278,200?
+Reactor Guard?17?271,000?
+Surnoch Suit?18?405,000?
+Warmaster's Harness?19?610,000?
+Starguard?20?904,500?
+

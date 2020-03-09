@@ -1,0 +1,19 @@
+~https://www.aonsrd.com/Starship_Armor.aspx
+<>Name?Bonus_to_AC?Special?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Mk 1 Armor?+1?—?1 x size category?
+Mk 2 Armor?+2?—?2 x size category?
+Mk 3 Armor?+3?—?3 x size category?
+Mk 4 Armor?+4?—?5 x size category?
+Mk 5 Armor?+5?-1 TL?7 x size category?
+Mk 6 Armor?+6?-1 TL?9 x size category?
+Mk 7 Armor?+7?-1 TL?12 x size category?
+Mk 8 Armor?+8?-1 TL?15 x size category?
+Mk 9 Armor?+9?-2 TL, +1 turn distance?18 x size category?
+Mk 10 Armor?+10?-2 TL, +1 turn distance?21 x size category?
+Mk 11 Armor?+11?-2 TL, +1 turn distance?25 x size category?
+Mk 12 Armor?+12?-3 TL, +2 turn distance?30 x size category?
+Mk 13 Armor?+13?-3 TL, +2 turn distance?35 x size category?
+Mk 14 Armor?+14?-3 TL, +2 turn distance?40 x size category?
+Mk 15 Armor?+15?-4 TL, +3 turn distance?45 x size category?
+

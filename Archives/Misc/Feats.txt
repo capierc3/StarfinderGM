@@ -1,0 +1,126 @@
+~https://www.aonsrd.com/Feats.aspx?Category=
+<>Name?Prerequisite?Description?
+:::
+Adaptive Fighting*?Three or more combat feats?Once per day as a move action, gain the benefit of a combat feat you don’t have?
+Advanced Melee Weapon Proficiency*?Proficiency in basic melee weapons?No penalty to attacks with advanced melee weapons?
+Agile Casting?Key ability score 15, Dex 15, Mobility, caster level 4th?Cast a spell at any point during movement?
+Amplified Glitch*?Computers 3 ranks, Intimidate 3 ranks?Disrupt devices, causing targets to become shaken for 1 round or more?
+Antagonize?Diplomacy 5 ranks, Intimidate 5 ranks?Anger a foe, causing it to become off-target and take a -2 penalty to skill checks for 1 round or more?
+Barricade*?Engineering 1 rank?Create your own fragile cover?
+Basic Melee Weapon Proficiency*?—?No penalty to attacks with basic melee weapons?
+Blind-Fight*?—?Reroll miss chances from concealment?
+Bodyguard*?—?Add a +2 bonus to an adjacent ally’s AC as a reaction?
+Cleave*?Str 13, base attack bonus +1?Make an additional melee attack if the first one hits?
+Climbing Master?Athletics 5 ranks?Gain a climb speed equal to your base speed?
+Close Combat*?Base attack bonus +1?Gain a +2 bonus to AC against ranged attacks when are are in melee combat?
+Combat Casting*?Ability to cast 2nd-level spells?+2 bonus to AC and saves against attacks of opportunity when casting spells?
+Connection Inkling?Wis 15, character level 5th, no levels in mystic?Gain the ability to cast minor mystic spells?
+Coordinated Shot*?Base attack bonus +1?Allies gain a +1 bonus to ranged attacks against foes you threaten?
+Corruption’s Gift?One or more <%RULES%Corruptions&Category=Afflictions%%>corruption manifestations<%END>?You have embraced your corruption.?
+Craven Ploy*?Cha 13?When the going gets tough, you hide behind allies.?
+Deadly Aim*?Base attack bonus +1?Take a −2 penalty to weapon attacks to deal extra damage?
+Deflect Projectiles*?Base attack bonus +8?Spend 1 Resolve Point to attempt to avoid a ranged attack?
+Diehard?—?You can spend Resolve Points to stabilize and to stay in the fight in the same round?
+Dive for Cover*?Base Reflex save bonus +2?Fall prone in an adjacent square to roll a Reflex save twice?
+Diversion?—?Use Bluff to create a distraction so that your allies can hide?
+Divine Blessing?Worship a deity of an alignment within one step of your own alignment?Gain a boon from your patron deity?
+Drag Down*?—?When you are tripped, you can attempt to trip an adjacent foe?
+Enhanced Resistance?Base attack bonus +4?Gain damage reduction or energy resistance?
+Extended Telepathy?Limited telepathy racial trait?Increase the range of your telepathy?
+Extra Resolve?Character level 5th?Gain 2 additional Resolve Points?
+Far Shot*?Base attack bonus +1?Reduce penalty due to range increments?
+Fast Talk?Bluff 5 ranks?Baffle a potential foe, causing it to be surprised when combat begins?
+Fleet*?—?Increase your base speed?
+Focused Spellcaster*?Combat Casting, ability to cast 4th-level spells?Spend a resolve point to successfully cast a spell after you take damage during the casting?
+Fusillade*?Base attack bonus +1, four or more arms?Make an automatic-mode attack with multiple small arms?
+Great Cleave*?Str 13, Cleave, base attack bonus +4?Make an additional melee attack after each melee attack that hits?
+Great Fortitude?—?+2 bonus to Fortitude saves?
+Greater Feint*?Improved Feint, base attack bonus +6?Foes you feint against are flat-footed for 1 round?
+Greater Shadow Infusion?Improved Shadow Infusion, Shadow Infusion, character level 13th?The energy of the Shadow Plane suffuses your body, mind, and spirit.?
+Greater Spell Penetration?Spell Penetration?Additional +2 bonus to caster level checks to overcome SR?
+Grenade Proficiency*?—?No penalty to attacks made with grenades?
+Harm Undead?Healing channel connection power, mystic level 1st?Expend a spell slot for healing channel to also damage undead?
+Heavy Armor Proficiency*?Str 13, proficiency in light armor?No penalty to attack rolls while wearing heavy armor?
+Heavy Weapon Proficiency*?Str 13, proficiency in small arms and longarms?No penalty to attacks with heavy weapons?
+Improved Combat Maneuver*?Base attack bonus +1?+4 bonus to perform one combat maneuver?
+Improved Critical*?Base attack bonus +8?The DC to resist the critical effects of your critical hits increases by 2?
+Improved Demoralize?—?You are skilled at quickly demoralizing your foes.?
+Improved Feint*?—?Use Bluff to feint as a move action?
+Improved Great Fortitude?Great Fortitude, character level 5th?Spend 1 Resolve Point to reroll a Fortitude save?
+Improved Initiative*?—?+4 bonus to initiative checks?
+Improved Iron Will?Iron Will, character level 5th?Spend 1 Resolve Point to reroll a Will save?
+Improved Lightning Reflexes?Lightning Reflexes, character level 5th?Spend 1 Resolve Point to reroll a Reflex save?
+Improved Shadow Infusion?Shadow Infusion, character level 7th?Your connection to the Shadow Plane has grown stronger.?
+Improved Sidestep*?Dex 17, Mobility or trick attack class feature, Sidestep?Reduce penalties from Sidestep?
+Improved Stand Still*?Stand Still?+4 bonus to melee attacks with Stand Still?
+Improved Unarmed Strike*?—?Deal more damage and threaten squares with unarmed strikes?
+In Harm’s Way*?Bodyguard?Take the damage of a successful attack against an adjacent ally?
+Indirect Retreat*?Dex 13, Mobility?You can run through winding corridors and weave your way through grasping claws without pause.?
+Iron Will?—?+2 bonus to Will saves?
+Jet Dash?—?Move faster when running, double height and distance when jumping?
+Kasathan Battle Dance*?Prerequisites: Dex 13, Mobility or trick attack?Avoid all attacks of opportunity when you withdraw?
+Kip Up*?Acrobatics 1 rank?Stand from prone as a swift action?
+Light Armor Proficiency*?—?No penalty to attack rolls while wearing light armor?
+Lightning Reflexes?—?+2 bonus to Reflex saves?
+Longarm Proficiency*?Proficiency in small arms?No penalty to attacks with longarms?
+Lunge*?Base attack bonus +6?Increase reach of melee attacks by 5 feet until the end of your turn?
+Major Psychic Power?Cha 15, Minor Psychic Power, Psychic Power, character level 7th?Cast a 2nd-level spell as a spell-like ability 1/day?
+Major Stage Magic?Cha 15, Minor Stage Magic, Stage Magic, character level 7th?Gain a 2nd-level spell-like ability?
+Master Crafter?Computers, Engineering, Life Science, Mysticism, Physical Science, or appropriate Profession 5 ranks?Craft items in half the normal time?
+Medical Expert?Life Science 1 rank, Medicine 1 rank, Physical Science 1 rank?Treat deadly wounds more quickly, and provide long-term care without a medical lab?
+Minor Psychic Power?Cha 11?Cast a 0-level spell as a spell-like ability 3/day?
+Minor Stage Magic?Cha 11?Gain a 0-level spell-like ability?
+Mobility*?Dex 13?+4 bonus to AC against attacks of opportunity from movement?
+Multi-Weapon Fighting*?—?Reduce the penalty for full attacks when using multiple small arms or operative melee weapons?
+Mystic Strike*?Ability to cast spells?Melee and ranged attacks count as magic?
+Nimble Moves*?Dex 15?Ignore 20 feet of difficult terrain when you move?
+Opening Volley*?—?+2 bonus to a melee attack against a target you damaged with a ranged attack?
+Parting Shot*?Dex 15, Mobility, Shot on the Run, base attack bonus +6?Make a single ranged attack when withdrawing?
+Penetrating Attack*?Base attack bonus +12?Reduce enemy's DR and energy resistance against your weapons by 5?
+Penetrating Spell?Ability to cast 4th-level spells?Reduce enemy's DR and energy resistance against your spells by 5?
+Periastra Training?Cha 13, Mysticism 5 ranks, <%CLASSES%Solarian%%>stellar mode<%END> class feature?Gain the benefit of a full attunement with only 1 or 2 attunement points?
+Polymorph Adept?You know the <%SPELLS%polymorph%%>polymorph<%END> spell as a 3rd-level spell or higher?Change the form of your polymorph spell?
+Powered Armored Proficiency*?Str 13, base attack bonus +5, proficiency in light and heavy armor?No penalty to attack rolls while wearing powered armor?
+Protector of Kahlannal?Anassanoi, any non-chaotic and non-evil alignment?You have a unique psychic bond with your own Protector chariot.?
+Psychic Insight?Limited telepathy or telepathy?Telepathic contact gives you social insight.?
+Psychic Power?Cha 13, Minor Psychic Power, character level 4th?Cast a 1st-level spell as a spell-like ability 1/day?
+Psychic Sense?Limited telepathy or telepathy?You can sense nearby creatures using your telepathy.?
+Pull the Pin*?Improved Combat Maneuver (disarm)?Perform a disarm to activate a foe’s grenade?
+Quick Draw*?Base attack bonus +1?Draw a weapon as a swift action?
+Reflect Projectiles*?Deflect Projectiles, base attack bonus +16?Spend 1 Resolve Point to attempt to redirect a ranged attack?
+Shadow Infusion?Strong connection to Shadow Plane?After enduring contact with the Shadow Plane, you have become infused with its energies.?
+Shot on the Run*?Dex 15, Mobility, base attack bonus +4?Make a ranged attack at any point during movement?
+Sidestep*?Dex 15, Mobility or trick attack class feature?Take guarded step as a reaction when a foe misses you with melee attack?
+Skill Focus?—?+3 insight bonus to one skill?
+Skill Synergy?—?Gain two new class skills or a +2 insight bonus to those skills?
+Sky Jockey?Piloting 5 ranks?Make jetpacks, vehicles, and starships go faster?
+Slippery Shooter*?Dex 15, base attack bonus +6?+3 bonus to AC against attacks of opportunity when making ranged attacks?
+Small Arm Proficiency*?—?No penalty to attacks with small arms?
+Sniper Weapon Proficiency*?—?No penalty to attacks with sniper weapons?
+Special Weapon Proficiency*?Proficiency in basic melee weapons or small arms (see below)?No penalty to attacks with one special weapon?
+Spell Focus?Ability to cast spells, character level 3rd?DCs of spells you cast increase?
+Spell Penetration?—?+2 bonus to caster level checks to overcome SR?
+Spellbane?Unable to cast spells or use spell-like abilities?+2 insight bonus to saving throws against spells and spell-like abilities?
+Spring Attack*?Dex 15, Mobility, base attack bonus +4?Move before and after a melee attack?
+Spry Cover*?Base attack bonus +1?Covering fire grants a +4 bonus to an ally’s Acrobatics check to tumble?
+Squox Companion?You own a trained squox that has an attitude of friendly or helpful toward you?Your pet squox aids you to the best of its ability?
+Stage Magic?Cha 13, Minor Stage Magic, character level 4th?Gain a 1st-level spell-like ability?
+Stand Still*?—?Make an attack of opportunity to stop a foe’s movement?
+Startled Scream?—?When something bad is about to go down, you scream to let everyone know.?
+Steel Nerves?Wis 13, character level 3rd?You retain your reason when you’re scared.?
+Step Up*?Base attack bonus +1?Take a guarded step as a reaction to an adjacent foe moving?
+Step Up and Strike*?Dex 13, Step Up, base attack bonus +6?Make an attack of opportunity as part of Step Up?
+Strike Back*?Base attack bonus +1?Ready an action to make a melee attack against a foe with reach?
+Suppressive Fire*?Base attack bonus +1, proficiency with heavy weapons?Provide covering fire or harrying fire in an area?
+Swimming Master?Athletics 5 ranks?Gain a swim speed equal to your base speed?
+Technomantic Dabbler?Intelligence 15, character level 5th, no levels in technomancer?Gain the ability to cast minor technomancer spells?
+Telepathic Spy?Limited telepathy or telepathy?Your telepathy is sensitive enough to detect similar psychic communication nearby.?
+Toughness?—?+1 Stamina Point per character level and other bonuses?
+Unfriendly Fire*?Bluff 5 ranks?Trick an attacker into shooting at another enemy adjacent to you?
+Veiled Threat?Cha 15, Intimidate 1 rank?Intimidated foe doesn’t become hostile?
+Versatile Focus*?Weapon Focus (any)?+1 bonus to attack rolls with all weapon types you are proficient with?
+Versatile Specialization*?Weapon Specialization, character level 3rd?Deal extra damage with all weapon types you are proficient with?
+Wary Withdrawal*?Dex 13, Wis 13, Mobility?You know how to withdraw with great caution.?
+Weapon Focus*?Proficiency with selected weapon type?+1 bonus to attack rolls with selected weapon type?
+Weapon Specialization*?Character level 3rd, proficiency with selected weapon type?Deal extra damage with selected weapon type?
+

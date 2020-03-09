@@ -1,0 +1,19 @@
+~https://www.aonsrd.com/Starship_OtherSystems.aspx?ItemName=All
+<>Name?PCU?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Aeon Diffuser?5?2 x size category?
+Algal shielding?0?5 + 2 x size category?
+Autodestruct System?0?1 x size category?
+Biocamouflage?5?2 x size category?
+Data Net?5?3?
+Dendritic interface?5?10?
+Hive Joining?0?1?
+Paraforan Resonator, Mk 1?0?1 x size category?
+Paraforan Resonator, Mk 2?0?3 x size category?
+Paraforan Resonator, Mk 3?0?5 x size category?
+Paraforan Resonator, Mk 4?0?7 x size category?
+Pheromone system?5?2 x size category?
+Psiostasis Pods?15?10?
+Root system?5?2 x size category?
+Solar Shield Channel?0?2 x size category?
+

@@ -1,0 +1,47 @@
+Cold
+Does cold and frost damage
+per second. Higher Apr increases this damage
+Corrosive
+Does APR amount of acid type
+damage per 60 earth seconds.
+Combustive
+Any ignition, spark or open flame has a chance
+to do fire + explosion
+damage. The higher the APR, the greater the
+chance of this occurring and the worse the
+explosion/fire when it does.
+Greenhouse
+This type is very hot and oppressive. This does
+AR in heat damage per second. Pressure
+damage based effects are doubled. Metal and
+stone can melt at the extremes. A Classic
+example of this type is Venus.
+Inert
+Although breathable by most races (racial
+differences not included), too much expose
+can cause “Inert Gas Narcosis”
+Symptoms include Light-headedness, reduced
+dexterity, euphoria, and impaired judgment.
+Each second of exposure to this atmosphere
+type has a chance equal to AR/10
+of this occurring.
+Standard/Earth-Like
+This is the same as Earth, same
+problems as well as same
+benefits.
+Suffocating
+Breathing is virtually impossible here
+for anything not adapted to
+this atmosphere. The higher the APR, the
+quicker your body would think you are being
+suffocated.
+Toxic
+Each APR point represents how much
+poison-like damage is done to anyone who
+breathes this atmosphere and is not adapted
+to it.
+Volcanic
+Each AR point represents an
+active volcano. The atmosphere is also slightly
+corrosive. This is similar to a Corrosive
+atmosphere but divided the rating by 10

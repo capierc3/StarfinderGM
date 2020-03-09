@@ -1,0 +1,21 @@
+https://www.aonsrd.com/OtherItems.aspx?Category=Transportation
+
+1
+Grav-Train Passage?1 per 100 miles?
+Robo-Taxi Passage?1 per 10 miles?
+Sea Vessel Passage?1 per 50 miles?
+Suborbital Flight?1 per 25 miles?
+Biological Transport, Colossal Creature (Rent)?3,000 per day?
+Biological Transport, Colossal Creature (Ride)?100 per mile?
+Biological Transport, Gargantuan Creature (Rent)?650 per day?
+Biological Transport, Garganutan Creature (Ride)?300 per mile?
+Biological Transport, Huge Creature (Rent)?125 per day?
+Biological Transport, Huge Creature (Ride)?10 per mile?
+Biological Transport, Large Creature (Ride)?5 per mile?
+Biological Transport, LargeCreature (Rent)?25 per day?
+Biological Transport, Medium Creature (Rent)?5 per day?
+Biological Transport, Medium Creature (Ride)?2 per mile?
+Starship Passage, Common?50 per day of travel?
+Starship Passage, Good?300 per day of travel?
+Starship Passage, Luxurious?1,000 per day of travel?
+

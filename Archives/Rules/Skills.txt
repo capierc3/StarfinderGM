@@ -1,0 +1,40 @@
+~https://www.aonsrd.com/Skills.aspx?ItemName=All
+<>
+:::
+Acrobatics (Dex; Armor Check Penalty) You can keep your balance while traversing narrow or treacherous surfaces, escape from restraints, and tumble to avoid attacks. You also use Acrobatics to determine the success of difficult maneuvers while flying.?
+Athletics (Str; Armor Check Penalty) You can scale vertical surfaces, leap over obstacles, and swim.?
+Bluff (Cha) You can use words and actions to create distractions, misdirect your opponents, tell convincing lies, and pass along secret messages.?
+Computers (Int; Trained Only) You can operate, manipulate, and hack into computer systems. If you don’t have physical access to a computer system’s user interface, you must use a hacking kit to access and manipulate the system. Details of computers themselves begin on page 213. Computers are set up to give one or more authorized users “root access,” allowing them to access any information or function of the computer as a standard action, with no need for a Computers check. Firewalls can block off specific sections of a computer and grant different users root access to those sections. The base DC for many of the tasks of the Computers skill is equal to 13 + (4 × the computer’s tier). These DCs may be adjusted by the GM to reflect other circumstances.?
+Culture (Int; Trained Only) You are a student of the vast number of known cultures in the galaxy, and you have a deep and rich understanding of the undercurrents of cultures and language in general. Each time you take a rank in Culture, you learn to speak and read a new language. See page 41 for a list of common languages.?
+Diplomacy (Cha) You can persuade others to be friendly toward you, resolve conflicts and differences, and learn common knowledge and rumors floating around a settlement.?
+Disguise (Cha) You are able to change your appearance to blend in and deceive others, whether to infiltrate?
+Engineering (Int; Trained Only) You can identify, build, repair, or disable technological devices; assess the stability of structures and machinery; and properly arm and disarm explosives. If you don’t have an engineering kit when attempting an Engineering check, you take a –2 penalty to the check.?
+Intimidate (Cha) You can rattle your foes or bully them to do what you want with verbal threats or displays of prowess.?
+Life Science (Int; Trained Only) You are educated in the scientific study of living things, from the smallest organisms to the largest biological systems.?
+Medicine (Int; Trained Only) You have knowledge of the biology of many species and can treat a number of different types of wounds and ailments. The DCs of most Medicine tasks are based on the type of equipment used (see Chapter 7 for that information).?
+Mysticism (Wis; Trained Only) You are educated in the fields of magic, religion, the planes, and spellcasting, and so can identify magic items and spells and make magic items yourself.?
+Perception (Wis) You can use all of your senses (hearing, taste, touch, sight, and smell) to notice danger, pick out fine details, and search for hidden objects or creatures.?
+Physical Science (Int; Trained Only) You are educated in the scientific study of non-living systems, from the tiniest atoms to the largest celestial bodies.?
+Piloting (Dex) You know how to drive vehicles, pilot starships, and navigate.?
+Profession (Cha, Int, or Wis; Trained Only) You are skilled in a specific job, specialty, or creative art. You know how to use the tools of your trade, how to perform the profession’s daily tasks, how to supervise helpers, and how to handle common problems. Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks. While skills like Culture, Life Science, Mysticism, and Physical Science represent highly specialized fields of study, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge. When you put ranks in a Profession skill, you must choose the ability score keyed to that skill: Charisma, Intelligence, or Wisdom. Common Charisma-based Profession skills include actor, artist, comedian, con artist, courtesan, dancer, musician, orator, poet, politician, video personality, and writer. Common Intelligence-based Profession skills include accountant, archaeologist, architect, corporate professional, electrician, lab technician, lawyer, mathematician, philosopher, professor, psychologist, and vidgamer. Common Wisdom-based Profession skills include bounty hunter, cook, counselor, dockworker, farmer, gambler, general contractor, herbalist, maintenance worker, manager, mercenary, merchant, miner, and smuggler. A Profession skill should not overlap with existing skills. For example, if you want to play a scientist, you should put ranks into Life Science or Physical Science rather than create a Profession (scientist) skill. The GM is the final arbiter of what is a good choice for a Profession skill and what ability score a given Profession skill is keyed to. Different professions are considered different skills for the purpose of how many ranks you can have each level. For example, a 4th-level character could have 4 ranks in both Profession (dockworker) and Profession (vidgamer).?
+Sense Motive (Wis) You can detect falsehoods and gain glimpses of the true intentions of creatures with which you interact.?
+Sleight of Hand (Dex; Armor Check Penalty; Trained Only) You can hide small objects, pick pockets, and accomplish other feats of manual dexterity without being noticed.?
+Stealth (Dex; Armor Check Penalty) You can stay hidden and move silently to avoid detection, allowing you to sneak past foes or strike from an unseen position.?
+Survival (Wis) You can survive in and make your way safely through almost any kind of wilderness, follow trails and tracks, deal with wild animals, and ride tamed ones. Use the following base DCs for many of the listed tasks of the Survival skill. These DCs may be adjusted by the GM to reflect other circumstances. Task DC Endure severe weather 15 Handle an animal 10 + 1-1/2 × CR of animal Live off the land 10 Orienteering 15 Predict weather 15 Rear a wild animal 15 + 1-1/2 × CR of animal?Task?DC?Endure severe weather?15?Handle an animal?10 + 1-1/2 × CR of animal?Live off the land?10?Orienteering?15?Predict weather?15?Rear a wild animal?15 + 1-1/2 × CR of animal?
+Task?DC?
+Endure severe weather?15?
+Handle an animal?10 + 1-1/2 × CR of animal?
+Live off the land?10?
+Orienteering?15?
+Predict weather?15?
+Rear a wild animal?15 + 1-1/2 × CR of animal?
+
+:::Acrobatics (Dex; Armor Check Penalty)
+Task?DC?
+Endure severe weather?15?
+Handle an animal?10 + 1-1/2 × CR of animal?
+Live off the land?10?
+Orienteering?15?
+Predict weather?15?
+Rear a wild animal?15 + 1-1/2 × CR of animal?
+

@@ -1,0 +1,42 @@
+~https://www.aonsrd.com/Starship_ExpBays.aspx?ItemName=All&Family=None
+<>Name?PCU?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Aeon Comm?5?3?
+Arcane Laboratory?1?1?
+Arcane Mortuary?1?2?
+Brig?1?1?
+Cargo Hold?0?0?
+Corpse Recycler?2?2?
+Decoy Husk?15 + size category?4 x size category?
+Docking Canopy?15?4?
+Drift Booster?40?20?
+Drift Shadow Projector?5?15?
+Drift Stasis Unit?15?10?
+Drone Tube?15?5?
+Escape Pods?2?1?
+Ghost Drive?10?5?
+Guest Quarters?1?1?
+Hanger Bay?30?10?
+Healing Pods?2?3?
+Hive Bay?5?10?
+Hydroponic Garden?0?5?
+Imperial Shrine?1?1?
+Launch Tubes?10?5?
+Life Boats?5?3?
+Medical Bay?4?8?
+Passenger Seating?0?0?
+Power Core Housing?0?10?
+Quantum Defender?10?5?
+Recreation Suite, Gym?0?1?
+Recreation Suite, HAC?3?1?
+Recreation Suite, Trivid Den?1?1?
+Recycling System?2?1?
+Science Lab?2?1?
+Sealed Environment Chamber?2?1?
+Shuttle Bay?10?4?
+Smuggler Compartment?4?2?
+Synthesis Bay?2?1?
+Tactical Sensor Tank?2?1?
+Tech Workshop?3?1?
+Telelith Matrix?10?8?
+

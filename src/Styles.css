@@ -1,0 +1,90 @@
+/* default values */
+.root {
+    color1: #001d2d;
+    color2: #b0cde1;
+    color3: #0d3849;
+    color4: #474056;
+    color5: #D8D8F6;
+    font1: verdana;
+}
+
+/* use color */
+.combo-box .list-cell {
+    -fx-background: color1;
+    -fx-text-fill: color2;
+    -fx-font-family: font1;
+    -fx-font-size:  12pt;
+    -fx-background-color: color1;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 5;
+}
+.combo-box .arrow-button{
+    -fx-background-color: color2;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.button {
+    -fx-text-fill: color1;
+    -fx-background-color: color2;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+    -fx-font-family: font1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-weight: bold;
+}
+
+.menu-item .label {
+    -fx-text-fill: color2;
+    -fx-text-family: font1;
+}
+.menu-item {
+    -fx-background-color: color1;
+}
+.menu-bar {
+    -fx-background-color: color1;
+}
+.menu-bar .label{
+    -fx-text-fill: color2;
+    -fx-text-family: font1;
+}
+.context-menu {
+    -fx-background-color: color2;
+    //-fx-background-insets: 0, 1, 2;
+    //-fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    //-fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+.text-field {
+    -fx-background: color1;
+    -fx-text-fill: color2;
+    -fx-font-family: font1;
+    -fx-font-size:  12pt;
+    -fx-font-weight: bold;
+    -fx-background-color: color1;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 5;
+}
+.tooltip {
+    -fx-background: color1;
+    -fx-text-fill: color2;
+    -fx-font-family: font1;
+    -fx-font-size:  12pt;
+    -fx-font-weight: bold;
+    -fx-background-color: color1;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 5;
+}
+
+HBox {
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}

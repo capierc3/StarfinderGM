@@ -1,0 +1,4 @@
+~https://www.aonsrd.com/Corruptions.aspx?ItemName=All
+<>Source?Type?Save?Frequency?Cure?
+:::
+Shadow Corruption?Source:Starfinder #10: The Diaspora Strain pg. 42Shadow Corruption ?Type: mental corruption; ?Save: Will DC = 10 + half the victim’s level + the number of manifestations the victim has; on a failure, a victim can spend a number of Resolve Points equal to 1 + the number of manifestations the victim has to succeed instead?Frequency: 1/day?Cure:break enchantmentremove afflictionhere

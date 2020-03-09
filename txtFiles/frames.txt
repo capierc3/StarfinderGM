@@ -1,0 +1,128 @@
+RACER
+Size Tiny
+Maneuverability perfect (+2 Piloting, turn 0)
+HP 20 (increment 5); DT —; CT 4
+Mounts forward arc (1 light), aft arc (1 light)
+Expansion Bays —
+Minimum Crew 1; Maximum Crew 1
+Cost 4
+
+INTERCEPTOR
+Size Tiny
+Maneuverability perfect (+2 Piloting, turn 0)
+HP 30 (increment 5); DT —; CT 6
+Mounts forward arc (2 light)
+Expansion Bays —
+Minimum Crew 1; Maximum Crew 1
+Cost 6
+
+FIGHTER
+Size Tiny
+Maneuverability good (+1 Piloting, turn 1)
+HP 35 (increment 5); DT —; CT 7
+Mounts forward arc (2 light), aft arc (1 light)
+Expansion Bays —
+Minimum Crew 1; Maximum Crew 2
+Cost 8
+
+SHUTTLE
+Size Small
+Maneuverability perfect (+2 Piloting, turn 0)
+HP 35 (increment 5); DT —; CT 7
+Mounts forward arc (1 light)
+Expansion Bays 3 (usually cargo holds or passenger seating)
+Minimum Crew 1; Maximum Crew 4
+Cost 6
+
+LIGHT FREIGHTER
+Size Small
+Maneuverability good (+1 Piloting, turn 1)
+HP 40 (increment 10); DT —; CT 8
+Mounts forward arc (2 light), port arc (1 light), starboard arc(1 light)
+Expansion Bays 3
+Minimum Crew 1; Maximum Crew 6
+Cost 10
+
+EXPLORER
+Size Medium
+Maneuverability good (+1 Piloting, turn 1)
+HP 55 (increment 10); DT —; CT 11
+Mounts forward arc (1 light), port arc (1 light), starboard arc(1 light), turret (1 light)
+Expansion Bays 4
+Minimum Crew 1; Maximum Crew 6
+Cost 12
+
+TRANSPORT
+Size Medium
+Maneuverability average (+0 Piloting, turn 2)
+HP 70 (increment 15); DT —; CT 14
+Mounts forward arc (1 heavy/1 light), aft arc (1 light), turret(2 light)
+Expansion Bays 5
+Minimum Crew 1; Maximum Crew 6
+Cost 15
+
+DESTROYER
+Size Large
+Maneuverability average (+0 Piloting, turn 2)
+HP 150 (increment 20); DT —; CT 30
+Mounts forward arc (2 heavy), port arc (1 light), starboard arc(1 light), aft arc (1 light), turret (1 light)
+Expansion Bays 4
+Minimum Crew 6; Maximum Crew 20
+Cost 30
+
+HEAVY FREIGHTER
+Size Large
+Maneuverability average (+0 Piloting, turn 2)
+HP 120 (increment 20); DT —; CT 24
+Mounts forward arc (1 heavy/2 light), port arc (1 heavy),starboard arc (1 heavy)
+Expansion Bays 8
+Minimum Crew 6; Maximum Crew 20
+Cost 40
+
+BULK FREIGHTER
+Size Huge
+Maneuverability poor (–1 Piloting, turn 3)
+HP 160 (increment 20); DT 5; CT 32
+Mounts forward arc (1 heavy), aft arc (1 heavy), turret(2 light)
+Expansion Bays 10
+Minimum Crew 20; Maximum Crew 50
+Cost 55
+
+CRUISER
+Size Huge
+Maneuverability average (+0 Piloting, turn 2)
+HP 180 (increment 25); DT 5; CT 36
+Mounts forward arc (1 capital), port arc (1 light), starboard arc(1 light), turret (1 heavy)
+Expansion Bays 6
+Minimum Crew 20; Maximum Crew 100
+Cost 60
+
+CARRIER
+Size Gargantuan
+Maneuverability poor (–1 Piloting, turn 3)
+HP 240 (increment 30); DT 10; CT 48
+Mounts forward arc (1 capital), port arc (3 heavy), starboard arc (3 heavy), turret (2 light)
+Expansion Bays 10 (must have at least 1 hangar bay)
+Minimum Crew 75; Maximum Crew 200
+Cost 120
+
+BATTLESHIP
+Size Gargantuan
+Maneuverability average (+0 Piloting, turn 2)
+HP 280 (increment 40); DT 10; CT 56
+Mounts forward arc (1 capital/2 heavy), port arc (2 heavy/1 light), starboard arc (2 heavy/1 light), aft arc (1 light),turret (2 heavy)
+Expansion Bays 8
+Minimum Crew 100; Maximum Crew 300
+Cost 150
+
+DREADNOUGHT
+Size Colossal
+Maneuverability clumsy (–2 Piloting, turn 4)
+HP 400 (increment 50); DT 15; CT 80
+Mounts forward arc (2 capital/2 heavy), port arc (1 capital/3 heavy), starboard arc (1 capital/3 heavy), turret (4 light)
+Expansion Bays 20
+Minimum Crew 125; Maximum Crew 500
+Cost 200
+
+
+

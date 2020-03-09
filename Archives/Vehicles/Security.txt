@@ -1,0 +1,10 @@
+~https://www.aonsrd.com/Starship_Security.aspx?ItemName=All&Family=None
+<>Name?Cost_(in_BP)?
+:::Armor | Base Frames | Computers | Crew Quarters | Defensive Countermeasures | Drift Engines | Expansion Bays | Other Systems | Power Cores | Security | Sensors | Shields | Thrusters | Weapons | Weapon Properties
+Anti-Hacking Systems?3?
+Antipersonnel Weapon, Heavy?5 + item level of weapon?
+Antipersonnel Weapon, Longarm?Item level of weapon?
+Biometric Locks?5?
+Computer Countermeasures?Tier of computer?
+Self-Destruct System?5 x size category?
+

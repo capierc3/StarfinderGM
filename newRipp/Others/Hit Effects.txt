@@ -1,0 +1,66 @@
+https://www.aonsrd.com/WeaponCriticals.aspx?ItemName=All
+
+1
+ArcSource Starfinder Core Rulebook pg. 182 The attack’s energy leaps to a second creature. This secondary target must be within 10 feet of your original target and must be the creature closest to the original target (you choose if multiple creatures are equidistant). Roll the amount of damage listed in the weapon’s arc—the secondary target takes this damage (not multiplied by the critical hit), of whatever type the weapon deals.?
+BindSource Starfinder Armory pg. 31 The target is entangled, as if the weapon had the entangle weapon special property.?
+BleedSource Starfinder Core Rulebook pg. 182 The target gains the bleeding condition (see page 273).?
+BlindSource Pact Worlds pg. 192 The target must succeed at a Reflex saving throw or gain the blinded condition for 1d3 rounds.?
+BlindSource Starfinder Armory pg. 31 The target must succeed at a Reflex saving throw or gain the blinded condition for 1d3 round.?
+BurnSource Starfinder Core Rulebook pg. 182 The target gains the burning condition (see page 273).?
+ConfuseSource Starfinder Armory pg. 31 The target must succeed at a Will saving throw or gain the confused condition for 1 round.?
+CorrodeSource Starfinder Core Rulebook pg. 182 The target takes corrode damage equal to the amount listed. This functions as the burning condition but deals acid damage rather than fire damage.?
+DeafenSource Starfinder Core Rulebook pg. 182 The target must succeed at a Fortitude saving throw or be deafened (see page 275) for 1d4 minutes.?
+DemoralizeSource Starfinder Armory pg. 31 You can attempt an Intimidate check with a –5 penalty to demoralize your foes as a reaction. Compare the result of this check to the DC of each creature that took damage from this attack using the guidelines from the demoralize task of the Intimidate skill.?
+ElectrocuteSource Pact Worlds pg. 192 The target must succeed at a Fortitude saving throw or take 1d4 Dexterity damage.?
+EmbedSource Starfinder Armory pg. 31 The attack embeds a barbed needle or another lingering effect in the target. The first time each round the target moves 5 feet or more in a single action (voluntarily or not), it takes the listed damage. The target can remove the embedded object with a standard action, dealing the listed damage in the process. Alternatively, with a successful Medicine check (DC = 15 + 1-1/2 the weapon’s item level), another creature can remove the object from the target and deal no damage. Multiple embedded objects each deal their listed damage and must be removed one at a time.?
+FatigueSource Starfinder Armory pg. 31 The target must succeed at a Fortitude saving throw or gain the fatigued condition for 1 round per item level of the weapon. This condition can be removed as normal.?
+Injection DC +2Source Starfinder Core Rulebook pg. 182 If the weapon is used to deliver a poison or drug of some kind, the save DC of that poison is increased by 2 when delivered on a critical hit.?
+IrradiateSource Starfinder Armory pg. 31 The target must succeed at a Fortitude save or contract radiation sickness. The DC for this disease is equal to the weapon’s critical hit DC. This is considered low-level radiation, regardless of the save DC.?
+JetSource Starfinder Armory pg. 31 The attack emits a jet of energy that suffuses the target and extends to strike a second creature. This secondary target must be adjacent to the original target and on the opposite border or opposite corner of the target’s space from you. When in doubt about whether a second creature’s position compared to a target makes it subject to a jet attack, trace a line from the center of your space to the center of the second creature’s space. If the line passes through opposite borders or corners of the primary target’s space, then the second creature is a valid target for the jet attack. If multiple valid targets of the jet damage are present, you choose which is the secondary target. Roll the amount of damage listed in the weapon’s jet: the secondary target takes this damage (not multiplied by the critical hit) of whatever energy damage type the weapon deals.?
+KnockdownSource Starfinder Core Rulebook pg. 182 The target is knocked prone (see page 277).?
+LeechSource Starfinder Armory pg. 31 This weapon can leach life force from a target, draining its vitality and leaving it feeling unsteady. The target must succeed at a Fortitude save or gain the off-target condition for 1 round per item level of the weapon. This has no effect if the target is immune to disease.?
+NauseateSource Starfinder Armory pg. 31 The target must succeed at a Fortitude saving throw or gain the nauseated condition for 1 round.?
+PulseSource Starfinder Armory pg. 31 The weapon’s output explodes in a pulse of energy. All creatures adjacent to the original target take the amount of damage listed in the pulse entry, of the same type dealt by the weapon’s initial attack.?
+PushSource Starfinder Armory pg. 31 The target is pushed the listed distance away from you. If the target runs into an obstacle, it stops moving and falls prone.?
+RechargeSource Alien Archive pg. 45 When the wielder scores a critical hit against a living creature or a construct with the technological subtype, the weapon regains the listed number of charges (up to the weapon’s maximum capacity).?
+Second ArcSource Starfinder Armory pg. 31 The attack’s energy continues leaping from a secondary target to a tertiary target. This functions identically to the arc critical hit effect, except the second arc can’t target either the original target of the attack or the creature struck by the first arc special property.?
+Severe WoundSource Starfinder Core Rulebook pg. 182 Roll twice on Table 7–11: Wounding Weapons and choose your desired result. The target can still attempt any associated save. D20 Location Save Effect 1–10 General — Bleed 1d6 11–13 Eye (sensory) Ref Lost eye, –2 Perception 14–15 Leg (mobility) Fort Severed limb, –10 land speed 16–17 Arm (manipulation) Ref Severed limb, lose a hand 18–19 Vital organ Fort 1d4 Con damage 20 Brain Fort Stunned 1 round?D20?Location?Save?Effect?1–10?General?—?Bleed 1d6?11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?18–19?Vital organ?Fort?1d4 Con damage?20?Brain?Fort?Stunned 1 round?
+D20?Location?Save?Effect?
+1–10?General?—?Bleed 1d6?
+11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?
+14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?
+16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?
+18–19?Vital organ?Fort?1d4 Con damage?
+20?Brain?Fort?Stunned 1 round?
+SickenSource Starfinder Armory pg. 31 The target must succeed at a Fortitude saving throw or become sickened for 1d4 minutes. This has no effect if the target is immune to disease.?
+StaggeredSource Starfinder Core Rulebook pg. 182 The target must succeed at a Fortitude save or be staggered (see page 277) for 1 round.?
+StifleSource Starfinder Armory pg. 31 The target can’t speak or make vocalizations of any kind for 1 round.?
+StunnedSource Starfinder Core Rulebook pg. 182 The target is stunned (see page 277) for 1 round.?
+SuffocateSource Starfinder Armory pg. 31 The weapon sucks the atmosphere away from the target. If the target is wearing armor or a space suit that has activated environmental protections, the weapon depletes a number of days of that protection equal to half the weapon’s item level. If this depletes the environmental protections entirely, or if the target was not wearing any such protections, the target must succeed at a Fortitude save or gain the exhausted condition?
+WoundSource Starfinder Core Rulebook pg. 182 Roll on Table 7-11: Wounding Weapons. The target must succeed at a saving throw of the listed type (if any) or suffer the listed effect. If the creature lacks a specified location, use the general location. D20 Location Save Effect 1–10 General — Bleed 1d6 11–13 Eye (sensory) Ref Lost eye, –2 Perception 14–15 Leg (mobility) Fort Severed limb, –10 land speed 16–17 Arm (manipulation) Ref Severed limb, lose a hand 18–19 Vital organ Fort 1d4 Con damage 20 Brain Fort Stunned 1 round?D20?Location?Save?Effect?1–10?General?—?Bleed 1d6?11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?18–19?Vital organ?Fort?1d4 Con damage?20?Brain?Fort?Stunned 1 round?
+D20?Location?Save?Effect?
+1–10?General?—?Bleed 1d6?
+11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?
+14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?
+16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?
+18–19?Vital organ?Fort?1d4 Con damage?
+20?Brain?Fort?Stunned 1 round?
+
+2
+D20?Location?Save?Effect?
+1–10?General?—?Bleed 1d6?
+11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?
+14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?
+16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?
+18–19?Vital organ?Fort?1d4 Con damage?
+20?Brain?Fort?Stunned 1 round?
+
+3
+D20?Location?Save?Effect?
+1–10?General?—?Bleed 1d6?
+11–13?Eye (sensory)?Ref?Lost eye, –2 Perception?
+14–15?Leg (mobility)?Fort?Severed limb, –10 land speed?
+16–17?Arm (manipulation)?Ref?Severed limb, lose a hand?
+18–19?Vital organ?Fort?1d4 Con damage?
+20?Brain?Fort?Stunned 1 round?
+
