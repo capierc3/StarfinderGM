@@ -2,6 +2,7 @@ package Equipment;
 
 import ArchivesBuilder.SQLite;
 import Equipment.Armor.Armor;
+import Equipment.Armor.ArmorUpgrade;
 import Equipment.Armor.Shields;
 import Equipment.Weapons.Ammo;
 import Equipment.Weapons.SolarianCrystal;
@@ -24,6 +25,7 @@ public class EquipmentStore {
     private ArrayList<SolarianCrystal> crystals;
     private ArrayList<WeaponAccessory> accessories;
     private ArrayList<Shields> shields;
+    private ArrayList<ArmorUpgrade> armorUpgrades;
     public enum size{Tiny, Small, Average, large, Huge, All}
     private int sizeMod;
     private boolean all;
@@ -143,7 +145,6 @@ public class EquipmentStore {
     }
     public void fillShields() throws SQLException {
         ArrayList<String> temp = SQLite.GetNamesByLevel(Shields.tableName, levelLow, levelHigh);
-        System.out.println(temp.size());
         shields = new ArrayList<>();
         if (all) {
             System.out.println(type);
@@ -158,6 +159,21 @@ public class EquipmentStore {
             }
         }
     }
+    public void fillArmorUps() throws SQLException {
+        ArrayList<String> temp = SQLite.GetNamesByLevel(ArmorUpgrade.tableName, levelLow, levelHigh);
+        armorUpgrades = new ArrayList<>();
+        if (all) {
+            if (!type.equalsIgnoreCase("All")) {
+                for (String s : temp) {
+                    ArmorUpgrade a = new ArmorUpgrade();
+                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    if (a.getType().contains(type)) {
+                        armorUpgrades.add(a);
+                    }
+                }
+            }
+        }
+    }
 
     public void getEquipment(String name, Equipment equipment,String table,String[] keys){
         try {
@@ -166,46 +182,64 @@ public class EquipmentStore {
             e.printStackTrace();
         }
     }
-    public String[] getWeaponsNames() {
-        String[] names = new String[weapons.size()];
-        for (int i = 0; i < weapons.size(); i++) {
-            names[i]=weapons.get(i).getName();
-        }
-        return names;
-    }
-    public String[] getArmorNames() {
-        String[] names = new String[armor.size()];
-        for (int i = 0; i < armor.size(); i++) {
-            names[i] = armor.get(i).getName();
-        }
-        return names;
-    }
+//    public String[] getWeaponsNames() {
+//        String[] names = new String[weapons.size()];
+//        for (int i = 0; i < weapons.size(); i++) {
+//            names[i]=weapons.get(i).getName();
+//        }
+//        return names;
+//    }
+//    public String[] getArmorNames() {
+//        String[] names = new String[armor.size()];
+//        for (int i = 0; i < armor.size(); i++) {
+//            names[i] = armor.get(i).getName();
+//        }
+//        return names;
+//    }
+//    public String[] getShieldNames() {
+//        String[] names = new String[shields.size()];
+//        for (int i = 0; i < shields.size(); i++) {
+//            names[i] = shields.get(i).getName();
+//        }
+//        return names;
+//    }
     public ArrayList<String> getNames(){
         ArrayList<String> names = new ArrayList<>();
-        if (weapons!=null){
-            for (int i = 0; i < weapons.size(); i++) {
-                names.add(weapons.get(i).getName());
-            }
-        }
-        if (armor!=null){
-            for (int i = 0; i < armor.size(); i++) {
-                names.add(armor.get(i).getName());
-            }
-        }
-        if (ammo!=null){
-            for (int i = 0; i < ammo.size(); i++) {
-                names.add(ammo.get(i).getName());
-            }
-        }
-        if (crystals != null) {
-            for (int i = 0; i < crystals.size(); i++) {
-                names.add(crystals.get(i).getName());
-            }
-        }
-        if (accessories != null){
-            for (int i = 0; i < accessories.size(); i++) {
-                names.add(accessories.get(i).getName());
-            }
+        switch (eqType){
+            case "Armor":
+                for (Armor value : armor) {
+                    names.add(value.getName());
+                }
+                break;
+            case "Ammo":
+                for (Ammo value : ammo) {
+                    names.add(value.getName());
+                }
+                break;
+            case "Solarian Crystals":
+                for (SolarianCrystal crystal : crystals) {
+                    names.add(crystal.getName());
+                }
+                break;
+            case"Weapon Accessories":
+                for (WeaponAccessory accessory : accessories) {
+                    names.add(accessory.getName());
+                }
+                break;
+            case "Shields":
+                for (Shields shield : shields) {
+                    names.add(shield.getName());
+                }
+                break;
+            case "Armor Upgrades":
+                for (ArmorUpgrade armorUpgrade : armorUpgrades) {
+                    names.add(armorUpgrade.getName());
+                }
+                break;
+            default:
+                for (Weapon weapon : weapons) {
+                    names.add(weapon.getName());
+                }
         }
         return names;
     }

@@ -144,6 +144,7 @@ public class SQLite {
             stmt = c.createStatement();
             for (int i = 0; i <sqls.size() ; i++) {
                 String sql = sqls.get(i);
+                if (sql.contains("ArmorUpgrades")) System.out.println(sql);
                 stmt.executeUpdate(sql);
             }
             stmt.close();

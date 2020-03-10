@@ -1,6 +1,7 @@
 package GUI;
 
 import Equipment.Armor.Armor;
+import Equipment.Armor.ArmorUpgrade;
 import Equipment.Armor.Shields;
 import Equipment.Equipment;
 import Equipment.EquipmentStore;
@@ -147,12 +148,16 @@ public class EquipmentStoreScreen {
             case "Shields":
                 equipmentStore.fillShields();
                 break;
+            case "Armor Upgrades":
+                equipmentStore.fillArmorUps();
             default:
                 equipmentStore.fillAmmo();
                 equipmentStore.fillArmor();
                 equipmentStore.fillWeapons();
                 equipmentStore.fillCrystals();
                 equipmentStore.fillAccessories();
+                equipmentStore.fillShields();
+                equipmentStore.fillArmorUps();
                 break;
         }
     }
@@ -176,6 +181,8 @@ public class EquipmentStoreScreen {
                 return WeaponAccessory.types;
             case "Shields":
                 return Shields.types;
+            case "Armor Upgrades":
+                return ArmorUpgrade.types;
             default:
                 String[] types = new String[Weapon.types.length+Ammo.types.length+Armor.getTypes().length];
                 int i=0;
@@ -232,6 +239,8 @@ public class EquipmentStoreScreen {
                 return new WeaponAccessory();
             case "Shields":
                 return new Shields();
+            case "Armor Upgrades":
+                return new ArmorUpgrade();
             default:
                 return new Weapon();
         }

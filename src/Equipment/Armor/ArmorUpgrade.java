@@ -6,26 +6,18 @@ import java.lang.reflect.Field;
 
 public class ArmorUpgrade implements Equipment {
 
+    public static String tableName = "ArmorUpgrades";
+    public static String[] keys = {"Name","Type","Level","Price","Slots","Armor_Type","Capacity","Usage","Bulk","ID"};
+    public static String[] types = {"-"};
+
     private String name;
+    private String type;
     private String level;
     private String price;
     private String slots;
     private String armorType;
     private String bulk;
-
-    public ArmorUpgrade(String line){
-        String[] split = line.split("\\?");
-        int i = 0;
-        for (Field f: this.getClass().getDeclaredFields()) {
-            try {
-                f.set(this,split[i]);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            i++;
-        }
-    }
-
+    private String id;
 
     public String toString(){
         return "Name: "+name+
@@ -50,7 +42,14 @@ public class ArmorUpgrade implements Equipment {
 
     @Override
     public void readSQL(String[] values) {
-
+        name = values[0];
+        type = values[1];
+        level = values[2];
+        price = values[3];
+        slots = values[4];
+        armorType = values[5];
+        bulk = values[6];
+        id = values[7];
     }
 
     @Override
@@ -60,15 +59,15 @@ public class ArmorUpgrade implements Equipment {
 
     @Override
     public String getTableName() {
-        return getTableName();
+        return tableName;
     }
 
     @Override
     public String[] getKeys() {
-        return new String[0];
+        return keys;
     }
 
     public String getType() {
-        return "Armor Upgrade";
+        return type;
     }
 }

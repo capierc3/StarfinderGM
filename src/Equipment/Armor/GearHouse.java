@@ -86,7 +86,7 @@ public class GearHouse {
         String line = in.nextLine();
         ArrayList<Equipment> equipment = new ArrayList<Equipment>();
         while (!line.equalsIgnoreCase("")){
-            equipment.add(new ArmorUpgrade(line));
+            equipment.add(new ArmorUpgrade());
             line = in.nextLine();
         }
         return equipment;

@@ -65,4 +65,15 @@ public class Shields implements Equipment {
     public String[] getKeys() {
         return keys;
     }
+    @Override
+    public String toString(){
+        return "Name: "+name+
+                "\nLevel: "+level+
+                "\nPrice: "+price+
+                "\nShield Bonus: "+bonus+
+                "\nMax Dex Bonus: "+maxDex+
+                "\nShield Penalty: "+checkPen+
+                "\nUpgrade Slots: "+upgrades+
+                "\nBulk: "+bulk;
+    }
 }

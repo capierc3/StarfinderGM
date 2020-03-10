@@ -1,5 +1,6 @@
 package ArchivesBuilder;
 
+import Equipment.Armor.ArmorUpgrade;
 import Equipment.Armor.Shields;
 import Equipment.Equipment;
 
@@ -123,7 +124,7 @@ public class ArchivesToSql {
             } else if (folder.equalsIgnoreCase("Other Items")){
                 fillOtherTable(folderFiles[i],typeBases[i],idCode[i]);
             } else if (folder.equalsIgnoreCase("Equipment")){
-                fillEquipmentTables(folderFiles[i],typeBases[i],idCode[i],new Shields());
+                fillEquipmentTables(folderFiles[i],typeBases[i],idCode[i]);
             }
             System.out.println(typeBases[i] + " Added");
         }
@@ -422,7 +423,18 @@ public class ArchivesToSql {
         }
     }
 
-    private void fillEquipmentTables(File file, String typeBase, String id, Equipment e) throws FileNotFoundException {
+    private void fillEquipmentTables(File file, String typeBase, String id) throws FileNotFoundException {
+        Equipment e;
+        switch (file.getName()){
+            case "Armor Upgrades.txt":
+                e = new ArmorUpgrade();
+                break;
+            case "Shields.txt":
+                e = new Shields();
+                break;
+            default:
+                e = null;
+        }
         String[] tableValues = e.getKeys();
         StringBuilder sbTable = new StringBuilder();
         int idStop = 0;
@@ -434,8 +446,8 @@ public class ArchivesToSql {
             idStop++;
         }
         sbTable.append("ID    TEXT)");
-
         SQLite.createTable(e.getTableName(), sbTable.toString());
+
         in = new Scanner(file);
         int i = 0;
         ArrayList<String> sqls = new ArrayList<>();
@@ -454,6 +466,9 @@ public class ArchivesToSql {
                     for (int j = 0; j < item.length; j++) {
                         if (j!=1){
                             item[j] = itemTemp[k];
+                            if (item[j].contains("'")) {
+                                item[j] = item[j].replace("'", "+");
+                            }
                             k++;
                         } else item[j] = type;
                     }

@@ -52,11 +52,7 @@ public class TopBar {
         Menu equipment = new Menu("Equipment");
         MenuItem shop = new MenuItem("Shop");
         shop.setOnAction(actionEvent -> EquipmentStoreScreen.Display(root));
-        MenuItem weapons = new MenuItem("Weapons");
-        weapons.setOnAction(actionEvent -> WeaponScreen.Run(root));
-        MenuItem armor = new MenuItem("Armor");
-        armor.setOnAction(actionEvent -> ArmorScreen.Run(root));
-        equipment.getItems().addAll(shop,weapons,armor);
+        equipment.getItems().addAll(shop);
         //Computer
         Menu computer = new Menu("Computer");
         MenuItem newComp = new MenuItem("Build Computer");
