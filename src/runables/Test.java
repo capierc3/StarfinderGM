@@ -21,6 +21,7 @@ public class Test {
         new ArchivesToSql();
     }
 
+
     public static void buildSector(){
 
         StarSystem system = new StarSystem(Sector.Population.POPULATED,0,0);
@@ -76,13 +77,10 @@ public class Test {
     private static void database(){
         //new ArchivesRipper();
         try {
-            URLRipper.textLayout("https://www.aonsrd.com/Afflictions.aspx?Category=Disease","test","test3");
+            URLRipper.textLayout("https://www.aonsrd.com/Afflictions.aspx?Category=Disease","Archives/test","test");
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    private static void run() {
-        buildComputer(new MicroCenter(),"Test");
     }
     private static void buildComputer(MicroCenter microCenter,String compName){
         Scanner in = new Scanner(System.in);

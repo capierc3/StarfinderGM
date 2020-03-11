@@ -104,8 +104,6 @@ public class URLRipper  {
                 boolean fillHeadings = true;
                 for (Element e2: e.children()) {
                     if (e2.tag().toString().equalsIgnoreCase("h2")) {
-                        //Name
-                        //System.out.println(e2.text());
                         if (sb.length()>0){
                             items.add(sb.toString());
                             sb = new StringBuilder();
