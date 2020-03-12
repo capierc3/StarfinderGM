@@ -17,7 +17,7 @@ public class ArchivesToSql {
      * main method that creates a new DataBase and loads in the tables and values provided in the Archives folder.
      */
     public ArchivesToSql() {
-        SQLite.Build();
+        SQLite.Build("database");
         addTables();
         try {
             FillTable("Weapons");
@@ -50,7 +50,7 @@ public class ArchivesToSql {
                 " Bulk                 TEXT," +
                 " Special              TEXT," +
                 " ID                   TEXT)";
-        SQLite.createTable("Weapons", weaponTable);
+        SQLite.createTable("database","Weapons", weaponTable);
         //Armor table
         String armorTable = "CREATE TABLE Armor" +
                 "(Name                TEXT NOT NULL," +
@@ -65,7 +65,7 @@ public class ArchivesToSql {
                 " Upgrade_Slots       TEXT," +
                 " Bulk                TEXT," +
                 " ID                  TEXT)";
-        SQLite.createTable("Armor", armorTable);
+        SQLite.createTable("database","Armor", armorTable);
         //Augmentation table
         String augTable = "CREATE TABLE Augmentations" +
                 "(Name               TEXT NOT NULL," +
@@ -75,7 +75,7 @@ public class ArchivesToSql {
                 " System             TEXT," +
                 " Ability            TEXT," +
                 " ID                 TEXT)";
-        SQLite.createTable("Augmentations", augTable);
+        SQLite.createTable("database","Augmentations", augTable);
         //Other Items table
         String itemsTable = "CREATE TABLE Items"+
                 "(Name               TEXT NOT NULL," +
@@ -85,7 +85,7 @@ public class ArchivesToSql {
                 " Price              TEXT," +
                 " Bulk               TEXT," +
                 " ID                 TEXT)";
-        SQLite.createTable("Items",itemsTable);
+        SQLite.createTable("database","Items",itemsTable);
     }
 
     /**
@@ -183,7 +183,7 @@ public class ArchivesToSql {
                 }
             }
         }
-        SQLite.AddRecord(sqls, "Weapons");
+        SQLite.AddRecord("database",sqls, "Weapons");
     }
 
     /**
@@ -245,7 +245,7 @@ public class ArchivesToSql {
                 }
             }
         }
-        SQLite.AddRecord(sqls, "Armor");
+        SQLite.AddRecord("database",sqls, "Armor");
     }
 
     /**
@@ -302,7 +302,7 @@ public class ArchivesToSql {
                 }
             }
         }
-        SQLite.AddRecord(sqls,"Armor");
+        SQLite.AddRecord("database",sqls,"Armor");
     }
 
     /**
@@ -363,7 +363,7 @@ public class ArchivesToSql {
                 }
             }
         }
-        SQLite.AddRecord(sqls,"Items");
+        SQLite.AddRecord("database",sqls,"Items");
     }
 
     /**
@@ -401,7 +401,7 @@ public class ArchivesToSql {
                         }
                         sb.append("ID    TEXT)");
                         sbInsert.append("ID)");
-                        SQLite.createTable(tableName, sb.toString());
+                        SQLite.createTable("database",tableName, sb.toString());
                     } else if (line.contains(":::")){
                         //TODO add type to table, then add a type if exist based on headers
                     } else {
@@ -419,7 +419,7 @@ public class ArchivesToSql {
                     }
                 }
             }
-            SQLite.AddRecord(sqls,tableName);
+            SQLite.AddRecord("database",sqls,tableName);
         }
     }
 
@@ -446,7 +446,7 @@ public class ArchivesToSql {
             idStop++;
         }
         sbTable.append("ID    TEXT)");
-        SQLite.createTable(e.getTableName(), sbTable.toString());
+        SQLite.createTable("database",e.getTableName(), sbTable.toString());
 
         in = new Scanner(file);
         int i = 0;
@@ -489,7 +489,7 @@ public class ArchivesToSql {
                 }
             }
         }
-        SQLite.AddRecord(sqls, e.getTableName());
+        SQLite.AddRecord("database",sqls, e.getTableName());
     }
 
 

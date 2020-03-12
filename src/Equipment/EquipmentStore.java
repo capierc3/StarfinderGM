@@ -67,13 +67,13 @@ public class EquipmentStore {
     }
 
     public void fillArmor()throws SQLException {
-        ArrayList<String> armorTemp = SQLite.GetNamesByLevel("Armor", levelLow, levelHigh);
+        ArrayList<String> armorTemp = SQLite.GetNamesByLevel("database","Armor", levelLow, levelHigh);
         armor = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : armorTemp) {
                     Armor a = new Armor();
-                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         armor.add(a);
                     }
@@ -82,13 +82,13 @@ public class EquipmentStore {
         }
     }
     public void fillWeapons() throws SQLException {
-        ArrayList<String> weaponsTemp = SQLite.GetNamesByLevel("Weapons",levelLow,levelHigh);
+        ArrayList<String> weaponsTemp = SQLite.GetNamesByLevel("database","Weapons",levelLow,levelHigh);
         weapons = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")){
                 for (String s:weaponsTemp) {
                     Weapon w = new Weapon();
-                    SQLite.Read(w,"Weapons",s,Weapon.keys);
+                    SQLite.Read(w,s);
                     if (w.getType().contains(type)){
                         weapons.add(w);
                     }
@@ -99,13 +99,13 @@ public class EquipmentStore {
         }
     }
     public void fillAmmo() throws SQLException {
-        ArrayList<String> ammoTemp = SQLite.GetNamesByLevel(Ammo.tableName, levelLow, levelHigh);
+        ArrayList<String> ammoTemp = SQLite.GetNamesByLevel("database",Ammo.tableName, levelLow, levelHigh);
         ammo = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : ammoTemp) {
                     Ammo a = new Ammo();
-                    SQLite.Read(a, Ammo.tableName, s, Ammo.keys);
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         ammo.add(a);
                     }
@@ -114,13 +114,13 @@ public class EquipmentStore {
         }
     }
     public void fillCrystals() throws SQLException {
-        ArrayList<String> temp = SQLite.GetNamesByLevel(SolarianCrystal.tableName, levelLow, levelHigh);
+        ArrayList<String> temp = SQLite.GetNamesByLevel("database",SolarianCrystal.tableName, levelLow, levelHigh);
         crystals = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : temp) {
                     SolarianCrystal a = new SolarianCrystal();
-                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         crystals.add(a);
                     }
@@ -129,13 +129,13 @@ public class EquipmentStore {
         }
     }
     public void fillAccessories() throws SQLException {
-        ArrayList<String> temp = SQLite.GetNamesByLevel(WeaponAccessory.tableName, levelLow, levelHigh);
+        ArrayList<String> temp = SQLite.GetNamesByLevel("database",WeaponAccessory.tableName, levelLow, levelHigh);
         accessories = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : temp) {
                     WeaponAccessory a = new WeaponAccessory();
-                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         accessories.add(a);
                     }
@@ -144,14 +144,14 @@ public class EquipmentStore {
         }
     }
     public void fillShields() throws SQLException {
-        ArrayList<String> temp = SQLite.GetNamesByLevel(Shields.tableName, levelLow, levelHigh);
+        ArrayList<String> temp = SQLite.GetNamesByLevel("database",Shields.tableName, levelLow, levelHigh);
         shields = new ArrayList<>();
         if (all) {
             System.out.println(type);
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : temp) {
                     Shields a = new Shields();
-                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         shields.add(a);
                     }
@@ -160,13 +160,13 @@ public class EquipmentStore {
         }
     }
     public void fillArmorUps() throws SQLException {
-        ArrayList<String> temp = SQLite.GetNamesByLevel(ArmorUpgrade.tableName, levelLow, levelHigh);
+        ArrayList<String> temp = SQLite.GetNamesByLevel("database",ArmorUpgrade.tableName, levelLow, levelHigh);
         armorUpgrades = new ArrayList<>();
         if (all) {
             if (!type.equalsIgnoreCase("All")) {
                 for (String s : temp) {
                     ArmorUpgrade a = new ArmorUpgrade();
-                    SQLite.Read(a, a.getTableName(), s, a.getKeys());
+                    SQLite.Read(a,s);
                     if (a.getType().contains(type)) {
                         armorUpgrades.add(a);
                     }
@@ -175,34 +175,13 @@ public class EquipmentStore {
         }
     }
 
-    public void getEquipment(String name, Equipment equipment,String table,String[] keys){
+    public void getEquipment(String name, Equipment equipment){
         try {
-            SQLite.Read(equipment,table,name,keys);
+            SQLite.Read(equipment,name);
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
-//    public String[] getWeaponsNames() {
-//        String[] names = new String[weapons.size()];
-//        for (int i = 0; i < weapons.size(); i++) {
-//            names[i]=weapons.get(i).getName();
-//        }
-//        return names;
-//    }
-//    public String[] getArmorNames() {
-//        String[] names = new String[armor.size()];
-//        for (int i = 0; i < armor.size(); i++) {
-//            names[i] = armor.get(i).getName();
-//        }
-//        return names;
-//    }
-//    public String[] getShieldNames() {
-//        String[] names = new String[shields.size()];
-//        for (int i = 0; i < shields.size(); i++) {
-//            names[i] = shields.get(i).getName();
-//        }
-//        return names;
-//    }
     public ArrayList<String> getNames(){
         ArrayList<String> names = new ArrayList<>();
         switch (eqType){

@@ -9,6 +9,8 @@ import dice.Dice;
  */
 public class Asteroid extends Body{
 
+    Asteroid(){}
+
     /**
      * Constructor that sets the type and name of the Asteroid/Comet and fills in the needed information.
      * @param type String
@@ -113,5 +115,15 @@ public class Asteroid extends Body{
         return super.toString()+
                 "\tRadius of Nucleus: "+radius+
                 "\tCloud Size: "+cloud;
+    }
+
+    @Override
+    public String getTableNames() {
+        return tableName;
+    }
+
+    @Override
+    public String[] getKeys() {
+        return keys;
     }
 }

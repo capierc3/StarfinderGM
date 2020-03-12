@@ -115,7 +115,7 @@ public class EquipmentStoreScreen {
         pane.setTop(hBox);
         //Equipment information
         Equipment equipment = newEquipment(eqType.getValue());
-        equipmentStore.getEquipment(name,equipment,equipment.getTableName(),equipment.getKeys());
+        equipmentStore.getEquipment(name,equipment);
         if (equipment.getName()!=null){
             pane.setCenter(SFText.create(equipment.toString()));
         } else pane.setCenter(SFText.create(eqType.getValue()));

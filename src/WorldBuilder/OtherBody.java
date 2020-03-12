@@ -16,4 +16,13 @@ public class OtherBody extends Body {
         this.name = name+"'s "+type;
     }
 
+    @Override
+    public String getTableNames() {
+        return tableName;
+    }
+
+    @Override
+    public String[] getKeys() {
+        return keys;
+    }
 }

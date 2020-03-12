@@ -7,7 +7,11 @@ import dice.Dice;
  * @author Chase Pierce
  * @version 1.0
  */
-public abstract class Body implements Comparable{
+public abstract class Body implements Comparable,GalaxyDataBaseItem{
+
+    public final String tableName = "Bodies";
+    public final String[] keys = {"Name","Type","Size","Radius","Gravity","Temp","Orbit_Length","location","dist_from_sun"};
+
     /**Body string Information*/
     protected String type;
     protected String name;
@@ -107,5 +111,12 @@ public abstract class Body implements Comparable{
                 "\n                 "+(String.format("%.2f",SpaceTravel.TimeTo(distanceSun,1, SpaceTravel.distUnits.AU, SpaceTravel.timeUnits.Days,false)))+" days at 1g"+
                 "\nTemperature: "+temp+"\u00B0" + "F"+
         "\nOrbit Length: "+String.format("%.2f",orbitLength)+" earth years";
+    }
+
+    @Override
+    public String getSQLInsert() {
+        return " INSERT INTO Bodies" + "(Name,Type,Size,Radius,Gravity,Temp,Orbit_Length,location,dist_from_sun)" +
+                "VALUES ('" + name.replace("'","?") + "','" + type + "','" + size + "','" + radius + "','" + gravity + "','" + temp + "','" + orbitLength + "','"
+                + location + "','" + distanceSun + "');";
     }
 }

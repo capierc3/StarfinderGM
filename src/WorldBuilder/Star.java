@@ -7,6 +7,9 @@ import dice.Dice;
  */
 public class Star extends Body {
 
+    public final String tableName = "Stars";
+    public final String[] keys = {"Name","Type","Solar_Mass","Solar_Radius"};
+
     /**Index value of the type String*/
     private int typeNum;
     /**Mass of the star, solarMass X 1030 = Mass in kg*/
@@ -39,7 +42,6 @@ public class Star extends Body {
         if (typeNum == 2){
             mainSeq();
         }
-
     }
     /**
      * Constructor for the Star that creates a random star based on the type a star it shares the system with, making
@@ -124,5 +126,18 @@ public class Star extends Body {
      */
     public double getSolarRadius() {
         return solarRadius;
+    }
+
+    public String getTableNames() {
+        return tableName;
+    }
+
+    public String[] getKeys() {
+        return keys;
+    }
+
+    public String getSQLInsert() {
+        return " INSERT INTO Stars" + "(Name,Type,Solar_Mass,Solar_Radius)" +
+                "VALUES ('" + name + "','" + type + "','" + solarMass + "','" + solarRadius + "');";
     }
 }

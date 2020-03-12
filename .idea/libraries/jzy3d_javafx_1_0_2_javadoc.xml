@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jzy3d-javafx-1.0.2-javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/tools/jzy3d-javafx-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

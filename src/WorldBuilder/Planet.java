@@ -9,6 +9,12 @@ import dice.Dice;
  */
 public class Planet extends Body {
 
+    /**SQL information*/
+    public static final String tableName = "Planets";
+    public final String[] keys = {"Name","Type","Size","Radius","Temp","Orbit_Length","location","dist_from_sun","Atmosphere","Density"
+            ,"Gravity","Circumference","Tilt","Rotation","Liquid","Orbiting_Bodies"};
+    private String id;
+
     /**the int value for the size of the planet for the size String*/
     private int planetSize;
     /**Planet density index*/
@@ -32,6 +38,9 @@ public class Planet extends Body {
     /**Atmosphere pressure rating (APR) of planet*/
     private double atmoRating;
 
+    Planet(){
+
+    }
     /**
      * Constructor that takes the type and name of the planet and creates the specs for the planet
      * @param type String
@@ -292,5 +301,24 @@ public class Planet extends Body {
                 "\nLiquid: "+liquidType+" ("+liquidAmt+"%)"+
                 "\nOrbiting Bodies: "+orbitingBodies.length+
                 "\n"+printOrbit();
+    }
+
+    @Override
+    public String getTableNames() {
+        return tableName;
+    }
+
+    @Override
+    public String[] getKeys() {
+        return keys;
+    }
+
+    @Override
+    public String getSQLInsert() {
+        return " INSERT INTO Planets" + "(Name,Type,Size,Radius,Temp,Orbit_Length,location,dist_from_sun,Atmosphere,Density" +
+                ",Gravity,Circumference,Tilt,Rotation,Liquid,Orbiting_Bodies)" +
+                "VALUES ('" + name + "','" + type + "','" + size + "','" + radius + "','" + temp + "','" + orbitLength + "','" + location + "','" +
+                distanceSun + "','" +atmoThickness+"("+atmoRating+"APR)" + "','" + density + "','"+ gravity + "','" + circumference + "','"
+                + axilTilt+"("+tiltDegree+"*)" + "','" + rotation+" hr/day "+rotationDir+ "','" + liquidType+" ("+liquidAmt+"%)" + "','" +orbitingBodies.length + "');";
     }
 }

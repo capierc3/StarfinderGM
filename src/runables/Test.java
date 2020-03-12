@@ -12,19 +12,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**Class used to run basic tests during development**/
 public class Test {
 
-
-
-    public static void main(String[] args) throws SQLException {
-        new ArchivesToSql();
+    public static void main(String[] args) {
+        new GalaxyDataBase();
+        Sector sector = sector();
+        GalaxyDataBase.addEntry(sector);
     }
 
+    public static void buildSystem(){
 
-    public static void buildSector(){
-
-        StarSystem system = new StarSystem(Sector.Population.POPULATED,0,0);
+        StarSystem system = new StarSystem("test",Sector.Population.POPULATED,0,0,0,0,0);
         System.out.println("System Name: "+system.getName());
         System.out.println("System Size: "+system.getSize()+" AU");
         System.out.println("Habitable Zone: "+system.getHabitZone()[0]+" - "+system.getHabitZone()[1]+" ls");
@@ -37,8 +36,9 @@ public class Test {
             System.out.println(b);
         }
     }
-    private static void sector(){
-        Sector sector = new Sector(Sector.Population.COLONIES,0,0,0);
+
+    private static Sector sector(){
+        Sector sector = new Sector(Sector.Population.POPULATED,0,0,0);
         System.out.println(sector.getName()+" Sector:");
         ArrayList<Star[]> stars = new ArrayList<>();
         for (int i = 0; i < sector.getGrid().length; i++) {
@@ -73,6 +73,7 @@ public class Test {
                 }
             }
         }
+        return sector;
     }
     private static void database(){
         //new ArchivesRipper();

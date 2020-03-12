@@ -11,7 +11,10 @@ import java.util.*;
  * @author Chase Pierce
  * @version 1.0
  */
-public class StarSystem {
+public class StarSystem implements GalaxyDataBaseItem{
+
+    public static final String[] keys = {"Name","X","Y","Z","Stars","Bodies","Size","Habitable_Zone","Population","ID"};
+    public static final String tableName = "Systems";
 
     /**Name of the system**/
     private String name;
@@ -22,21 +25,27 @@ public class StarSystem {
     /**Size of the system in AUs**/
     private double size;
     /**Information on the habitable zone of the system if it has one.**/
-    double habitLow;
-    double habitHigh;
+    private double habitLow;
+    private double habitHigh;
     /**The Population of the system**/
-    Sector.Population population;
-    /**The location in the sector**/
-    int x;
-    int y;
+    private Sector.Population population;
+    /**The location in the galaxy**/
+    double x,y,z;
+    String id;
 
+    /**
+     * Empty Constructor for use with the database creation only
+     */
+    StarSystem(){
+
+    }
     /**
      * Constructor that creates the system based on inputted population and location.
      * @param population enum of population.
      * @param x location int for x.
      * @param y location int for y.
      */
-    public StarSystem(Sector.Population population, int x, int y) {
+    public StarSystem(String sectorName, Sector.Population population, int x, int y,int secX, int secY, int secZ) {
         this.population = population;
         findName();
         int starCount;
@@ -48,19 +57,29 @@ public class StarSystem {
         } else if (roll < 20) {
             starCount = 3;
         } else starCount = 4;
+        int negX = 1;
+        int negY = 1;
+        int negZ = 1;
+        if (Dice.Roller(1,2)==1) negX = -1;
+        if (Dice.Roller(1,2)==1) negY = -1;
+        if (Dice.Roller(1,2)==1) negZ = -1;
+        this.x = (((Dice.Roller(1,99.00)/100.00)+x)+(10*secX))*(negX);
+        this.y = (((Dice.Roller(1,99.00)/100.00)+y)+(10*secY))*(negY);
+        this.z = ((Dice.Roller(1,999)/100.0)+(10*secZ))*(negZ);
         createStars(starCount);
         createBodies();
         createSize();
         placeBodies();
         setBodyNames();
         createTemp();
+        id = sectorName.toCharArray()[0]+name.toCharArray()[0]+ x + y + Double.toString(z);
     }
 
     /**
-     * Searches "WorldBuilder/StarNamesSuffix.txt" for a name of the system, picks a random one and sets it.
+     * Searches "txtFiles/WorldBuilder/StarNamesSuffix.txt" for a name of the system, picks a random one and sets it.
      */
     private void findName(){
-        File file = new File("WorldBuilder/StarNamesSuffix.txt");
+        File file = new File("txtFiles/WorldBuilder/StarNamesSuffix.txt");
         try {
             Scanner in = new Scanner(file);
             int roll= Dice.Roller(1,1000);
@@ -343,5 +362,34 @@ public class StarSystem {
      */
     public double[] getHabitZone() {
         return new double[] {habitLow,habitHigh};
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getZ() {
+        return z;
+    }
+
+    @Override
+    public String getTableNames() {
+        return "Systems";
+    }
+
+    @Override
+    public String[] getKeys() {
+        return keys;
+    }
+
+    @Override
+    public String getSQLInsert() {
+        return " INSERT INTO Systems" + "(Name,X,Y,Z,Stars,Bodies,Size,Habitable_Zone,Population,ID)" +
+                "VALUES ('" + name + "','" + x + "','" + y + "','" + z + "','" + stars.length + "','" + bodies.length + "','" + size + "','"
+                + "("+habitLow+"-"+habitHigh + ")" + "','" + population + "','" + id + "');";
     }
 }

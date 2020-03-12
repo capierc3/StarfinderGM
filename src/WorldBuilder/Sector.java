@@ -11,9 +11,16 @@ import java.util.Scanner;
  * @author Chase
  * @version 1.0
  */
-public class Sector {
+public class Sector implements GalaxyDataBaseItem {
+    /**SQL information*/
+    public static final String tableName = "Sectors";
+    public static final String[] keys = {"Name","X","Y","Z","Systems","ID"};
+    private String id;
+
     /** Gird that holds all the Systems in the Sector*/
     private StarSystem[][] grid;
+    /**Amount of systems in the sector*/
+    private int amtSystems;
     /** String that holds the name**/
     private String name;
     /** Position of the sector based on the origin of earth's Sector (0,0,0) **/
@@ -22,9 +29,15 @@ public class Sector {
     private int z;
     /**Shows if sector is the origin or main sector*/
     boolean origin;
-
     public enum Population {POPULATED, COLONIES, RESEARCH, NONE}
 
+
+    /**
+     * Empty Constructor for use with the database creation only
+     */
+    Sector(){
+
+    }
     /**
      * constructor for the sector, takes an input on how the sector is populated and then builds a random amount of Star Systems
      * max 10 in a 10X10 sector.
@@ -44,14 +57,14 @@ public class Sector {
         }
         grid = new StarSystem[10][10];
         findName();
-        int StarSystemCount = Dice.Roller(1,10)+20;
-        for (int i = 0; i < StarSystemCount; i++) {
+        amtSystems = Dice.Roller(1,10)+20;
+        for (int i = 0; i < amtSystems; i++) {
             int row = Dice.Roller(1,10)-1;
             int col = Dice.Roller(1,10)-1;
             boolean placed = false;
             while (!placed) {
                 if (grid[row][col] == null) {
-                    grid[row][col] = new StarSystem(population,col,row);
+                    grid[row][col] = new StarSystem(name,population,col,row,x,y,z);
                     placed = true;
                 } else {
                     row = Dice.Roller(1,10) - 1;
@@ -59,6 +72,7 @@ public class Sector {
                 }
             }
         }
+        id = "Sec"+x+y+z;
     }
 
     /**
@@ -66,7 +80,7 @@ public class Sector {
      * Text file "StarNamesPrefix.txt" needed in the WorldBuilder directory.
      */
     private void findName(){
-        File file = new File("WorldBuilder/StarNamesPrefix.txt");
+        File file = new File("txtFiles/WorldBuilder/StarNamesPrefix.txt");
         try {
             Scanner in = new Scanner(file);
             int roll= Dice.Roller(1,1000);
@@ -108,5 +122,21 @@ public class Sector {
      */
     public int[] getCoordinates(){
         return new int[]{x,y,z};
+    }
+
+    /**Overridden methods for the interface GalaxyDataBaseItem.*/
+    @Override
+    public String getTableNames() {
+        return tableName;
+    }
+    @Override
+    public String[] getKeys() {
+        return keys;
+    }
+
+    @Override
+    public String getSQLInsert() {
+        return " INSERT INTO Sectors" + "(Name,X,Y,Z,Systems,ID)" +
+                "VALUES ('" + name + "','" + x + "','" + y + "','" + z + "','" + amtSystems + "','" + id + "');";
     }
 }
