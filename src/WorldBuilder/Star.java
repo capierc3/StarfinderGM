@@ -8,7 +8,8 @@ import dice.Dice;
 public class Star extends Body {
 
     public final String tableName = "Stars";
-    public final String[] keys = {"Name","Type","Solar_Mass","Solar_Radius"};
+    public final String[] keys = {"Name","Type","Solar_Mass","Solar_Radius","System_Name"};
+
 
     /**Index value of the type String*/
     private int typeNum;
@@ -27,11 +28,14 @@ public class Star extends Body {
             {19,"Neutron"},
             {20,"Supergiant"}};
 
+    public Star(){}
     /**
      * Constructor for the Star that creates a random star and sets the type, if its a main sequence star it runs the
      * setup for finding the type.
      */
-    public Star() {
+    public Star(String name) {
+        this.name = name;
+        systemName = name;
         int roll = Dice.Roller(1,20);
         for (int i = 0; i < starTypes.length; i++) {
             if (roll >= (int) starTypes[i][0]) {
@@ -48,7 +52,7 @@ public class Star extends Body {
      * it one lower in rating or one higher only. Then sets the type, if its a main sequence star it runs the
      * setup for finding the type.
      */
-    public Star(int num){
+    public Star(int num, int i, String systemName){
         if (num<0){
             this.type = (String) starTypes[starTypes.length-1][1];
             this.typeNum = starTypes.length-1;
@@ -62,6 +66,8 @@ public class Star extends Body {
         if (typeNum == 2){
             mainSeq();
         }
+        name = systemName+" "+i;
+        this.systemName = systemName;
     }
 
     /**
@@ -137,7 +143,14 @@ public class Star extends Body {
     }
 
     public String getSQLInsert() {
-        return " INSERT INTO Stars" + "(Name,Type,Solar_Mass,Solar_Radius)" +
-                "VALUES ('" + name + "','" + type + "','" + solarMass + "','" + solarRadius + "');";
+        return " INSERT INTO Stars" + "(Name,Type,Solar_Mass,Solar_Radius,System_Name)" +
+                "VALUES ('" + name + "','" + type + "','" + solarMass + "','" + solarRadius + "','" + systemName + "');";
+    }
+    public void readSQL(String[] values){
+        name = values[0];
+        type = values[1];
+        solarMass = Double.parseDouble(values[2]);
+        solarRadius = Long.parseLong(values[3]);
+        systemName = values[4];
     }
 }

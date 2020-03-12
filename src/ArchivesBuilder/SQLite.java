@@ -148,6 +148,12 @@ public class SQLite {
         System.out.println(tableName+" table created");
     }
 
+    /**
+     * Adds an item to a database.
+     * @param dbName the database to add the entry to
+     * @param sqls an array of sqls to add
+     * @param tableName the table that the sqls need to be added to
+     */
     public static void AddRecord(String dbName, ArrayList<String> sqls, String tableName){
 
         Connection c = null;

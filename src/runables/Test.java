@@ -17,8 +17,10 @@ public class Test {
 
     public static void main(String[] args) {
         new GalaxyDataBase();
-        Sector sector = sector();
+        Sector sector = new Sector(Sector.Population.POPULATED,0,0,0);
+        Sector sector2 = new Sector(Sector.Population.POPULATED,0,0,1);
         GalaxyDataBase.addEntry(sector);
+        GalaxyDataBase.addEntry(sector2);
     }
 
     public static void buildSystem(){
@@ -63,7 +65,7 @@ public class Test {
                     for (int k = 0; k < sector.getGrid()[i][j].getStars().length; k++) {
                         System.out.println("\t" + sector.getGrid()[i][j].getStars()[k].getType());
                     }
-                    System.out.println("Bodies: "+sector.getGrid()[i][j].getBodies().length);
+                    System.out.println("Bodies: "+sector.getGrid()[i][j].getBodies().size());
 //                    for (int k = 0; k < sector.getGrid()[i][j].getOrderSystem().length; k++) {
 //                        if (sector.getGrid()[i][j].getOrderSystem()[k]!=null) {
 //                            System.out.println(sector.getGrid()[i][j].getOrderSystem()[k].toString());

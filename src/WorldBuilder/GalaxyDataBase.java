@@ -8,8 +8,14 @@ import Equipment.Equipment;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static ArchivesBuilder.SQLite.connect;
 
 /**
  * Class used to build and maintain the galaxy database.
@@ -55,6 +61,10 @@ public class GalaxyDataBase {
         return sb.toString();
     }
 
+    /**
+     * Adds a new entry to the database. If its an sector or system it adds the entries within to the database.
+     * @param entry GalaxyDataBaseItem to be added.
+     */
     public static void addEntry(GalaxyDataBaseItem entry){
         ArrayList<String> sqls = new ArrayList<>();
         sqls.add(entry.getSQLInsert());
@@ -78,6 +88,104 @@ public class GalaxyDataBase {
                 addEntry(b);
             }
         }
+    }
+
+    /**
+     * Searches the database for the name of the item then fills the item with the found values.
+     * @param item Item to be filled
+     * @param name name of item to be filled
+     * @throws SQLException
+     */
+    public static void readEntry(GalaxyDataBaseItem item, String name) throws SQLException {
+        String[] values = new String[item.getKeys().length];
+        String sql = "SELECT * FROM "+ item.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        boolean found = false;
+        while (rs.next() || !found){
+            if (rs.getString("Name").equalsIgnoreCase(name)){
+                for (int i = 0; i <item.getKeys().length ; i++) {
+                    values[i]= rs.getString(item.getKeys()[i]);
+                    found = true;
+                }
+            }
+        }
+        if (values[0] != null) item.readSQL(values);
+        rs.close();
+        stmt.close();
+        conn.close();
+    }
+
+    public static Star[] findStar(String name, int amount) throws SQLException {
+        Star item = new Star();
+        String[] values = new String[item.getKeys().length];
+        Star[] items = new Star[amount];
+        String sql = "SELECT * FROM "+item.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        int j = 0;
+        while (rs.next()||j<amount){
+            if (rs.getString("System_Name").equalsIgnoreCase(name)){
+                for (int i = 0; i <item.getKeys().length ; i++) {
+                    values[i]= rs.getString(item.getKeys()[i]);
+                }
+                item.readSQL(values);
+                items[j] = item;
+                j++;
+            }
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return items;
+    }
+    public static ArrayList<Planet> findPlanets(String name, int amount) throws SQLException {
+        Planet item = new Planet();
+        String[] values = new String[item.getKeys().length];
+        ArrayList<Planet> items = new ArrayList<>();
+        String sql = "SELECT * FROM "+item.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()||amount>0){
+            if (rs.getString("System_Name").contains(name)){
+                for (int i = 0; i <item.getKeys().length ; i++) {
+                    values[i]= rs.getString(item.getKeys()[i]);
+                }
+                item.readSQL(values);
+                items.add(item);
+                amount--;
+            }
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return items;
+    }
+    public static ArrayList<Body> findBodies(String name, int amount) throws SQLException {
+        Body item = new Asteroid();
+        String[] values = new String[item.getKeys().length];
+        ArrayList<Body> items = new ArrayList<>();
+        String sql = "SELECT * FROM "+item.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()||amount>0){
+            if (rs.getString("System_Name").contains(name)){
+                for (int i = 0; i <item.getKeys().length ; i++) {
+                    values[i]= rs.getString(item.getKeys()[i]);
+                }
+                item.readSQL(values);
+                items.add(item);
+                amount--;
+            }
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return items;
     }
 
 

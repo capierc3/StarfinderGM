@@ -3,6 +3,7 @@ package WorldBuilder;
 import dice.Dice;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -13,14 +14,15 @@ import java.util.*;
  */
 public class StarSystem implements GalaxyDataBaseItem{
 
-    public static final String[] keys = {"Name","X","Y","Z","Stars","Bodies","Size","Habitable_Zone","Population","ID"};
+    public static final String[] keys = {"Name","X","Y","Z","Stars","Planets","Bodies","Size","Habitable_Zone","Population","ID"};
     public static final String tableName = "Systems";
 
     /**Name of the system**/
     private String name;
     /**Arrays that hold the systems stars, bodies, and an order Array of the bodies**/
     private Star[] stars;
-    private Body[] bodies;
+    private ArrayList<Planet> planets;
+    private ArrayList<Body> bodies;
     private ArrayList<Body> orderSystem;
     /**Size of the system in AUs**/
     private double size;
@@ -115,7 +117,7 @@ public class StarSystem implements GalaxyDataBaseItem{
      * Creates a random size for the system in AUs based on the amount of bodies in the system
      */
     private void createSize(){
-        int sizeMod = Dice.Roller(1,20)+bodies.length;
+        int sizeMod = Dice.Roller(1,20)+(bodies.size()+planets.size());
         if (sizeMod<7){
             double[] aus = {.25,.33,.5,.66,.75,1};
             size = aus[sizeMod-1];
@@ -137,29 +139,30 @@ public class StarSystem implements GalaxyDataBaseItem{
     private void createBodies(){
         int bodyNum = Dice.Roller(1,10);
         if (bodyNum == 10) bodyNum = 10+Dice.Roller(1,10);
-        bodies = new Body[bodyNum];
-        for (int i = 0; i < bodies.length; i++) {
+        bodies = new ArrayList<>();
+        planets = new ArrayList<>();
+        for (int i = 0; i < bodyNum; i++) {
             int roll = Dice.Roller(1,20);
             if (roll <= 1) {
-                bodies[i] = new OtherBody("Anomaly",name);
+                bodies.add(new OtherBody("Anomaly",name));
             } else if (roll <=2){
-                bodies[i] = new OtherBody("Structure/Item",name);
+                bodies.add(new OtherBody("Structure/Item",name));
             } else if (roll <=3){
-                bodies[i] = new Asteroid("Single/Group",name);
+                bodies.add(new Asteroid("Single/Group",name));
             } else if (roll <=6){
-                bodies[i] = new Asteroid("Belt",name);
+                bodies.add(new Asteroid("Belt",name));
             } else if (roll <=7){
-                bodies[i] = new Asteroid("Comet",name);
+                bodies.add(new Asteroid("Comet",name));
             } else if (roll <=8){
-                bodies[i] = new OtherBody("Dust Cloud",name);
+                bodies.add(new OtherBody("Dust Cloud",name));
             } else if (roll <=9){
-                bodies[i] = new OtherBody("Oort Cloud",name);
+                bodies.add(new OtherBody("Oort Cloud",name));
             } else if (roll <=12){
-                bodies[i] = new Planet("Dwarf Planet",name);
+                planets.add(new Planet("Dwarf Planet",name));
             } else if (roll <=16){
-                bodies[i] = new Planet("Gas Planet",name);
+                planets.add(new Planet("Gas Planet",name));
             } else {
-                bodies[i] = new Planet("Terrestrial Planet",name);
+                planets.add(new Planet("Terrestrial Planet",name));
             }
         }
     }
@@ -219,7 +222,17 @@ public class StarSystem implements GalaxyDataBaseItem{
                 b.distanceSun = SpaceTravel.LStoAU(placeInSystem(placedLocs,habitHigh,lsSize));
             }
         }
-        orderSystem = new ArrayList<>(Arrays.asList(bodies));
+        for (Body b:planets) {
+            if (fullTypes.contains(b.type)){
+                b.distanceSun = SpaceTravel.LStoAU(placeInSystem(placedLocs,0,lsSize));
+            } else if (hotHabitTypes.contains(b.type)){
+                b.distanceSun = SpaceTravel.LStoAU(placeInSystem(placedLocs,0,habitHigh+((habitHigh-habitLow)/2)));
+            } else {
+                b.distanceSun = SpaceTravel.LStoAU(placeInSystem(placedLocs,habitHigh,lsSize));
+            }
+        }
+        orderSystem = bodies;
+        orderSystem.addAll(planets);
         orderSystem.sort(Body::compareTo);
     }
 
@@ -247,16 +260,16 @@ public class StarSystem implements GalaxyDataBaseItem{
     private void createStars(int starCount){
         stars = new Star[starCount];
         if (starCount==1){
-            stars[0] = new Star();
+            stars[0] = new Star(name);
         } else {
-            stars[0] = new Star();
+            stars[0] = new Star(name);
             for (int i = 1; i < stars.length; i++) {
                 if (new Dice(2).Roll() == 1) {
-                    stars[i] = new Star(stars[i - 1].getTypeNum());
+                    stars[i] = new Star(stars[i - 1].getTypeNum(),i+1,name);
                 } else {
                     if (new Dice(2).Roll() == 1){
-                        stars[i] = new Star(stars[i-1].getTypeNum()-1);
-                    } else stars[i] = new Star(stars[i-1].getTypeNum()+1);
+                        stars[i] = new Star(stars[i-1].getTypeNum()-1,i+1,name);
+                    } else stars[i] = new Star(stars[i-1].getTypeNum()+1,i+1,name);
                 }
             }
         }
@@ -327,6 +340,35 @@ public class StarSystem implements GalaxyDataBaseItem{
     public String getName() {
         return name;
     }
+
+    @Override
+    public void readSQL(String[] values) {
+       name = values[0];
+       x = Double.parseDouble(values[1]);
+       y = Double.parseDouble(values[2]);
+       z = Double.parseDouble(values[3]);
+       //Needs to find its stars
+        try {
+            stars = GalaxyDataBase.findStar(name,Integer.parseInt(values[4]));
+            planets = GalaxyDataBase.findPlanets(name,Integer.parseInt(values[5]));
+            bodies = GalaxyDataBase.findBodies(name,Integer.parseInt(values[5]));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       size = Double.parseDouble(values[6]);
+       String[] hab = values[7].split("-");
+       habitLow = Double.parseDouble(hab[0].replace("(",""));
+       habitHigh = Double.parseDouble(hab[1].replace(")",""));
+       if (values[8].equalsIgnoreCase(Sector.Population.POPULATED.toString())){
+           population = Sector.Population.POPULATED;
+       } else if (values[8].equalsIgnoreCase(Sector.Population.COLONIES.toString())){
+           population = Sector.Population.COLONIES;
+       } else if (values[8].equalsIgnoreCase(Sector.Population.NONE.toString())){
+           population = Sector.Population.NONE;
+       } else population = Sector.Population.RESEARCH;
+       id = values[9];
+    }
+
     /**
      * getter to return the system's size in AU
      * @return double of the system size
@@ -343,11 +385,20 @@ public class StarSystem implements GalaxyDataBaseItem{
     }
     /**
      * getter to return the system's bodies
-     * @return Body[]
+     * @return Body array list
      */
-    public Body[] getBodies() {
+    public ArrayList<Body> getBodies() {
         return bodies;
     }
+
+    /**
+     * getter to return the system's Planets
+     * @return planets arraylist
+     */
+    public ArrayList<Planet> getPlanets() {
+        return planets;
+    }
+
     /**
      * getter to return the system's ordered body array
      * @return ArrayList<Body>
@@ -388,8 +439,8 @@ public class StarSystem implements GalaxyDataBaseItem{
 
     @Override
     public String getSQLInsert() {
-        return " INSERT INTO Systems" + "(Name,X,Y,Z,Stars,Bodies,Size,Habitable_Zone,Population,ID)" +
-                "VALUES ('" + name + "','" + x + "','" + y + "','" + z + "','" + stars.length + "','" + bodies.length + "','" + size + "','"
+        return " INSERT INTO Systems" + "(Name,X,Y,Z,Stars,Planets,Bodies,Size,Habitable_Zone,Population,ID)" +
+                "VALUES ('" + name + "','" + x + "','" + y + "','" + z + "','" + stars.length + "','" + planets.size() + "','"+ bodies.size() + "','" + size + "','"
                 + "("+habitLow+"-"+habitHigh + ")" + "','" + population + "','" + id + "');";
     }
 }

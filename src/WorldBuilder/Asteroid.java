@@ -19,6 +19,7 @@ public class Asteroid extends Body{
     public Asteroid(String type,String name){
         this.type = type;
         this.name = name+"'s "+type;
+        systemName = name;
         if (type.equalsIgnoreCase("Comet")){ findCometSize();}
         else if (type.equalsIgnoreCase("Belt")){ findBeltSize();}
         else {findAstSize();}

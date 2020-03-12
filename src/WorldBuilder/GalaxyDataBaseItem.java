@@ -6,6 +6,7 @@ public interface GalaxyDataBaseItem {
     String[] getKeys();
     String getSQLInsert();
     String getName();
+    void readSQL(String[] values);
 
 
 

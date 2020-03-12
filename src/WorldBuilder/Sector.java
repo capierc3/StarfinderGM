@@ -108,6 +108,11 @@ public class Sector implements GalaxyDataBaseItem {
         return name;
     }
 
+    @Override
+    public void readSQL(String[] values) {
+
+    }
+
     /**
      * Getter that returns the grid array that holds all the Sector's Systems
      * @return StarSystem[][] grid

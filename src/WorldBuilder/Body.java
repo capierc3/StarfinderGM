@@ -10,7 +10,7 @@ import dice.Dice;
 public abstract class Body implements Comparable,GalaxyDataBaseItem{
 
     public final String tableName = "Bodies";
-    public final String[] keys = {"Name","Type","Size","Radius","Gravity","Temp","Orbit_Length","location","dist_from_sun"};
+    public final String[] keys = {"Name","Type","Size","Radius","Gravity","Temp","Orbit_Length","location","dist_from_sun","System_Name"};
 
     /**Body string Information*/
     protected String type;
@@ -27,6 +27,7 @@ public abstract class Body implements Comparable,GalaxyDataBaseItem{
     int location;
     /**Distance from sun is in AUs*/
     Double distanceSun;
+    public String systemName;
 
     /**Main Constructor that sets the orbit length of the body*/
     Body(){
@@ -93,6 +94,7 @@ public abstract class Body implements Comparable,GalaxyDataBaseItem{
     public int compareTo(Object o) {
         try {
             Body b = (Body) o;
+            //System.out.println(this.name+": "+this.type);
             return this.distanceSun.compareTo(b.distanceSun);
         } catch (ClassCastException e){
             return 0;
@@ -115,8 +117,21 @@ public abstract class Body implements Comparable,GalaxyDataBaseItem{
 
     @Override
     public String getSQLInsert() {
-        return " INSERT INTO Bodies" + "(Name,Type,Size,Radius,Gravity,Temp,Orbit_Length,location,dist_from_sun)" +
+        return " INSERT INTO Bodies" + "(Name,Type,Size,Radius,Gravity,Temp,Orbit_Length,location,dist_from_sun,System_Name)" +
                 "VALUES ('" + name.replace("'","?") + "','" + type + "','" + size + "','" + radius + "','" + gravity + "','" + temp + "','" + orbitLength + "','"
-                + location + "','" + distanceSun + "');";
+                + location + "','" + distanceSun +  "','" + systemName +"');";
+    }
+
+    public void readSQL(String[] values){
+        name = values[0];
+        type = values[1];
+        size = values[2];
+        radius = Long.parseLong(values[3]);
+        gravity = Double.parseDouble(values[4]);
+        temp = Double.parseDouble(values[5]);
+        orbitLength = Double.parseDouble(values[6]);
+        location = Integer.parseInt(values[7]);
+        distanceSun = Double.parseDouble(values[8]);
+        systemName = values[9];
     }
 }

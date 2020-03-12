@@ -12,8 +12,7 @@ public class Planet extends Body {
     /**SQL information*/
     public static final String tableName = "Planets";
     public final String[] keys = {"Name","Type","Size","Radius","Temp","Orbit_Length","location","dist_from_sun","Atmosphere","Density"
-            ,"Gravity","Circumference","Tilt","Rotation","Liquid","Orbiting_Bodies"};
-    private String id;
+            ,"Gravity","Circumference","Tilt","Rotation","Liquid","Orbiting_Bodies","System_Name"};
 
     /**the int value for the size of the planet for the size String*/
     private int planetSize;
@@ -37,6 +36,7 @@ public class Planet extends Body {
     private String atmoThickness;
     /**Atmosphere pressure rating (APR) of planet*/
     private double atmoRating;
+    private String systemName;
 
     Planet(){
 
@@ -49,6 +49,7 @@ public class Planet extends Body {
     public Planet(String type,String name){
         this.type = type;
         this.name = name;
+        systemName = name;
         findSize();
         findAtmo();
         findDR();
@@ -223,6 +224,7 @@ public class Planet extends Body {
             atmoThickness = thickness[thickness.length-1][0];
             atmoRating = AP *40;
         } else {
+            if ((int) AP<0) AP = 0;
             atmoThickness = thickness[(int) AP][0];
             atmoRating = Integer.parseInt(thickness[(int) AP][1]);
         }
@@ -316,9 +318,9 @@ public class Planet extends Body {
     @Override
     public String getSQLInsert() {
         return " INSERT INTO Planets" + "(Name,Type,Size,Radius,Temp,Orbit_Length,location,dist_from_sun,Atmosphere,Density" +
-                ",Gravity,Circumference,Tilt,Rotation,Liquid,Orbiting_Bodies)" +
+                ",Gravity,Circumference,Tilt,Rotation,Liquid,Orbiting_Bodies,System_Name)" +
                 "VALUES ('" + name + "','" + type + "','" + size + "','" + radius + "','" + temp + "','" + orbitLength + "','" + location + "','" +
                 distanceSun + "','" +atmoThickness+"("+atmoRating+"APR)" + "','" + density + "','"+ gravity + "','" + circumference + "','"
-                + axilTilt+"("+tiltDegree+"*)" + "','" + rotation+" hr/day "+rotationDir+ "','" + liquidType+" ("+liquidAmt+"%)" + "','" +orbitingBodies.length + "');";
+                + axilTilt+"("+tiltDegree+"*)" + "','" + rotation+" hr/day "+rotationDir+ "','" + liquidType+" ("+liquidAmt+"%)" + "','" +orbitingBodies.length +"','" +systemName + "');";
     }
 }

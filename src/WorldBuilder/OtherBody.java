@@ -14,6 +14,7 @@ public class OtherBody extends Body {
     public OtherBody(String type,String name){
         this.type = type;
         this.name = name+"'s "+type;
+        systemName = name;
     }
 
     @Override
