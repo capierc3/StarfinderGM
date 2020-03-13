@@ -117,6 +117,57 @@ public class GalaxyDataBase {
         conn.close();
     }
 
+    public static ArrayList<StarSystem> findNearBySystems(StarSystem system,int range) throws SQLException {
+        ArrayList<StarSystem> systems = new ArrayList<>();
+        StarSystem s = new StarSystem();
+        String[] values = new String[system.getKeys().length];
+        String sql = "SELECT * FROM "+system.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        double x1 = system.getX();
+        double y1 = system.getY();
+        double z1 = system.getZ();
+        while (rs.next()){
+            double x2 = Double.parseDouble(rs.getString("X"));
+            double y2 = Double.parseDouble(rs.getString("Y"));
+            double z2 = Double.parseDouble(rs.getString("Z"));
+            double dist = Math.pow((x2-x1),2)+Math.pow((y2-y1),2)+Math.pow((z2-z1),2);
+            dist = Math.sqrt(dist);
+            if (dist<=15){
+                for (int i = 0; i <system.getKeys().length ; i++) {
+                    values[i]= rs.getString(system.getKeys()[i]);
+                }
+                s.readSQL(values);
+                systems.add(s);
+                s = new StarSystem();
+            }
+        }
+        rs.close();
+        stmt.close();
+        conn.close();
+        return systems;
+    }
+    public static StarSystem findSystem(String name) throws SQLException {
+        StarSystem s = new StarSystem();
+        String[] values = new String[s.getKeys().length];
+        String sql = "SELECT * FROM "+s.getTableNames();
+        Connection conn = connect(dbName);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        while (rs.next()){
+            if (rs.getString("Name").equalsIgnoreCase(name)){
+                for (int i = 0; i <s.getKeys().length ; i++) {
+                    values[i]= rs.getString(s.getKeys()[i]);
+                }
+            }
+        }
+        s.readSQL(values);
+        rs.close();
+        stmt.close();
+        conn.close();
+        return s;
+    }
     public static Star[] findStar(String name, int amount) throws SQLException {
         Star item = new Star();
         String[] values = new String[item.getKeys().length];
@@ -126,7 +177,7 @@ public class GalaxyDataBase {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         int j = 0;
-        while (rs.next()||j<amount){
+        while (rs.next() && j<amount){
             if (rs.getString("System_Name").equalsIgnoreCase(name)){
                 for (int i = 0; i <item.getKeys().length ; i++) {
                     values[i]= rs.getString(item.getKeys()[i]);

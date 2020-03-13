@@ -24,6 +24,7 @@ public class StarSystem implements GalaxyDataBaseItem{
     private ArrayList<Planet> planets;
     private ArrayList<Body> bodies;
     private ArrayList<Body> orderSystem;
+    private ArrayList<StarSystem> nearBySystems;
     /**Size of the system in AUs**/
     private double size;
     /**Information on the habitable zone of the system if it has one.**/
@@ -38,7 +39,7 @@ public class StarSystem implements GalaxyDataBaseItem{
     /**
      * Empty Constructor for use with the database creation only
      */
-    StarSystem(){
+    public StarSystem(){
 
     }
     /**
@@ -351,22 +352,24 @@ public class StarSystem implements GalaxyDataBaseItem{
         try {
             stars = GalaxyDataBase.findStar(name,Integer.parseInt(values[4]));
             planets = GalaxyDataBase.findPlanets(name,Integer.parseInt(values[5]));
-            bodies = GalaxyDataBase.findBodies(name,Integer.parseInt(values[5]));
+            //bodies = GalaxyDataBase.findBodies(name,Integer.parseInt(values[6]));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-       size = Double.parseDouble(values[6]);
-       String[] hab = values[7].split("-");
+       size = Double.parseDouble(values[7]);
+       //"("+habitLow+"-"+habitHigh + ")"
+       String[] hab = values[8].split("\\-");
        habitLow = Double.parseDouble(hab[0].replace("(",""));
        habitHigh = Double.parseDouble(hab[1].replace(")",""));
-       if (values[8].equalsIgnoreCase(Sector.Population.POPULATED.toString())){
+       if (values[9].equalsIgnoreCase(Sector.Population.POPULATED.toString())){
            population = Sector.Population.POPULATED;
-       } else if (values[8].equalsIgnoreCase(Sector.Population.COLONIES.toString())){
+       } else if (values[9].equalsIgnoreCase(Sector.Population.COLONIES.toString())){
            population = Sector.Population.COLONIES;
-       } else if (values[8].equalsIgnoreCase(Sector.Population.NONE.toString())){
+       } else if (values[9].equalsIgnoreCase(Sector.Population.NONE.toString())){
            population = Sector.Population.NONE;
        } else population = Sector.Population.RESEARCH;
-       id = values[9];
+       id = values[10];
+
     }
 
     /**
@@ -425,6 +428,10 @@ public class StarSystem implements GalaxyDataBaseItem{
 
     public double getZ() {
         return z;
+    }
+
+    public ArrayList<StarSystem> getNearBySystems() {
+        return nearBySystems;
     }
 
     @Override

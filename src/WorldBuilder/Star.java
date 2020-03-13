@@ -150,7 +150,7 @@ public class Star extends Body {
         name = values[0];
         type = values[1];
         solarMass = Double.parseDouble(values[2]);
-        solarRadius = Long.parseLong(values[3]);
+        solarRadius = Double.parseDouble(values[3]);
         systemName = values[4];
     }
 }

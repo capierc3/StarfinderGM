@@ -323,4 +323,30 @@ public class Planet extends Body {
                 distanceSun + "','" +atmoThickness+"("+atmoRating+"APR)" + "','" + density + "','"+ gravity + "','" + circumference + "','"
                 + axilTilt+"("+tiltDegree+"*)" + "','" + rotation+" hr/day "+rotationDir+ "','" + liquidType+" ("+liquidAmt+"%)" + "','" +orbitingBodies.length +"','" +systemName + "');";
     }
+
+    public void readSQL(String[] values){
+        name = values[0];
+        type = values[1];
+        size = values[2];
+        radius = Long.parseLong(values[3]);
+        temp = Double.parseDouble(values[4]);
+        orbitLength = Double.parseDouble(values[5]);
+        location = Integer.parseInt(values[6]);
+        distanceSun = Double.parseDouble(values[7]);
+        atmoThickness = values[8].split("\\(")[0];
+        atmoRating = Double.parseDouble(values[8].split("\\(")[1].replace("APR)",""));
+        density = values[9];
+        gravity = Double.parseDouble(values[10]);
+        circumference = Long.parseLong(values[11]);
+        axilTilt = values[12].split("\\(")[0];
+        tiltDegree = Integer.parseInt(values[12].split("\\(")[1].replace("*)",""));
+        rotation = Integer.parseInt(values[13].split(" hr/day ")[0]);
+        rotationDir = values[13].split(" hr/day ")[1];
+        liquidType = values[14].split(" \\(")[0];
+        liquidAmt = Integer.parseInt(values[14].split(" \\(")[1].replace("%)",""));
+        //find orbiting bodies//
+        //values[15]
+        systemName = values[16];
+
+    }
 }
