@@ -2,8 +2,6 @@ import GUI.SFText;
 import GUI.TopBar;
 import WorldBuilder.Diagrams;
 import WorldBuilder.GalaxyDataBase;
-import WorldBuilder.Sector;
-import WorldBuilder.StarSystem;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
