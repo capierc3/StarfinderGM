@@ -1,7 +1,5 @@
 import GUI.SFText;
 import GUI.TopBar;
-import WorldBuilder.Diagrams;
-import WorldBuilder.GalaxyDataBase;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -19,7 +17,8 @@ public class Main extends Application{
         Scene scene = new Scene(root, 1500, 800);
         //Center//
         Text txt = SFText.create("Starfinder 1.0",50);
-        Diagrams.drawLocalMap(GalaxyDataBase.findSystem("Su"),root);
+        root.setCenter(txt);
+        //Diagrams.drawLocalMap(GalaxyDataBase.findSystem("Su"),root);
         //Top Bar//
         TopBar bar = new TopBar(root);
         root.setTop(bar.getBar());
