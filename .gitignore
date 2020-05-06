@@ -6,4 +6,6 @@
 /Non-Git/
 /target/
 /tools/
-StarFinder.iml
+StarfinderGM.iml
+src/test/test.iml
+src/main/main.iml
