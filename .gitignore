@@ -1,2 +1,9 @@
 # Project exclude paths
 /out/
+/build/
+/.idea/
+/lib/
+/Non-Git/
+/target/
+/tools/
+StarFinder.iml
