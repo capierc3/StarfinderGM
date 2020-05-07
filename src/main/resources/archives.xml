@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Archives>
+    <ship>
+        <armor>
+            <url>
+                https://www.aonsrd.com/Starship_Armor.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </armor>
+
+        <baseframes>
+            <url>
+                https://www.aonsrd.com/Starship_BaseFrames.aspx?ItemName=All
+            </url>
+            <type>
+                text
+            </type>
+        </baseframes>
+
+        <computers>
+            <url>
+                https://www.aonsrd.com/Starship_Computers.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </computers>
+
+        <quarters>
+            <url>
+                https://www.aonsrd.com/Starship_CrewQuarters.aspx?ItemName=All
+            </url>
+            <type>
+                text
+            </type>
+        </quarters>
+
+        <countermeasures>
+            <url>
+                https://www.aonsrd.com/Starship_DefCounters.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </countermeasures>
+
+        <drift>
+            <url>
+                https://www.aonsrd.com/Starship_DriftEngines.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </drift>
+
+        <expansion>
+            <url>
+                https://www.aonsrd.com/Starship_ExpBays.aspx?ItemName=All&Family=None
+            </url>
+            <type>
+                table
+            </type>
+        </expansion>
+
+        <other>
+            <url>
+                https://www.aonsrd.com/Starship_OtherSystems.aspx?ItemName=All
+            </url>
+            <type>
+                table
+            </type>
+        </other>
+
+        <cores>
+            <url>
+                https://www.aonsrd.com/Starship_PowerCores.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </cores>
+
+        <security>
+            <url>
+                https://www.aonsrd.com/Starship_Security.aspx?ItemName=All&Family=None
+            </url>
+            <type>
+                table
+            </type>
+        </security>
+
+        <sensors>
+            <url>
+                https://www.aonsrd.com/Starship_Sensors.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </sensors>
+
+        <shields>
+            <url>
+                https://www.aonsrd.com/Starship_Shields.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </shields>
+
+        <thrusters>
+            <url>
+                https://www.aonsrd.com/Starship_Thrusters.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </thrusters>
+
+        <weapons>
+            <url>
+                https://www.aonsrd.com/Starship_Weapons.aspx
+            </url>
+            <type>
+                table
+            </type>
+        </weapons>
+
+        <properties>
+            <url>
+                https://www.aonsrd.com/Starship_WeaponProperties.aspx?ItemName=All
+            </url>
+            <type>
+                text
+            </type>
+        </properties>
+    </ship>
+</Archives>

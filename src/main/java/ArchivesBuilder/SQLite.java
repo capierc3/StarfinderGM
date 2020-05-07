@@ -112,40 +112,38 @@ public class SQLite {
      * Creates the main database file.
      * @param dbName name of database to be created
      */
-    public static void Build(String dbName){
-
+    public static void build(String dbName) {
         Connection c = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:"+dbName+".db");
-        } catch (Exception e){
-            System.out.println(e.getClass().getName()+": "+e.getMessage());
+            c = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".db");
+        } catch (Exception e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
         }
-        System.out.println(dbName+" Created");
+        System.out.println(dbName + " Created");
     }
 
     /**
-     * Creates the tables inside the database file
+     * Creates the tables inside the database file.
      * @param tableName Name of table
      * @param sql the sql string to create the table.
      */
-    public static void createTable(String dbName, String tableName,String sql){
-
+    public static void createTable(String dbName, String tableName,String sql) {
         Connection c;
         Statement stmt;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:"+dbName+".db");
+            c = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".db");
 
             stmt = c.createStatement();
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
-        } catch (Exception e){
-            System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.out.println(tableName+" ERROR");
+            System.out.println(tableName + " table created");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.out.println(tableName + " ERROR");
         }
-        System.out.println(tableName+" table created");
     }
 
     /**
@@ -154,26 +152,24 @@ public class SQLite {
      * @param sqls an array of sqls to add
      * @param tableName the table that the sqls need to be added to
      */
-    public static void AddRecord(String dbName, ArrayList<String> sqls, String tableName){
-
+    public static void AddRecord(String dbName, ArrayList<String> sqls, String tableName) {
         Connection c = null;
         Statement stmt = null;
-        try{
+        try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:"+dbName+".db");
+            c = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".db");
             c.setAutoCommit(false);
             stmt = c.createStatement();
-            for (int i = 0; i <sqls.size() ; i++) {
-                String sql = sqls.get(i);
+            for (String sql : sqls) {
                 stmt.executeUpdate(sql);
             }
             stmt.close();
             c.commit();
             c.close();
 
-        } catch (Exception e){
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.out.println(tableName+" ERROR");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.out.println(tableName + " ERROR");
         }
     }
 

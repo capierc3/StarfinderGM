@@ -1,6 +1,9 @@
+import ships.ShipDatabaseBuilder;
+
 public class Run {
 
     public static void main(String[] args) {
-        Main.main(args);
+        new ShipDatabaseBuilder();
+        //Main.main(args);
     }
 }

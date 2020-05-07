@@ -1,19 +1,13 @@
 package WorldBuilder;
 
 import ArchivesBuilder.SQLite;
-import Equipment.Armor.ArmorUpgrade;
-import Equipment.Armor.Shields;
-import Equipment.Equipment;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import static ArchivesBuilder.SQLite.connect;
 
@@ -32,7 +26,7 @@ public class GalaxyDataBase {
     public GalaxyDataBase(){
         File db = new File("Galaxy.db");
         if (db.exists()) db.delete();
-        SQLite.Build(dbName);
+        SQLite.build(dbName);
         SQLite.createTable(dbName,tables[0], buildTableSQL(new Sector()));
         SQLite.createTable(dbName,tables[1], buildTableSQL(new StarSystem()));
         SQLite.createTable(dbName,tables[2], buildTableSQL(new Star()));
