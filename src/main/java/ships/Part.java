@@ -1,6 +1,4 @@
-package Ships;
-
-import Equipment.Equipment;
+package ships;
 
 import java.util.Comparator;
 

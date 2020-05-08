@@ -1,23 +1,14 @@
 package GUI;
 
-import Ships.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import ships.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-
-import java.util.ArrayList;
-import java.util.EventListener;
 
 public class ShipScreen {
 

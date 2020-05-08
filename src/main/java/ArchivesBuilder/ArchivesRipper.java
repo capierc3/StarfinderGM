@@ -97,14 +97,21 @@ public class ArchivesRipper {
     /**
      * Rips the saved urls that are hardcoded in the final String[][] to text files in the Archives folder.
      */
-    public ArchivesRipper(){
-//        String[][][] site = {weaponPages,armorPages,augmentationsPages,otherItemsPages,miscPages,rulePages,afflictionsPages,spellPages,vehiclePages};
-//        String[] folders = {"Weapons","Armor","Augmentations","Other Items","Misc","Rules","Afflictions","Spells","Vehicles"};
-//        for (int i = 0; i < site.length; i++) {
-//            for (int j = 0; j < site[i].length; j++) {
-//                ripper(site[i][j][0],folders[i],site[i][j][1],1);
-//            }
-//        }
+    public ArchivesRipper() {
+        String[][][] site = {
+            weaponPages, armorPages, augmentationsPages,
+            otherItemsPages, miscPages, rulePages, afflictionsPages,
+            spellPages, vehiclePages
+        };
+        String[] folders = {
+            "Weapons","Armor","Augmentations",
+            "Other Items","Misc","Rules","Afflictions",
+            "Spells","Vehicles"};
+        for (int i = 0; i < site.length; i++) {
+            for (int j = 0; j < site[i].length; j++) {
+                ripper(site[i][j][0],folders[i],site[i][j][1],1);
+            }
+        }
         String[][][] siteType2 = {stillNeed};
         String[] type2Folders = {"random"};
         for (int i = 0; i < siteType2.length; i++) {
@@ -115,19 +122,19 @@ public class ArchivesRipper {
     }
 
     /**
-     * runs the URLRipper and catches any thrown errors
+     * runs the URLRipper and catches any thrown errors.
      * @param url url of page to rip
      * @param folder destination folder
      * @param fileName destination file name
      */
-    private static void ripper(String url,String folder, String fileName,int type){
+    private static void ripper(String url,String folder, String fileName,int type) {
         try {
             if (type == 1) {
                 URLRipper.tablesLayout(url, folder, fileName);
-            } else if (type == 2){
+            } else if (type == 2) {
                 URLRipper.textLayout(url,folder,fileName);
             }
-            System.out.println(folder+"/"+fileName+": Done");
+            System.out.println(folder + "/" + fileName + ": Done");
         } catch (IOException e) {
             e.printStackTrace();
         }

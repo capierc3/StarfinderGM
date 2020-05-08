@@ -1,4 +1,4 @@
-package Ships;
+package ships;
 
 public class ExpansionBay extends Part {
 

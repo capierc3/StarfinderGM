@@ -1,10 +1,7 @@
 package GUI;
 
-import Ships.Makes;
-import Ships.ShipFrame;
-import Ships.ShipYard;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import ships.Makes;
+import ships.ShipYard;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;

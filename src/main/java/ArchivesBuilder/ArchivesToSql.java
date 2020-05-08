@@ -17,7 +17,7 @@ public class ArchivesToSql {
      * main method that creates a new DataBase and loads in the tables and values provided in the Archives folder.
      */
     public ArchivesToSql() {
-        SQLite.Build("database");
+        SQLite.build("database");
         addTables();
         try {
             FillTable("Weapons");
