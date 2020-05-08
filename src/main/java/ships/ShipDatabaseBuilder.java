@@ -1,26 +1,24 @@
 package ships;
 
 import ArchivesBuilder.SQLite;
-
 import java.io.*;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
-
+/**
+ * Class that reads the Website aonsrd.com and turns the ship info into a database file.
+ *
+ * @author Chase
+ */
 public class ShipDatabaseBuilder {
 
     private Elements page;
     private String pageName;
     private Document webDoc;
-    private Elements webElms;
 
     /**
      * Builds a new database of the Ship components from aonsrd.com.
@@ -47,7 +45,7 @@ public class ShipDatabaseBuilder {
      */
     private void read() throws IOException {
         if (page.get(1).text().equalsIgnoreCase("table")) {
-            //tableReader(page.get(0).text());
+            tableReader(page.get(0).text());
         } else {
             textReader(page.get(0).text());
         }
@@ -105,29 +103,38 @@ public class ShipDatabaseBuilder {
         }
     }
 
+    /**
+     * Reads the page element and adds the info to the database for text based pages.
+     * @param url String of the page's url
+     * @throws IOException e
+     */
     private void textReader(String url) throws IOException {
         webDoc = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 "
                         + "(KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36")
                 .timeout(0).followRedirects(true).execute().parse();
+        ArrayList<ArrayList<String>> allHeadings = new ArrayList<>();
+        ArrayList<ArrayList<String>> allValues = new ArrayList<>();
+        ArrayList<String> titles = new ArrayList<>();
         //Finds the information and stores it in arrays.
         Elements blocks = webDoc.getElementsByTag("body");
         Element block = blocks.get(0).getElementById("main");
         block = block.getElementById("ctl00_MainContent_DataListAll");
         blocks = block.getElementsByTag("tr");
-        for (int i = 0; i < blocks.size(); i++) {
+        for (Element value : blocks) {
             ArrayList<String> headings = new ArrayList<>();
             ArrayList<String> values = new ArrayList<>();
-            String title = blocks.get(i).getElementsByClass("title").get(0).text();
-            if (blocks.get(i).getElementsByTag("b").size() == 1) {
-                headings.add(blocks.get(i).getElementsByTag("b").get(0).text());
-                Element a = blocks.get(i).getElementsByTag("b").get(0).nextElementSibling();
+            titles.add(value.getElementsByClass("title").get(0).text());
+            if (value.getElementsByTag("b").size() == 1) {
+                headings.add(value.getElementsByTag("b").get(0).text());
+                Element a = value.getElementsByTag("b").get(0).nextElementSibling();
                 values.add(a.getElementsByTag("i").text());
                 StringBuilder sb = new StringBuilder();
-                for (int j = 0; j < blocks.get(i).getElementsByTag("br").size(); j++) {
-                    Element elm = blocks.get(i).getElementsByTag("br").get(j);
+                for (int j = 0; j < value.getElementsByTag("br").size(); j++) {
+                    Element elm = value.getElementsByTag("br").get(j);
                     while (elm.nextElementSibling() != null) {
-                        sb.append(elm.nextSibling());
+                        String s = elm.nextSibling().toString().replace("'","/");
+                        sb.append(s);
                         if (elm.nextElementSibling().tag().toString().equalsIgnoreCase("a")) {
                             sb.append(elm.nextElementSibling().text());
                             sb.append(elm.nextElementSibling().getElementsByTag("i").text());
@@ -138,32 +145,29 @@ public class ShipDatabaseBuilder {
                 }
                 values.add(sb.toString());
             } else {
-                //Element a = blocks.get(i).getElementsByTag("b").get(0).nextElementSibling();
-                Elements elms = blocks.get(i).getElementsByTag("b");
-                for (int j = 0; j < elms.size(); j++) {
-                    headings.add(elms.get(j).text());
-                    if (elms.get(j).nextSibling().toString()
+                Elements elms = value.getElementsByTag("b");
+                for (Element element : elms) {
+                    headings.add(element.text());
+                    if (element.nextSibling().toString()
                             .equalsIgnoreCase(" ")) {
-                        values.add(blocks.get(i).getElementsByTag("i").text());
+                        values.add(value.getElementsByTag("i").text());
                     } else {
-                        values.add(elms.get(j).nextSibling().toString());
+                        values.add(element.nextSibling().toString());
                     }
                 }
-
-
-
-
-
-            }
-            System.out.println(title);
-            for (int j = 0; j < values.size(); j++) {
-                if (j < headings.size()) {
-                    System.out.print(headings.get(j) + ": ");
+                Element elm = elms.get(elms.size() - 1).nextElementSibling();
+                while (elm.nextSibling() != null) {
+                    if (!elm.nextSibling().toString().contains("<br>")) {
+                        String s = elm.nextElementSibling().toString().replace("'","/");
+                        values.add(s);
+                    }
+                    elm = elm.nextElementSibling();
                 }
-                System.out.print(values.get(j) + "\n");
             }
-            System.out.println();
+            allHeadings.add(headings);
+            allValues.add(values);
         }
+        cleanAndInsert(allHeadings,allValues,titles);
     }
 
 
@@ -223,5 +227,63 @@ public class ShipDatabaseBuilder {
             }
         }
         SQLite.createTable("ships",pageName,table.toString());
+    }
+
+    /**
+     * Takes the arrays from the text reader and turns them into arrays for SQL stings.
+     * @param headings List of all the heading list found for the page.
+     * @param values List of all the value lists for the page.
+     * @param titles String of the titles from the page.
+     */
+    private void cleanAndInsert(ArrayList<ArrayList<String>> headings,
+                               ArrayList<ArrayList<String>> values, ArrayList<String> titles) {
+        int headingHigh = headings.get(0).size();
+        int valuesHigh = values.get(0).size();
+        int headingLow = headings.get(0).size();
+        int headingLowI = 0;
+        int valuesLow = values.get(0).size();
+        int headingDiff = 1;
+        int valuesDiff = 1;
+        for (int i = 1; i < headings.size(); i++) {
+            if (values.get(i).size() < valuesLow) {
+                valuesLow = values.get(i).size();
+                valuesDiff++;
+            } else if (values.get(i).size() > valuesHigh) {
+                valuesHigh = values.get(i).size();
+                valuesDiff++;
+            }
+            if (headings.get(i).size() < headingLow) {
+                headingLow = headings.get(i).size();
+                headingDiff++;
+            } else if (headings.get(i).size() > headingHigh) {
+                headingHigh = headings.get(i).size();
+                headingDiff++;
+            }
+        }
+        ArrayList<String> finalHeadings = new ArrayList<>();
+        finalHeadings.add("Name");
+        finalHeadings.addAll(headings.get(headingLowI));
+        if (headingDiff > 1) {
+            finalHeadings.add("Other");
+        }
+        if (valuesHigh > headingHigh) {
+            finalHeadings.add("info");
+        }
+        ArrayList<ArrayList<String>> finalValues = new ArrayList<>();
+        ArrayList<String> tempValues;
+        for (int i = 0; i < titles.size(); i++) {
+            tempValues = new ArrayList<>();
+            tempValues.add(titles.get(i));
+            for (int j = 0; j < finalHeadings.size() - 1; j++) {
+                if (values.get(i).size() > j) {
+                    tempValues.add(values.get(i).get(j));
+                } else {
+                    tempValues.add("N/A");
+                }
+            }
+            finalValues.add(tempValues);
+        }
+        createTable(finalHeadings);
+        addEntries(finalHeadings,finalValues);
     }
 }
