@@ -6,7 +6,7 @@ public class Shields extends Part {
     private String regen;
 
     public Shields(String line){
-        super(line);
+
         String[] split = line.split("\\?");
         name = name +" "+ split[1];
         totalSP = split[1];

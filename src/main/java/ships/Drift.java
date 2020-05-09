@@ -7,7 +7,7 @@ public class Drift extends Part{
     private String maxSize;
 
     public Drift(String line){
-        super(line);
+
         String[] split = line.split("\\?");
         rating = split[1];
         minPCU = split[2];

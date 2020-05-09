@@ -5,7 +5,7 @@ public class ExpansionBay extends Part {
     private String description;
 
     public ExpansionBay(String line){
-        super(line);
+
     }
 
     public void setDescription(String description) {

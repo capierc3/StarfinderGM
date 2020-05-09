@@ -7,7 +7,6 @@ public class Thruster extends Part {
     private String pilotingMod;
 
     public Thruster(String line){
-        super(line);
         String[] split = line.split("\\?");
         size = split[1];
         speed = split[2];

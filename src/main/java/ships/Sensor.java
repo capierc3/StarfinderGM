@@ -6,7 +6,7 @@ public class Sensor extends Part {
     private String mod;
 
     public Sensor(String line){
-        super(line);
+
         String[] split = line.split("\\?");
         range = split[1];
         mod = split[2];

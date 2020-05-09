@@ -3,7 +3,6 @@ package ships;
 public class Security extends Part{
 
     public Security(String line){
-        super(line);
         pcu = "-";
         partType = "Self Destruct System";
     }

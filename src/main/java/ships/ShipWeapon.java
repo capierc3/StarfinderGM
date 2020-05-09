@@ -9,7 +9,7 @@ public class ShipWeapon extends Part {
     private String type;
 
     public ShipWeapon(String type, String line){
-        super(line);
+
         String[] split = line.split("\\?");
         range = split[1];
         speed = split[2];

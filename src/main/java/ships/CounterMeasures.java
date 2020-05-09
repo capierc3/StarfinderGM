@@ -5,7 +5,6 @@ public class CounterMeasures extends Part {
     private String bonus;
 
     public CounterMeasures(String line){
-        super(line);
         String[] split = line.split("\\?");
         bonus = split[1];
         partType = "Counter Measures";

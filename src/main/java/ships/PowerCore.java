@@ -5,7 +5,7 @@ public class PowerCore extends Part {
     private String size;
 
     public PowerCore(String line) {
-        super(line);
+
         String[] split = line.split("\\?");
         name = split[0];
         size = split[1];

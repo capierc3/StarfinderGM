@@ -396,7 +396,7 @@ public class ShipYard {
             "Mk 14 armor?+14?–3 TL, +2 turn distance ?40 × size category",
             "Mk 15 armor?+15?–4 TL, +3 turn distance ?45 × size category"};
         for (String s:armorsStrings) {
-            armors.add(new Armor(s));
+            armors.add(new Armor());
         }
     }
 

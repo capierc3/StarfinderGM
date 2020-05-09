@@ -96,7 +96,7 @@ public class ShipScreen {
     }
     private static Node armor(){
         ComboBox<Armor> box = new ComboBox<>();
-        box.getItems().add(new Armor("None?-?-?-"));
+        box.getItems().add(new Armor());
         box.getItems().addAll(shipYard.getArmors());
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
