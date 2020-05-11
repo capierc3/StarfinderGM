@@ -8,11 +8,7 @@ public class Armor extends Part {
     private String special;
 
     public Armor() {
-        super();
-//        bonusAc = line.split("\\?")[1];
-//        special = line.split("\\?")[2];
-//        cost = line.split("\\?")[3];
-        pcu = "-";
+
     }
 
     public Armor(ArrayList<String> list) {
@@ -37,5 +33,10 @@ public class Armor extends Part {
                 + "\nBonus to AC: " + bonusAc
                 + "\nSpecial: " + special
                 + toStringBTM();
+    }
+
+    @Override
+    public String getTableName() {
+        return "armor";
     }
 }

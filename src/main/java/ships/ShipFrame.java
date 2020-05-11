@@ -7,61 +7,39 @@ import java.util.ArrayList;
  *
  * @author Chase
  */
-public class ShipFrame implements ShipComponent {
+public class ShipFrame extends Part {
 
     private String name;
     private String size;
     private String maneuver;
-    private Integer hp;
-    private Integer dt;
-    private Integer ct;
+    private String hp;
+    private String dt;
+    private String ct;
     private String mounts;
     private String bays;
     private String minCrew;
     private String maxCrew;
     private String cost;
-    private Integer hpInc;
+    private String hpInc;
+    private String source;
+    private String other;
 
-    /**
-     * Constructor that takes the list of frame info strings and sets them to the correct variable.
-     * @param strings ArrayList
-     */
-    public ShipFrame(ArrayList<String> strings) {
+    public ShipFrame() {}
 
-        name = strings.get(0);
-        size = strings.get(1).replace("Size ","");
-        maneuver = strings.get(2).replace("Maneuverability ","");
-
-        String[] split = strings.get(3).split(";");
-        String hpString = split[0].replace("HP ","");
-        int space = hpString.length();
-        for (int i = 0; i < hpString.length(); i++) {
-            if (hpString.charAt(i) == ' ') {
-                space = i;
-                break;
-            }
-        }
-        hp = Integer.parseInt(hpString.substring(0,space));
-        hpInc = Integer.parseInt(hpString.substring(space + 2,hpString.length() - 1)
-                .replace("increment ",""));
-        String dtString = split[1].replace(" DT ","");
-
-        if (dtString.length() == 3) {
-            dt = 0;
-        } else {
-            dt = Integer.parseInt(dtString.replace(" ", ""));
-        }
-        ct = Integer.parseInt(split[2].replace(" CT ",""));
-
-        mounts = strings.get(4).replace("Mounts ","");
-
-        bays = strings.get(5).replace("Expansion Bays ","");
-
-        split = strings.get(6).split(";");
-        minCrew = split[0].replace("Minimum Crew ","");
-        maxCrew = split[1].replace(" Maximum Crew ","");
-
-        cost = strings.get(7).replace("Cost ","");
+    public ShipFrame(ArrayList<String> list) {
+        name = list.get(0);
+        source = list.get(1);
+        size = list.get(2);
+        maneuver = list.get(3);
+        hp = list.get(4);
+        dt = list.get(5);
+        ct = list.get(6);
+        mounts = list.get(7);
+        bays = list.get(8);
+        minCrew = list.get(9);
+        maxCrew = list.get(10);
+        cost = list.get(11);
+        other = list.get(12);
     }
 
     //Getters
@@ -78,15 +56,15 @@ public class ShipFrame implements ShipComponent {
     }
 
     public Integer getHp() {
-        return hp;
+        return 0;
     }
 
     public Integer getDt() {
-        return dt;
+        return 0;
     }
 
     public Integer getCt() {
-        return ct;
+        return 0;
     }
 
     public String getMounts() {
@@ -110,7 +88,7 @@ public class ShipFrame implements ShipComponent {
     }
 
     public Integer getHpInc() {
-        return hpInc;
+        return 0;
     }
 
     /**
@@ -135,7 +113,23 @@ public class ShipFrame implements ShipComponent {
      */
     @Override
     public String toString() {
-        return name;
+        return "Name: " + name
+                + "\nSource: " + source
+                + "\nSize: " + size
+                + "\nManeuverability: " + maneuver
+                + "\nHp: " + hp
+                + "\nDT: " + dt
+                + "\nCT: " + ct
+                + "\nMounts: " + mounts
+                + "\nBays: " + bays
+                + "\nCrew: " + minCrew + " - " + maxCrew
+                + "\nCost: " + cost
+                + "\nOther: " + other;
+    }
+
+    @Override
+    public String getTableName() {
+        return "baseframes";
     }
 
     /**

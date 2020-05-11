@@ -39,7 +39,7 @@ public class TopBar {
         newShip.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                ShipScreen.RunNewShip(root);
+                //ShipScreen.RunNewShip(root);
             }
         });
         MenuItem viewShips = new MenuItem("View Ships");

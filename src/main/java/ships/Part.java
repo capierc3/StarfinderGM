@@ -1,5 +1,7 @@
 package ships;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Comparator;
 
 public abstract class Part implements ShipComponent {
@@ -8,6 +10,8 @@ public abstract class Part implements ShipComponent {
     protected String pcu;
     protected String partType;
     protected String name;
+    protected String source;
+    protected String info;
 
     protected Part(){
 

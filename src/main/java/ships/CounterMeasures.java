@@ -1,18 +1,20 @@
 package ships;
 
+import java.util.ArrayList;
+
 public class CounterMeasures extends Part {
 
     private String bonus;
 
-    public CounterMeasures(String line){
-        String[] split = line.split("\\?");
-        bonus = split[1];
-        partType = "Counter Measures";
+    public CounterMeasures(){
+
     }
-    public CounterMeasures(int none){
-        super(none);
-        partType = "Counter Measures";
-        bonus = "-";
+
+    public CounterMeasures(ArrayList<String> list) {
+        name = list.get(0);
+        bonus = list.get(1);
+        pcu = list.get(2);
+        cost = list.get(3);
     }
 
     public String getBonus() {
@@ -21,8 +23,13 @@ public class CounterMeasures extends Part {
 
     @Override
     public String toString() {
-        return toStringTop()+
-                "\nBonus To TL: "+bonus+
-                toStringBTM();
+        return toStringTop()
+                + "\nBonus To TL: " + bonus
+                + toStringBTM();
+    }
+
+    @Override
+    public String getTableName() {
+        return "countermeasures";
     }
 }

@@ -7,5 +7,5 @@
 /target/
 /tools/
 StarfinderGM.iml
-src/test/test.iml
+src/ShipDatabaseTest/ShipDatabaseTest.iml
 src/main/main.iml

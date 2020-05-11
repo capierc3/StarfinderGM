@@ -6,7 +6,7 @@ public class ShipTier implements ShipComponent {
     private String buildPoints;
     private String special;
 
-    public ShipTier(String line){
+    public ShipTier(String line) {
         String[] split = line.split("\\?");
         tier = split[0];
         buildPoints = split[1];
@@ -18,12 +18,19 @@ public class ShipTier implements ShipComponent {
         return tier;
     }
 
+    @Override
+    public String getTableName() {
+        return null;
+    }
+
     public String getTier() {
         return tier;
     }
+
     public String getBuildPoints() {
         return buildPoints;
     }
+
     public String getSpecial() {
         return special;
     }

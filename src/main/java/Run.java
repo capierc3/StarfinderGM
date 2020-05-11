@@ -1,7 +1,4 @@
-import ships.Armor;
-import ships.Part;
-import ships.ShipDatabaseBuilder;
-import ships.ShipYardNew;
+import ships.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,7 +6,8 @@ import java.util.ArrayList;
 public class Run {
 
     public static void main(String[] args) {
-        ArrayList<Part> armors = ShipYardNew.getParts(new Armor());
+        ArrayList<Part> armors;
+        armors = ShipYard.getParts(new Drift());
         System.out.println("------------------");
         for (Part part: armors) {
             System.out.println(part);

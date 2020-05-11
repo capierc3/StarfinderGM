@@ -1,15 +1,18 @@
 package ships;
 
+import java.util.ArrayList;
+
 public class PowerCore extends Part {
 
     private String size;
 
-    public PowerCore(String line) {
+    public PowerCore() {}
 
-        String[] split = line.split("\\?");
-        name = split[0];
-        size = split[1];
-        partType = "Power Core";
+    public PowerCore(ArrayList<String> list) {
+        name = list.get(0);
+        size = list.get(1);
+        pcu = list.get(2);
+        cost = list.get(3);
     }
 
     public String getSize() {
@@ -18,8 +21,13 @@ public class PowerCore extends Part {
 
     @Override
     public String toString() {
-        return toStringTop()+
-                "\nSize: "+size+
-                toStringBTM();
+        return toStringTop()
+                + "\nSize: " + size
+                + toStringBTM();
+    }
+
+    @Override
+    public String getTableName() {
+        return "cores";
     }
 }
