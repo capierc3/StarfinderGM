@@ -1,15 +1,21 @@
 package ships;
 
+import java.util.ArrayList;
+
 public class Armor extends Part {
 
     private String bonusAc;
     private String special;
 
-    public Armor(String line) {
-        super(line);
-        bonusAc = line.split("\\?")[1];
-        special = line.split("\\?")[2];
-        cost = line.split("\\?")[3];
+    public Armor() {
+
+    }
+
+    public Armor(ArrayList<String> list) {
+        name = list.get(0);
+        bonusAc = list.get(1);
+        special = list.get(2);
+        cost = list.get(3);
         pcu = "-";
     }
 
@@ -23,9 +29,14 @@ public class Armor extends Part {
 
     @Override
     public String toString() {
-        return toStringTop()+
-                "\nBonus to AC: "+ bonusAc+
-                "\nSpecial: "+special+
-                toStringBTM();
+        return toStringTop()
+                + "\nBonus to AC: " + bonusAc
+                + "\nSpecial: " + special
+                + toStringBTM();
+    }
+
+    @Override
+    public String getTableName() {
+        return "armor";
     }
 }

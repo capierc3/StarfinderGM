@@ -1,5 +1,7 @@
 package ships;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Comparator;
 
 public abstract class Part implements ShipComponent {
@@ -8,15 +10,15 @@ public abstract class Part implements ShipComponent {
     protected String pcu;
     protected String partType;
     protected String name;
+    protected String source;
+    protected String info;
 
-    protected Part(String line){
-        String[] split = line.split("\\?");
-        name = split[0];
-        cost = split[split.length-1];
-        pcu = split[split.length-2];
+    protected Part(){
+
     }
+
     //For "None" option//
-    protected Part(int i){
+    protected Part(int i) {
         name = "None";
         cost = "-";
         pcu = "-";
@@ -25,39 +27,51 @@ public abstract class Part implements ShipComponent {
     public String getPcu() {
         return pcu;
     }
+
     public String getCost() {
         return cost;
     }
+
     public String getName() {
         return name;
     }
 
-    protected String toStringTop(){
-        return "Name: "+name;
-    }
-    protected String toStringBTM(){
-        return "\nPCU: "+pcu+
-                "\nCost: "+cost;
+    protected String toStringTop() {
+        return "Name: " + name;
     }
 
-    public Integer getCostInt(){
-        if (cost==null) return 0;
-        if (cost.equalsIgnoreCase("-"))return 0;
-        if (cost.contains(" × size category")) {
-            return (-1*Integer.parseInt(cost.replace(" × size category","")));
+    protected String toStringBTM() {
+        return "\nPCU: " + pcu
+                + "\nCost: " + cost;
+    }
+
+    public Integer getCostInt() {
+        if (cost == null) {
+            return 0;
         }
-        if (cost.contains("+ item level of weapon")){
-            return (-1*Integer.parseInt(cost.replace("+ item level of weapon","")));
+        if (cost.equalsIgnoreCase("-")) {
+            return 0;
+        }
+        if (cost.contains(" × size category")) {
+            return (-1 * Integer.parseInt(cost.replace(" × size category","")));
+        }
+        if (cost.contains("+ item level of weapon")) {
+            return (-1 * Integer.parseInt(cost.replace("+ item level of weapon","")));
         }
         return Integer.parseInt(cost);
     }
-    public Integer getPcuInt(){
-        if (pcu==null)return 0;
-        if (pcu.equalsIgnoreCase("-"))return 0;
+
+    public Integer getPcuInt() {
+        if (pcu == null) {
+            return 0;
+        }
+        if (pcu.equalsIgnoreCase("-")) {
+            return 0;
+        }
         return Integer.parseInt(pcu);
     }
 
-    public static Comparator<Part> compareCost(){
+    public static Comparator<Part> compareCost() {
         return new Comparator<Part>() {
             @Override
             public int compare(Part o1, Part o2) {
@@ -65,7 +79,8 @@ public abstract class Part implements ShipComponent {
             }
         };
     }
-    public static Comparator<Part> comparePCU(){
+
+    public static Comparator<Part> comparePCU() {
         return new Comparator<Part>() {
             @Override
             public int compare(Part o1, Part o2) {

@@ -1,17 +1,20 @@
 package ships;
 
+import java.util.ArrayList;
+
 public class Shields extends Part {
 
     private String totalSP;
     private String regen;
 
-    public Shields(String line){
-        super(line);
-        String[] split = line.split("\\?");
-        name = name +" "+ split[1];
-        totalSP = split[1];
-        regen = split[2];
-        partType = "Shield";
+    public Shields() {}
+
+    public Shields(ArrayList<String> list) {
+        name = list.get(0);
+        totalSP = list.get(1);
+        regen = list.get(2);
+        pcu = list.get(3);
+        cost = list.get(4);
     }
 
     public String getRegen() {
@@ -24,9 +27,14 @@ public class Shields extends Part {
 
     @Override
     public String toString() {
-        return toStringTop()+
-                "\nTotal SP: "+totalSP+
-                "\nRegen: "+regen+
-                toStringBTM();
+        return toStringTop()
+                + "\nTotal SP: " + totalSP
+                + "\nRegen: " + regen
+                + toStringBTM();
+    }
+
+    @Override
+    public String getTableName() {
+        return "shields";
     }
 }

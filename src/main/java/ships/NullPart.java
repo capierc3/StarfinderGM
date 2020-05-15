@@ -1,8 +1,13 @@
 package ships;
 
-public class NullPart extends Part{
+public class NullPart extends Part {
 
     public NullPart() {
-        super("None?-?-");
+
+    }
+
+    @Override
+    public String getTableName() {
+        return null;
     }
 }
