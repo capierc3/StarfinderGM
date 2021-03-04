@@ -37,8 +37,7 @@ public class TopBar {
         Menu ship = new Menu("Ship");
         MenuItem newShip = new MenuItem("New Ship");
         newShip.setOnAction(actionEvent -> {
-            System.out.println("Currently off");
-            //ShipScreen.RunNewShip(root);
+            ShipScreen.RunNewShip(root);
         });
         MenuItem viewShips = new MenuItem("View Ships");
         MenuItem makes = new MenuItem("Manufacturers");

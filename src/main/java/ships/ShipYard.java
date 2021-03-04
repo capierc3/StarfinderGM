@@ -15,6 +15,25 @@ import java.util.ArrayList;
 public class ShipYard {
 
     private static final String databaseName = "ships";
+    public enum ShipTables {
+        armor,
+        baseframes,
+        computers,
+        cores,
+        countermeasures,
+        drift,
+        expansion,
+        other,
+        properties,
+        quarters,
+        security,
+        sensors,
+        shields,
+        thrusters,
+        weapons
+    }
+
+    private StarShip ship;
 
     /**
      * returns the names of the items in the table.
@@ -22,19 +41,24 @@ public class ShipYard {
      * @return ArrayList of strings
      * @throws SQLException e
      */
-    public static ArrayList<String> getNames(String tableName) throws SQLException {
-        ArrayList<String> names = new ArrayList<>();
-        String sql = "SELECT * FROM " + tableName;
-        Connection conn = connect(databaseName);
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()) {
-            names.add(rs.getString(1));
+    public static ArrayList<String> getNames(String tableName) {
+        try {
+            ArrayList<String> names = new ArrayList<>();
+            String sql = "SELECT * FROM " + tableName;
+            Connection conn = connect(databaseName);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                names.add(rs.getString(1));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+            return names;
+        } catch (SQLException e) {
+            System.out.println("getNames() error");
+            return new ArrayList<>();
         }
-        rs.close();
-        stmt.close();
-        conn.close();
-        return names;
     }
 
     /**
@@ -58,9 +82,11 @@ public class ShipYard {
         return parts;
     }
 
-
-    public ArrayList<Makes> getMakes() {
-        //TODO
+    /**
+     * TODO
+     * @return
+     */
+    public static ArrayList<Makes> getMakes() {
         return new ArrayList<>();
     }
 
@@ -91,4 +117,35 @@ public class ShipYard {
         conn.close();
         return items;
     }
+
+
+//TODO: Ship building and shopping cart
+    /**
+     * Starts a new ship builder
+     * @param ship Starship object
+     */
+    public void newBuild(StarShip ship) {
+        this.ship = ship;
+    }
+
+    public void buyPart(Part part) {
+
+    }
+
+    public void returnPart(Part part) {
+
+    }
+
+    public int getBuildPoints() {
+        return 0;
+    }
+
+    public int getPcuLeft() {
+        return 0;
+    }
+
+    public ArrayList<Part> getCart() {
+        return new ArrayList<>();
+    }
+
 }

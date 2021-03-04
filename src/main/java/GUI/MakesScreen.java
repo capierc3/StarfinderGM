@@ -28,7 +28,7 @@ public class MakesScreen {
         ScrollPane pane = new ScrollPane();
         pane.setStyle("-fx-border-color: #001d2d; -fx-border-width: 0 5");
         VBox box = new VBox();
-        for (Makes make: shipYard.getMakes()) {
+        for (Makes make: ShipYard.getMakes()) {
             Button btn = new Button(make.getName());
             btn.setOnAction(actionEvent -> {
                 setCenter(make);

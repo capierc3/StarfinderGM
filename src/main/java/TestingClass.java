@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class TestingClass {
 
     public static void main(String[] args) {
-        try {
             Scanner in = new Scanner(System.in);
             ArrayList<String> names = ShipYard.getNames("cores");
             int i = 1;
@@ -20,9 +19,5 @@ public class TestingClass {
             int sel = in.nextInt();
             PowerCore core = (PowerCore) ShipYard.getParts(new PowerCore()).get(sel - 1);
             System.out.println(core.toString());
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
     }
 }

@@ -273,7 +273,7 @@ public class StarShip {
         this.minCrew = Integer.parseInt(frame.getMinCrew());
         this.crew = new SFCharacter[this.maxCrew];
         this.maneuver = frame.getManeuver();
-        if (frame.getBays().equalsIgnoreCase("—")){
+        if (frame.getBays().equalsIgnoreCase(" —")){
             this.bays = new Part[0];
         } else if (frame.getBays().contains("(")){
             String temp = "";

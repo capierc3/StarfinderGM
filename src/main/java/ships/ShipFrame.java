@@ -76,11 +76,12 @@ public class ShipFrame extends Part {
     }
 
     public String getMinCrew() {
-        return minCrew;
+        return maxCrew.replaceAll("[^0-9]","");
     }
 
     public String getMaxCrew() {
-        return maxCrew;
+        //String temp = maxCrew.replace(" ","");
+        return maxCrew.replaceAll("[^0-9]","");
     }
 
     public String getCost() {
