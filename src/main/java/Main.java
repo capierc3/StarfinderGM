@@ -1,5 +1,7 @@
 import GUI.SFText;
 import GUI.TopBar;
+import WorldBuilder.Diagrams;
+import WorldBuilder.GalaxyDataBase;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -18,14 +20,11 @@ public class Main extends Application{
         //Center//
         Text txt = SFText.create("Starfinder 1.0",50);
         root.setCenter(txt);
-        //Diagrams.drawLocalMap(GalaxyDataBase.findSystem("Su"),root);
         //Top Bar//
         TopBar bar = new TopBar(root);
         root.setTop(bar.getBar());
         root.setStyle("-fx-background-color: #0d3849;");
         root.getStylesheets().add(getClass().getResource("Styles.css").toString());
-
-
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("StarFinder");
