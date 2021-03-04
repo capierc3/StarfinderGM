@@ -9,3 +9,7 @@
 StarfinderGM.iml
 src/ShipDatabaseTest/ShipDatabaseTest.iml
 src/main/main.iml
+.gradle/
+gradle/
+gradlew
+gradlew.bat
