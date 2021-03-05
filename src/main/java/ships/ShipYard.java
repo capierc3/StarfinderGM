@@ -90,6 +90,47 @@ public class ShipYard {
         return new ArrayList<>();
     }
 
+    //TODO BAD FIX! based on import order to database!
+    public static ArrayList<ShipWeapon> getWeaponsByType(String wType) {
+        try {
+            ArrayList<ArrayList<String>> weaponsStrings = getItemStrings(ShipTables.weapons.toString());
+            ArrayList<ShipWeapon> weapons = new ArrayList<>();
+            int start;
+            switch (wType) {
+                case "Light":
+                    start = 0;
+                    break;
+                case "Heavy":
+                    start = 1;
+                    break;
+                case "Capital":
+                    start = 2;
+                    break;
+                default:
+                    start = 3;
+                    break;
+            }
+            int pos = 0;
+            boolean sw = true;
+            for (ArrayList<String> weaponsString : weaponsStrings) {
+                boolean temp = weaponsString.get(1).equalsIgnoreCase("Direct-Fire");
+                if (!sw && temp) {
+                   pos++;
+                }
+                sw = temp;
+                if (pos == start) {
+                    weapons.add(new ShipWeapon(weaponsString));
+                } else if (pos > start) {
+                    return weapons;
+                }
+            }
+            return weapons;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+
     /**
      * Returns a list of different lists of strings for each row in the table.
      * @param tableName String of the table to be pulled from

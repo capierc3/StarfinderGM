@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class ShipScreen {
@@ -302,25 +303,25 @@ public class ShipScreen {
         vBox.getChildren().addAll(SFText.create("Select The Shields You Want."),box,btn);
         return vBox;
     }
-//    private static Node weapons(String key){
-//        String type = key.substring(key.indexOf('(')+1,key.indexOf(')'));
-//        type = type.replace(type.charAt(0),Character.toUpperCase(type.charAt(0)));
-//        ComboBox<ShipWeapon> box = new ComboBox<>();
-//        box.getItems().addAll(shipYard.getWeaponsByType(type));
-//        Button btn = new Button("Buy");
-//        btn.setOnAction(actionEvent -> {
-//            ShipWeapon weapon = box.getValue();
-//            ship.getWeapons().put(key,weapon);
-//            shipYard.buyPart(weapon);
-//            currentShip(ship);
-//            shoppingCart(shipYard);
-//            root.setCenter(SFText.create("Choose Which Weapon To Add On Side "));
-//        });
-//        VBox vBox = new VBox();
-//        vBox.setAlignment(Pos.CENTER);
-//        vBox.getChildren().addAll(SFText.create("Select Your Weapons."),box,btn);
-//        return vBox;
-//    }
+    private static Node weapons(String key){
+        String type = key.substring(key.indexOf('(')+1,key.indexOf(')'));
+        type = type.replace(type.charAt(0),Character.toUpperCase(type.charAt(0)));
+        ComboBox<ShipWeapon> box = new ComboBox<>();
+        box.getItems().addAll(ShipYard.getWeaponsByType(type));
+        Button btn = new Button("Buy");
+        btn.setOnAction(actionEvent -> {
+            ShipWeapon weapon = box.getValue();
+            ship.getWeapons().put(key,weapon);
+            shipYard.buyPart(weapon);
+            currentShip(ship);
+            shoppingCart(shipYard);
+            root.setCenter(SFText.create("Choose Which Weapon To Add On Side "));
+        });
+        VBox vBox = new VBox();
+        vBox.setAlignment(Pos.CENTER);
+        vBox.getChildren().addAll(SFText.create("Select Your Weapons."),box,btn);
+        return vBox;
+    }
 
 
     //Current Ship(Left Bar)//
@@ -383,9 +384,29 @@ public class ShipScreen {
             HBox sensor = currentPartBox("Sensors: "+displayPart(ship.getSensor()),11);
             Text weapons = SFText.create(" Weapons: ");
             vBox.getChildren().addAll(shield,sensor,weapons);
-//            for (String key: ship.getWeapons().keySet()) {
-//                vBox.getChildren().add(weaponBox(key));
-//            }
+            ArrayList<HBox> forward = new ArrayList<>();
+            ArrayList<HBox> starboard = new ArrayList<>();
+            ArrayList<HBox> aft = new ArrayList<>();
+            ArrayList<HBox> port = new ArrayList<>();
+            ArrayList<HBox> other = new ArrayList<>();
+            for (String key: ship.getWeapons().keySet()) {
+                if (key.contains("forward")) {
+                    forward.add(weaponBox(key));
+                } else if (key.contains("starboard")) {
+                    starboard.add(weaponBox(key));
+                } else if (key.contains("aft")) {
+                    aft.add(weaponBox(key));
+                } else if (key.contains("port")) {
+                    port.add(weaponBox(key));
+                } else {
+                    other.add(weaponBox(key));
+                }
+            }
+            vBox.getChildren().addAll(forward);
+            vBox.getChildren().addAll(starboard);
+            vBox.getChildren().addAll(aft);
+            vBox.getChildren().addAll(port);
+            vBox.getChildren().addAll(other);
         } else {
             HBox current = currentPartBox("Current Ship:\n\tSet Tier and Frame",0);
             vBox.getChildren().addAll(current);
@@ -447,26 +468,26 @@ public class ShipScreen {
         }
         return box;
     }
-//    private static HBox weaponBox(String key){
-//        HBox box = new HBox();
-//        box.setStyle("-fx-border-color: #001d2d; -fx-border-width: 0 0 4 0");
-//        //Text text = SFText.create("\t"+key.substring(0,key.indexOf(" "))+": "+displayPart(ship.getWeapons().get(key)));
-//        Text text = SFText.create("\t"+key+": "+displayPart(ship.getWeapons().get(key)));
-//        Region region1 = new Region();
-//        HBox.setHgrow(region1, Priority.ALWAYS);
-//        Button btn = weaponAddReplace(key,displayPart(ship.getWeapons().get(key)));
-//        box.getChildren().addAll(text,region1,btn);
-//        box.setAlignment(Pos.CENTER_LEFT);
-//        return box;
-//    }
-//    private static Button weaponAddReplace(String key,String addReplace){
-//        Button btn = new Button("Replace");
-//        if (addReplace.contains("-")) btn.setText("Add");
-//        btn.setOnAction(actionEvent -> {
-//            root.setCenter(weapons(key));
-//        });
-//        return btn;
-//    }
+    private static HBox weaponBox(String key){
+        HBox box = new HBox();
+        box.setStyle("-fx-border-color: #001d2d; -fx-border-width: 0 0 4 0");
+        //Text text = SFText.create("\t"+key.substring(0,key.indexOf(" "))+": "+displayPart(ship.getWeapons().get(key)));
+        Text text = SFText.create("\t"+key+": "+displayPart(ship.getWeapons().get(key)));
+        Region region1 = new Region();
+        HBox.setHgrow(region1, Priority.ALWAYS);
+        Button btn = weaponAddReplace(key,displayPart(ship.getWeapons().get(key)));
+        box.getChildren().addAll(text,region1,btn);
+        box.setAlignment(Pos.CENTER_LEFT);
+        return box;
+    }
+    private static Button weaponAddReplace(String key,String addReplace){
+        Button btn = new Button("Replace");
+        if (addReplace.contains("-")) btn.setText("Add");
+        btn.setOnAction(actionEvent -> {
+            root.setCenter(weapons(key));
+        });
+        return btn;
+    }
     private static HBox currentPartBox(String s,int i){
         HBox box = new HBox();
         box.setStyle("-fx-border-color: #001d2d; -fx-border-width: 0 0 4 0");

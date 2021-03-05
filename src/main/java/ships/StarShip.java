@@ -246,25 +246,43 @@ public class StarShip {
     public void setFrame(ShipFrame frame) {
         String[] mounts = frame.getMounts().split(",");
         weapons = new HashMap<>();
+        String loc = "";
         for (String s : mounts) {
-            String loc = s.substring(0,s.indexOf('('))
-                    .replace(" arc","")
-                    .replace(" ","");
-            String amtType = s.substring(s.indexOf('(')+1,s.indexOf(')'));
-            String[] amtTypeArray;
-            if (amtType.contains("/")){
-                amtTypeArray = amtType.split("/");
-            } else {
-                amtTypeArray = new String[]{amtType};
-            }
-            for (String s2:amtTypeArray) {
-                String amt = s2.substring(0,1);
-                String type= s2.substring(2);
-                if (amt.equalsIgnoreCase("1")){
-                    weapons.put(loc+" ("+type+")",null);
+            if (Character.isDigit(s.charAt(1))) {
+                String amt = s.substring(1, 2);
+                String type = s.substring(3).replace(")","");
+                if (amt.equalsIgnoreCase("1")) {
+                    weapons.put(loc + " (" + type + ")", null);
                 } else {
                     for (int i = 0; i < Integer.parseInt(amt); i++) {
-                        weapons.put(loc + " " + (i+1) + " (" + type + ")", null);
+                        weapons.put(loc + " " + (i + 1) + " (" + type + ")", null);
+                    }
+                }
+            } else {
+                loc = s.substring(0, s.indexOf('('))
+                        .replace(" arc", "")
+                        .replace(" ", "");
+                String amtType;
+                if (s.charAt(s.length() - 1) != ')') {
+                    amtType = s.substring(s.indexOf('(') + 1, s.length() - 1);
+                } else {
+                    amtType = s.substring(s.indexOf('(') + 1, s.indexOf(')'));
+                }
+                String[] amtTypeArray;
+                if (amtType.contains("/")) {
+                    amtTypeArray = amtType.split("/");
+                } else {
+                    amtTypeArray = new String[]{amtType};
+                }
+                for (String s2 : amtTypeArray) {
+                    String amt = s2.substring(0, 1);
+                    String type = s2.substring(2);
+                    if (amt.equalsIgnoreCase("1")) {
+                        weapons.put(loc + " (" + type + ")", null);
+                    } else {
+                        for (int i = 0; i < Integer.parseInt(amt); i++) {
+                            weapons.put(loc + " " + (i + 1) + " (" + type + ")", null);
+                        }
                     }
                 }
             }
@@ -273,7 +291,7 @@ public class StarShip {
         this.minCrew = Integer.parseInt(frame.getMinCrew());
         this.crew = new SFCharacter[this.maxCrew];
         this.maneuver = frame.getManeuver();
-        if (frame.getBays().equalsIgnoreCase(" —")){
+        if (frame.getBays().equalsIgnoreCase("")){
             this.bays = new Part[0];
         } else if (frame.getBays().contains("(")){
             String temp = "";
@@ -285,6 +303,7 @@ public class StarShip {
             temp = temp.replace(" ","");
             this.bays = new Part[Integer.parseInt(temp)];
         } else {
+
             this.bays = new Part[Integer.parseInt(frame.getBays())];
         }
         this.size = frame.getSize();

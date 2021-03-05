@@ -72,7 +72,7 @@ public class ShipFrame extends Part {
     }
 
     public String getBays() {
-        return bays;
+        return bays.replaceAll("[^0-9]","");
     }
 
     public String getMinCrew() {
