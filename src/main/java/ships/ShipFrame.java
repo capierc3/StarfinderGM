@@ -55,17 +55,30 @@ public class ShipFrame extends Part {
         return maneuver;
     }
 
-    public Integer getHp() {
-        return 0;
+    public int[] getHp() {
+        String[] split = hp.split(" ");
+        int[] hpInc = {0,0};
+        try {
+            hpInc[0] = Integer.parseInt(split[1]);
+            hpInc[1] = Integer.parseInt(split[3].replace(");",""));
+        } catch (NumberFormatException e) {
+            System.out.println("ERROR getHP SHIP FRAME");
+        }
+        return hpInc;
     }
+
 
     public Integer getDt() {
-        return 0;
+        try {
+            return Integer.parseInt(dt.replaceAll("[^0-9]",""));
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
-    public Integer getCt() {
-        return 0;
-    }
+//    public Integer getCt() {
+//        return getHp() / 5;
+//    }
 
     public String getMounts() {
         return mounts;
@@ -86,10 +99,6 @@ public class ShipFrame extends Part {
 
     public String getCost() {
         return cost;
-    }
-
-    public Integer getHpInc() {
-        return 0;
     }
 
     /**

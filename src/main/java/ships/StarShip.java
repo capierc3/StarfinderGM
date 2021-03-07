@@ -16,11 +16,7 @@ public class StarShip {
     private String speed;
     private String maneuver;
     private String driftRating;
-    private Integer ac;
-    private Integer tl;
-    private Integer hp;
     private Integer dt;
-    private Integer ct;
     private Integer hpInc;
     private Integer shieldTotal;
     private Integer regenPerMin;
@@ -85,19 +81,23 @@ public class StarShip {
         return driftRating;
     }
     public Integer getAc() {
-        return ac;
+        return 10 - getSizeACTL() + getArmorACTL()[0];
     }
     public Integer getTl() {
-        return tl;
+        return 10 - getSizeACTL() + getArmorACTL()[1] + getDCM_TL();
     }
     public Integer getHp() {
-        return hp;
+        int hpInc = 0;
+        if (!tier.getTier().contains("/")) {
+            hpInc = Integer.parseInt(tier.getTier()) / 4;
+        }
+        return frame.getHp()[0] + (hpInc * frame.getHp()[1]);
     }
     public Integer getDt() {
         return dt;
     }
     public Integer getCt() {
-        return ct;
+        return getHp() / 5;
     }
     public Integer getShieldTotal() {
         return shieldTotal;
@@ -137,25 +137,25 @@ public class StarShip {
     }
     public int getSizeMod(){
         switch (size){
-            case "Tiny":
+            case " Tiny":
                 return 1;
-            case "Small":
+            case " Small":
                 return 2;
-            case "Medium":
+            case " Medium":
                 return 3;
-            case "Large":
+            case " Large":
                 return 4;
-            case "Huge":
+            case " Huge":
                 return 5;
-            case "Gargantuan":
+            case " Gargantuan":
                 return 6;
-            case "Colossal":
+            case " Colossal":
                 return 7;
         }
         return 0;
     }
     public int getSizeACTL(){
-        switch (size){
+        switch (size.replace(" ","")){
             case "Tiny":
                 return -2;
             case "Small":
@@ -168,10 +168,9 @@ public class StarShip {
                 return 2;
             case "Gargantuan":
                 return 4;
-            case "Colossal":
+            default:
                 return 8;
         }
-        return 0;
     }
     public Sensor getSensor() {
         return sensor;
@@ -182,15 +181,37 @@ public class StarShip {
     public int getTurn() {
         return turn;
     }
+    private int[] getArmorACTL() {
+        try {
+            int[] acTl = {0, 0};
+            if (armor.getBonusAc().contains("+")) {
+                acTl[0] = Integer.parseInt(armor.getBonusAc().replace("+", ""));
+            }
+            if (!armor.getSpecial().equalsIgnoreCase("—")) {
+                String tl = armor.getSpecial().split(",")[0];
+                acTl[1] = Integer.parseInt(tl.replace(" TL", ""));
+            }
+            return acTl;
+        } catch (NullPointerException e) {
+            return new int[]{0,0};
+        }
+    }
+    private int getDCM_TL() {
+        try {
+            if (!counterMeasures.getBonus().equalsIgnoreCase("-")) {
+                return Integer.parseInt(counterMeasures.getBonus().replace("+", ""));
+            }
+            return 0;
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
 
     public void setComputer(ShipComputer computer) {
         this.computer = computer;
     }
     public void setCounterMeasures(CounterMeasures counterMeasures) {
         this.counterMeasures = counterMeasures;
-        if (!counterMeasures.getBonus().equalsIgnoreCase("-")) {
-            this.tl = tl + Integer.parseInt(counterMeasures.getBonus().replace("+", ""));
-        }
     }
     public void setTier(ShipTier tier) {
         this.tier = tier;
@@ -229,13 +250,6 @@ public class StarShip {
     }
     public void setArmor(Armor armor) {
         this.armor = armor;
-        if (armor.getBonusAc().contains("+")){
-            this.ac = ac+Integer.parseInt(armor.getBonusAc().replace("+",""));
-        }
-        if (armor.getSpecial().contains(",")){
-            String tlBonus = armor.getSpecial().split(",")[0].replace("TL","");
-            this.tl = tl - Integer.parseInt(tlBonus.replace("–","").replace(" ",""));
-        }
     }
     public void setDriftEngine(Drift driftEngine) {
         this.driftEngine = driftEngine;
@@ -308,16 +322,9 @@ public class StarShip {
         }
         this.size = frame.getSize();
         this.frame = frame;
-        this.hp = frame.getHp();
         this.dt = frame.getDt();
-        this.ct = frame.getCt();
-        this.ac = 10 + getSizeACTL();
-        this.tl = 10 + getSizeACTL();
         this.shieldTotal = 0;
         this.regenPerMin = 0;
-        if (tier.getSpecial().equalsIgnoreCase("HP increase")){
-            this.hp = hp + frame.getHpInc();
-        }
         String turnPMod = frame.getManeuver().substring(frame.getManeuver().indexOf('(')+1,frame.getManeuver().indexOf(')'));
         this.turn = Integer.parseInt(turnPMod.split(",")[1].replace(" turn ",""));
         this.pilotMod = frame.getPilotMod();

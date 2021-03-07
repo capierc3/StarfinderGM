@@ -5,6 +5,7 @@ import static ArchivesBuilder.SQLite.connect;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Stack;
 
 
 /**
@@ -33,7 +34,6 @@ public class ShipYard {
         weapons
     }
 
-    private StarShip ship;
 
     /**
      * returns the names of the items in the table.
@@ -160,6 +160,11 @@ public class ShipYard {
     }
 
 
+    private StarShip ship;
+    private ArrayList<Part> shoppingCart;
+    private int pcu;
+    private int bp;
+
 //TODO: Ship building and shopping cart
     /**
      * Starts a new ship builder
@@ -167,26 +172,98 @@ public class ShipYard {
      */
     public void newBuild(StarShip ship) {
         this.ship = ship;
+        shoppingCart = new ArrayList<>();
+        bp = Integer.parseInt(ship.getTier().getBuildPoints());
+        pcu = 0;
     }
 
     public void buyPart(Part part) {
-
+        shoppingCart.add(part);
+        try {
+            bp -= Integer.parseInt(part.cost.replaceAll(" ",""));
+        } catch (NumberFormatException e) {
+            if (!part.cost.contains("—")) {
+                if (part.cost.contains( "x size category")) {
+                    bp -= findSizePrice(part.cost);
+                } else {
+                    System.out.println("DEBUG: (COST BUY) " + part.cost);
+                }
+            }
+        }
+        if (part instanceof PowerCore) {
+            pcu += Integer.parseInt(part.pcu);
+        } else {
+            try {
+                pcu -= Integer.parseInt(part.pcu);
+            } catch (NumberFormatException e) {
+                if (part.pcu != null && !part.pcu.contains("-")) {
+                    System.out.println("DEBUG: (PCU BUY) " + part.pcu);
+                }
+            }
+        }
     }
 
     public void returnPart(Part part) {
+        shoppingCart.remove(part);
+        if (part instanceof PowerCore) {
+            pcu -= Integer.parseInt(part.pcu);
+        } else {
+            try {
+                pcu += Integer.parseInt(part.pcu);
+            } catch (NumberFormatException e) {
+                if (part.pcu != null && !part.pcu.contains("-")) {
+                    System.out.println("DEBUG: (PCU RETURN) " + part.pcu);
+                }
+            }
+        }
+        try {
+            bp += Integer.parseInt(part.cost.replaceAll(" ",""));
+        } catch (NumberFormatException e) {
+            if (!part.cost.contains("—")) {
+                if (part.cost.contains( "x size category")) {
+                    bp += findSizePrice(part.cost);
+                } else {
+                    System.out.println("DEBUG: (COST RETURN) " + part.cost);
+                }
+            }
+        }
 
     }
 
     public int getBuildPoints() {
-        return 0;
+        return bp;
     }
 
     public int getPcuLeft() {
-        return 0;
+        return pcu;
     }
 
     public ArrayList<Part> getCart() {
-        return new ArrayList<>();
+        return shoppingCart;
+    }
+
+    public int findSizePrice(String cost) {
+        int times = Integer.parseInt(cost.split("x")[0].replaceAll("[^0-9]",""));
+        switch (ship.getFrame().getSize()) {
+            case " Tiny":
+                return times;
+            case " Small":
+                return times * 2;
+            case " Medium":
+                return times * 3;
+            case " Large":
+                return times * 4;
+            case " Huge":
+                return times * 5;
+            case " Gargantuan":
+                return times * 6;
+            case " Colossal":
+                return times * 7;
+            case " Supercolossal":
+                return times * 8;
+            default:
+                return 0;
+        }
     }
 
 }

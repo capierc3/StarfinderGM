@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class Armor extends Part {
 
+    //TODO new armor type
     private String bonusAc;
     private String special;
+    private String tempHP;
 
     public Armor() {
 
@@ -14,8 +16,9 @@ public class Armor extends Part {
     public Armor(ArrayList<String> list) {
         name = list.get(0);
         bonusAc = list.get(1);
-        special = list.get(2);
-        cost = list.get(3);
+        tempHP = list.get(2);
+        special = list.get(3);
+        cost = list.get(4);
         pcu = "-";
     }
 

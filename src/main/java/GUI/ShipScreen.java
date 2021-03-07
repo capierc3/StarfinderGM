@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static ships.ShipYard.getParts;
+
 public class ShipScreen {
 
     private static StarShip ship;
@@ -47,7 +49,7 @@ public class ShipScreen {
         ComboBox<String> frameComboBox = new ComboBox<>();
         frameComboBox.getItems().addAll(ShipYard.getNames(ShipYard.ShipTables.baseframes.toString()));
         frameComboBox.getSelectionModel().select(sel2);
-        ShipFrame shipFrame = (ShipFrame) ShipYard.getParts(new ShipFrame())
+        ShipFrame shipFrame = (ShipFrame) getParts(new ShipFrame())
                 .get(frameComboBox.getSelectionModel().getSelectedIndex());
         info = SFText.create("Build Points: "+tierComboBox.getValue().getBuildPoints()
                 +"\n"+ shipFrame.getInfo());
@@ -82,15 +84,21 @@ public class ShipScreen {
     //Center part picker//
     private static Node powerCore(){
         ComboBox<Part> powerCoreComboBox = new ComboBox<>();
-        powerCoreComboBox.getItems().addAll(ShipYard.getParts(new PowerCore()));
+        ArrayList<Part> parts =  ShipYard.getParts(new PowerCore());
+        for (Part p:parts) {
+            char size = ship.getSize().charAt(1);
+            if (((PowerCore) p).getSize().contains(String.valueOf(size))) {
+                powerCoreComboBox.getItems().add(p);
+            }
+        }
         Button next = new Button("Next");
         next.setOnAction(actionEvent -> {
             PowerCore powerCore = (PowerCore) powerCoreComboBox.getValue();
             if (ship.getPowerCore()!=null){
                 shipYard.returnPart(ship.getPowerCore());
             }
-            ship.setPowerCore(powerCore);
             shipYard.buyPart(powerCore);
+            ship.setPowerCore(powerCore);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(armor());
@@ -103,15 +111,15 @@ public class ShipScreen {
     private static Node armor() {
         ComboBox<Part> box = new ComboBox<>();
         box.getItems().add(new Armor());
-        box.getItems().addAll(ShipYard.getParts(new Armor()));
+        box.getItems().addAll(getParts(new Armor()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getArmor()!=null) {
                 shipYard.returnPart(ship.getArmor());
             }
             Armor armor = (Armor) box.getValue();
-            ship.setArmor(armor);
             shipYard.buyPart(armor);
+            ship.setArmor(armor);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(crew());
@@ -123,15 +131,15 @@ public class ShipScreen {
     }
     private static Node crew(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new CrewQuarter()));
+        box.getItems().addAll(getParts(new CrewQuarter()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getCrewQuarter()!=null){
                 shipYard.returnPart(ship.getCrewQuarter());
             }
             CrewQuarter part = (CrewQuarter) box.getValue();
-            ship.setCrewQuarter(part);
             shipYard.buyPart(part);
+            ship.setCrewQuarter(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(dcm());
@@ -145,15 +153,15 @@ public class ShipScreen {
         ComboBox<Part> box = new ComboBox<>();
         //TODO NULL ITEM
         //box.getItems().add(new CounterMeasures(0));
-        box.getItems().addAll(ShipYard.getParts(new CounterMeasures()));
+        box.getItems().addAll(getParts(new CounterMeasures()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getCounterMeasures()!=null){
                 shipYard.returnPart(ship.getCounterMeasures());
             }
             CounterMeasures part = (CounterMeasures) box.getValue();
-            ship.setCounterMeasures(part);
             shipYard.buyPart(part);
+            ship.setCounterMeasures(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(drift());
@@ -167,15 +175,15 @@ public class ShipScreen {
         ComboBox<Part> box = new ComboBox<>();
         //TODO NULL ITEM
         //box.getItems().add(new Drift(0));
-        box.getItems().addAll(ShipYard.getParts(new Drift()));
+        box.getItems().addAll(getParts(new Drift()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getDriftEngine()!=null){
                 shipYard.returnPart(ship.getDriftEngine());
             }
             Drift part = (Drift) box.getValue();
-            ship.setDriftEngine(part);
             shipYard.buyPart(part);
+            ship.setDriftEngine(part);
             currentShip(ship);
             shoppingCart(shipYard);
             if (ship.getBays().length>0) {
@@ -191,12 +199,12 @@ public class ShipScreen {
     }
     private static Node bays(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new ExpansionBay()));
+        box.getItems().addAll(getParts(new ExpansionBay()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             ExpansionBay part = (ExpansionBay) box.getValue();
-            ship.addBay(part);
             shipYard.buyPart(part);
+            ship.addBay(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(SFText.create("Whats next?"));
@@ -208,15 +216,21 @@ public class ShipScreen {
     }
     private static Node thrusters(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new Thruster()));
+        ArrayList<Part> parts =  ShipYard.getParts(new Thruster());
+        for (Part p:parts) {
+            char size = ship.getSize().charAt(1);
+            if (((Thruster) p).getSize().contains(String.valueOf(size))) {
+                box.getItems().add(p);
+            }
+        }
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getThrusters()!=null){
                 shipYard.returnPart(ship.getThrusters());
             }
             Thruster part = (Thruster) box.getValue();
-            ship.setThrusters(part);
             shipYard.buyPart(part);
+            ship.setThrusters(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(computers());
@@ -228,15 +242,15 @@ public class ShipScreen {
     }
     private static Node computers(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new ShipComputer()));
+        box.getItems().addAll(getParts(new ShipComputer()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getComputer()!=null){
                 shipYard.returnPart(ship.getComputer());
             }
             ShipComputer part = (ShipComputer) box.getValue();
-            ship.setComputer(part);
             shipYard.buyPart(part);
+            ship.setComputer(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(security());
@@ -248,12 +262,12 @@ public class ShipScreen {
     }
     private static Node security(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new Security()));
+        box.getItems().addAll(getParts(new Security()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             Security part = (Security) box.getValue();
-            ship.addSecurity(part);
             shipYard.buyPart(part);
+            ship.addSecurity(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(shield());
@@ -265,15 +279,15 @@ public class ShipScreen {
     }
     private static Node sensors(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new Sensor()));
+        box.getItems().addAll(getParts(new Sensor()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getSensor()!=null){
                 shipYard.returnPart(ship.getSensor());
             }
             Sensor part = (Sensor) box.getValue();
-            ship.setSensor(part);
             shipYard.buyPart(part);
+            ship.setSensor(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(SFText.create("Choose Which Weapon To Add On Side "));
@@ -285,15 +299,15 @@ public class ShipScreen {
     }
     private static Node shield(){
         ComboBox<Part> box = new ComboBox<>();
-        box.getItems().addAll(ShipYard.getParts(new Shields()));
+        box.getItems().addAll(getParts(new Shields()));
         Button btn = new Button("Next");
         btn.setOnAction(actionEvent -> {
             if (ship.getShields()!=null){
                 shipYard.returnPart(ship.getShields());
             }
             Shields part = (Shields) box.getValue();
-            ship.setShields(part);
             shipYard.buyPart(part);
+            ship.setShields(part);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(sensors());
@@ -311,8 +325,8 @@ public class ShipScreen {
         Button btn = new Button("Buy");
         btn.setOnAction(actionEvent -> {
             ShipWeapon weapon = box.getValue();
-            ship.getWeapons().put(key,weapon);
             shipYard.buyPart(weapon);
+            ship.getWeapons().put(key,weapon);
             currentShip(ship);
             shoppingCart(shipYard);
             root.setCenter(SFText.create("Choose Which Weapon To Add On Side "));
@@ -570,8 +584,8 @@ public class ShipScreen {
         vBox.getChildren().addAll(bp,pcu,SFText.create("////////////////////////"));
         for (int i = 0; i < shipYard.getCart().size(); i++) {
             String s = shipYard.getCart().get(i).getName()+": -"+shipYard.getCart().get(i).getCost()+" bp";
-            if (shipYard.getCart().get(i).getCost().contains(" × size category")){
-                s = shipYard.getCart().get(i).getName()+": "+(shipYard.getCart().get(i).getCostInt()*ship.getSizeMod())+" bp";
+            if (shipYard.getCart().get(i).getCost().contains(" x size category")){
+                s = shipYard.getCart().get(i).getName()+": -"+shipYard.findSizePrice(shipYard.getCart().get(i).getCost()) + " bp";
             }
             Text text = SFText.create(s);
             vBox.getChildren().add(text);
