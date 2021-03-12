@@ -44,5 +44,10 @@ task runTest(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     description 'runs currently testing class'
     main = 'TestingClass'
+}
 
+task buildDataBase(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    description 'runs database builders'
+    main = 'runables/BuildDB'
 }

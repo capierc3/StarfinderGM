@@ -81,10 +81,10 @@ public class StarShip {
         return driftRating;
     }
     public Integer getAc() {
-        return 10 - getSizeACTL() + getArmorACTL()[0];
+        return 10 - getSizeACTL() + getArmorACTL()[0] + getShieldACTL()[0];
     }
     public Integer getTl() {
-        return 10 - getSizeACTL() + getArmorACTL()[1] + getDCM_TL();
+        return 10 - getSizeACTL() + getArmorACTL()[1] + getDCM_TL() + getShieldACTL()[1];
     }
     public Integer getHp() {
         int hpInc = 0;
@@ -206,7 +206,15 @@ public class StarShip {
             return 0;
         }
     }
-
+    private int[] getShieldACTL() {
+        int[] acTl = {0,0};
+        if (shields != null && shields.isDeflector()) {
+            String[] acTLString = shields.getAc_tl().split("_");
+            acTl[0] = Integer.parseInt(acTLString[0].replace(" AC",""));
+            acTl[1] = Integer.parseInt(acTLString[1].replace(" TL",""));
+        }
+        return acTl;
+    }
     public void setComputer(ShipComputer computer) {
         this.computer = computer;
     }
@@ -334,7 +342,9 @@ public class StarShip {
     }
     public void setShields(Shields shields) {
         this.shields = shields;
-        this.shieldTotal = Integer.parseInt(shields.getTotalSP());
-        this.regenPerMin = Integer.parseInt(shields.getRegen().replace("/min.",""));
+        if (!shields.isDeflector()) {
+            this.shieldTotal = Integer.parseInt(shields.getTotalSP());
+            this.regenPerMin = Integer.parseInt(shields.getRegen().replace("/min.", ""));
+        }
     }
 }

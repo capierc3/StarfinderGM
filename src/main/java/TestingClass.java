@@ -9,10 +9,9 @@ public class TestingClass {
 
     public static void main(String[] args) {
 
-        ArrayList<Part> parts = ShipYard.getParts(new ShipFrame());
-//        for (Part p:parts) {
-//            System.out.println(((ShipFrame) p).getMaxCrew());
-//        }
+        for (Part p:ShipYard.getParts(new Shields())) {
+            System.out.println(p.getName() + ": " + ((Shields) p).isDeflector());
+        }
 
     }
 

@@ -6,6 +6,8 @@ public class Shields extends Part {
 
     private String totalSP;
     private String regen;
+    private String dv;
+    private String ac_tl;
 
     public Shields() {}
 
@@ -13,8 +15,10 @@ public class Shields extends Part {
         name = list.get(0);
         totalSP = list.get(1);
         regen = list.get(2);
-        pcu = list.get(3);
-        cost = list.get(4);
+        dv = list.get(3);
+        ac_tl = list.get(4);
+        pcu = list.get(5);
+        cost = list.get(6);
     }
 
     public String getRegen() {
@@ -25,16 +29,35 @@ public class Shields extends Part {
         return totalSP;
     }
 
+    public String getAc_tl() {
+        return ac_tl;
+    }
+
+    public String getDV() {
+        return dv;
+    }
+
     @Override
     public String toString() {
-        return toStringTop()
-                + "\nTotal SP: " + totalSP
-                + "\nRegen: " + regen
-                + toStringBTM();
+        if (isDeflector()) {
+            return toStringTop()
+                    + "\nDV: " + dv
+                    + "\nAC/TL: " + ac_tl
+                    + toStringBTM();
+        } else {
+            return toStringTop()
+                    + "\nTotal SP: " + totalSP
+                    + "\nRegen: " + regen
+                    + toStringBTM();
+        }
     }
 
     @Override
     public String getTableName() {
         return "shields";
+    }
+
+    public boolean isDeflector() {
+        return totalSP.contains("—");
     }
 }

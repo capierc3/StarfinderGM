@@ -129,6 +129,9 @@ public class SQLite {
      * @param sql the sql string to create the table.
      */
     public static void createTable(String dbName, String tableName,String sql) {
+        if (sql.contains("/")) {
+            sql = sql.replaceAll("/","_");
+        }
         Connection c;
         Statement stmt;
         try {
@@ -142,12 +145,13 @@ public class SQLite {
             System.out.println(tableName + " table created");
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.out.println(tableName + " ERROR");
+            System.out.println(tableName + " ERROR: " + sql);
         }
     }
 
     /**
      * Adds an item to a database.
+     * TODO random sql in security table is empty, throws error but loads table.
      * @param dbName the database to add the entry to
      * @param sqls an array of sqls to add
      * @param tableName the table that the sqls need to be added to
@@ -161,6 +165,9 @@ public class SQLite {
             c.setAutoCommit(false);
             stmt = c.createStatement();
             for (String sql : sqls) {
+                if (sql.contains("/")) {
+                    sql = sql.replaceAll("/","_");
+                }
                 stmt.executeUpdate(sql);
             }
             stmt.close();
@@ -169,7 +176,7 @@ public class SQLite {
 
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.out.println(tableName + " ERROR");
+            System.out.println(tableName + " ERROR: SQLITE.ADDRECORD");
         }
     }
 

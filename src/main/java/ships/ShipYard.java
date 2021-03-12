@@ -96,6 +96,9 @@ public class ShipYard {
             ArrayList<ArrayList<String>> weaponsStrings = getItemStrings(ShipTables.weapons.toString());
             ArrayList<ShipWeapon> weapons = new ArrayList<>();
             int start;
+            if (wType.contains(" [")) {
+                wType = wType.substring(0,wType.indexOf("[") - 1);
+            }
             switch (wType) {
                 case "Light":
                     start = 0;
