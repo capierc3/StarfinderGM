@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class StarSystem implements GalaxyDataBaseItem{
 
-    public static final String[] keys = {"Name","X","Y","Z","Stars","Planets","Bodies","Size","Habitable_Zone","Population","ID"};
+    public static final String[] keys = {"Name","Sector","X","Y","Z","Stars","Planets","Bodies","Size","Habitable_Zone","Population","ID"};
     public static final String tableName = "Systems";
 
     /**Name of the system**/
@@ -35,6 +35,7 @@ public class StarSystem implements GalaxyDataBaseItem{
     /**The location in the galaxy**/
     double x,y,z;
     String id;
+    private String sector;
 
     /**
      * Empty Constructor for use with the database creation only
@@ -75,6 +76,7 @@ public class StarSystem implements GalaxyDataBaseItem{
         placeBodies();
         setBodyNames();
         createTemp();
+        sector = sectorName;
         id = sectorName.toCharArray()[0]+name.toCharArray()[0]+ x + y + Double.toString(z);
     }
 
@@ -345,30 +347,34 @@ public class StarSystem implements GalaxyDataBaseItem{
     @Override
     public void readSQL(String[] values) {
        name = values[0];
-       x = Double.parseDouble(values[1]);
-       y = Double.parseDouble(values[2]);
-       z = Double.parseDouble(values[3]);
+       sector = values[1];
+       x = Double.parseDouble(values[2]);
+       y = Double.parseDouble(values[3]);
+       z = Double.parseDouble(values[4]);
        //Needs to find its stars
         try {
-            stars = GalaxyDataBase.findStar(name,Integer.parseInt(values[4]));
-            planets = GalaxyDataBase.findPlanets(name,Integer.parseInt(values[5]));
-            //bodies = GalaxyDataBase.findBodies(name,Integer.parseInt(values[6]));
+            stars = GalaxyDataBase.findStar(name,Integer.parseInt(values[5]));
+            planets = GalaxyDataBase.findPlanets(name);
+            bodies = GalaxyDataBase.findBodies(name);
+            orderSystem = bodies;
+            orderSystem.addAll(planets);
+            orderSystem.sort(Body::compareTo);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-       size = Double.parseDouble(values[7]);
+       size = Double.parseDouble(values[8]);
        //"("+habitLow+"-"+habitHigh + ")"
-       String[] hab = values[8].split("\\-");
+       String[] hab = values[9].split("\\-");
        habitLow = Double.parseDouble(hab[0].replace("(",""));
        habitHigh = Double.parseDouble(hab[1].replace(")",""));
-       if (values[9].equalsIgnoreCase(Sector.Population.POPULATED.toString())){
+       if (values[10].equalsIgnoreCase(Sector.Population.POPULATED.toString())){
            population = Sector.Population.POPULATED;
-       } else if (values[9].equalsIgnoreCase(Sector.Population.COLONIES.toString())){
+       } else if (values[10].equalsIgnoreCase(Sector.Population.COLONIES.toString())){
            population = Sector.Population.COLONIES;
-       } else if (values[9].equalsIgnoreCase(Sector.Population.NONE.toString())){
+       } else if (values[10].equalsIgnoreCase(Sector.Population.NONE.toString())){
            population = Sector.Population.NONE;
        } else population = Sector.Population.RESEARCH;
-       id = values[10];
+       id = values[11];
 
     }
 
@@ -446,8 +452,8 @@ public class StarSystem implements GalaxyDataBaseItem{
 
     @Override
     public String getSQLInsert() {
-        return " INSERT INTO Systems" + "(Name,X,Y,Z,Stars,Planets,Bodies,Size,Habitable_Zone,Population,ID)" +
-                "VALUES ('" + name + "','" + x + "','" + y + "','" + z + "','" + stars.length + "','" + planets.size() + "','"+ bodies.size() + "','" + size + "','"
+        return " INSERT INTO Systems" + "(Name,Sector,X,Y,Z,Stars,Planets,Bodies,Size,Habitable_Zone,Population,ID)" +
+                "VALUES ('" + name + "','" + sector + "','" + x + "','" + y + "','" + z + "','" + stars.length + "','" + planets.size() + "','"+ bodies.size() + "','" + size + "','"
                 + "("+habitLow+"-"+habitHigh + ")" + "','" + population + "','" + id + "');";
     }
 }

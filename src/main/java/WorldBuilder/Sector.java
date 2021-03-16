@@ -3,6 +3,8 @@ import dice.Dice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -35,9 +37,10 @@ public class Sector implements GalaxyDataBaseItem {
     /**
      * Empty Constructor for use with the database creation only
      */
-    Sector(){
+    public Sector(){
 
     }
+
     /**
      * constructor for the sector, takes an input on how the sector is populated and then builds a random amount of Star Systems
      * max 10 in a 10X10 sector.
@@ -50,11 +53,7 @@ public class Sector implements GalaxyDataBaseItem {
         this.x = x;
         this.y = y;
         this.z = z;
-        if (x == 0 && y==0 && z == 0){
-            this.origin = true;
-        } else {
-            this.origin = false;
-        }
+        this.origin = x == 0 && y == 0 && z == 0;
         grid = new StarSystem[10][10];
         findName();
         amtSystems = Dice.Roller(1,10)+20;
@@ -110,7 +109,12 @@ public class Sector implements GalaxyDataBaseItem {
 
     @Override
     public void readSQL(String[] values) {
-
+        name = values[0];
+        x = Integer.parseInt(values[1]);
+        y = Integer.parseInt(values[2]);
+        z = Integer.parseInt(values[3]);
+        amtSystems = Integer.parseInt(values[4]);
+        id = values[4];
     }
 
     /**

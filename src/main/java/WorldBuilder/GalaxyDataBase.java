@@ -25,13 +25,14 @@ public class GalaxyDataBase {
      */
     public GalaxyDataBase(){
         File db = new File("Galaxy.db");
-        if (db.exists()) db.delete();
-        SQLite.build(dbName);
-        SQLite.createTable(dbName,tables[0], buildTableSQL(new Sector()));
-        SQLite.createTable(dbName,tables[1], buildTableSQL(new StarSystem()));
-        SQLite.createTable(dbName,tables[2], buildTableSQL(new Star()));
-        SQLite.createTable(dbName,tables[3], buildTableSQL(new Planet()));
-        SQLite.createTable(dbName,tables[4],buildTableSQL(new Asteroid()));
+        if (!db.exists()) {
+            SQLite.build(dbName);
+            SQLite.createTable(dbName, tables[0], buildTableSQL(new Sector()));
+            SQLite.createTable(dbName, tables[1], buildTableSQL(new StarSystem()));
+            SQLite.createTable(dbName, tables[2], buildTableSQL(new Star()));
+            SQLite.createTable(dbName, tables[3], buildTableSQL(new Planet()));
+            SQLite.createTable(dbName, tables[4], buildTableSQL(new Asteroid()));
+        }
     }
 
     /**
@@ -142,24 +143,28 @@ public class GalaxyDataBase {
         conn.close();
         return systems;
     }
-    public static StarSystem findSystem(String name) throws SQLException {
+    public static StarSystem findSystem(String name) {
         StarSystem s = new StarSystem();
-        String[] values = new String[s.getKeys().length];
-        String sql = "SELECT * FROM "+s.getTableNames();
-        Connection conn = connect(dbName);
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()){
-            if (rs.getString("Name").equalsIgnoreCase(name)){
-                for (int i = 0; i <s.getKeys().length ; i++) {
-                    values[i]= rs.getString(s.getKeys()[i]);
+        try {
+            String[] values = new String[s.getKeys().length];
+            String sql = "SELECT * FROM " + s.getTableNames();
+            Connection conn = connect(dbName);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                if (rs.getString("Name").equalsIgnoreCase(name)) {
+                    for (int i = 0; i < s.getKeys().length; i++) {
+                        values[i] = rs.getString(s.getKeys()[i]);
+                    }
                 }
             }
+            s.readSQL(values);
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.toString());
         }
-        s.readSQL(values);
-        rs.close();
-        stmt.close();
-        conn.close();
         return s;
     }
     public static Star[] findStar(String name, int amount) throws SQLException {
@@ -176,8 +181,9 @@ public class GalaxyDataBase {
                 for (int i = 0; i <item.getKeys().length ; i++) {
                     values[i]= rs.getString(item.getKeys()[i]);
                 }
-                item.readSQL(values);
-                items[j] = item;
+                Star temp = new Star();
+                temp.readSQL(values);
+                items[j] = temp;
                 j++;
             }
         }
@@ -186,46 +192,42 @@ public class GalaxyDataBase {
         conn.close();
         return items;
     }
-    public static ArrayList<Planet> findPlanets(String name, int amount) throws SQLException {
+    public static ArrayList<Planet> findPlanets(String name) throws SQLException {
         Planet item = new Planet();
         String[] values = new String[item.getKeys().length];
         ArrayList<Planet> items = new ArrayList<>();
-        String sql = "SELECT * FROM "+item.getTableNames();
+        String sql = "SELECT * FROM Planets WHERE System_Name='" + name + "'";
         Connection conn = connect(dbName);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()||amount>0){
-            if (rs.getString("System_Name").contains(name)){
-                for (int i = 0; i <item.getKeys().length ; i++) {
-                    values[i]= rs.getString(item.getKeys()[i]);
-                }
-                item.readSQL(values);
-                items.add(item);
-                amount--;
+        while (rs.next()){
+            for (int i = 0; i <item.getKeys().length ; i++) {
+                values[i]= rs.getString(item.getKeys()[i]);
             }
+            Planet temp = new Planet();
+            temp.readSQL(values);
+            items.add(temp);
         }
         rs.close();
         stmt.close();
         conn.close();
         return items;
     }
-    public static ArrayList<Body> findBodies(String name, int amount) throws SQLException {
+    public static ArrayList<Body> findBodies(String name) throws SQLException {
         Body item = new Asteroid();
         String[] values = new String[item.getKeys().length];
         ArrayList<Body> items = new ArrayList<>();
-        String sql = "SELECT * FROM "+item.getTableNames();
+        String sql = "SELECT * FROM bodies WHERE System_Name='" + name + "'";
         Connection conn = connect(dbName);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()||amount>0){
-            if (rs.getString("System_Name").contains(name)){
-                for (int i = 0; i <item.getKeys().length ; i++) {
-                    values[i]= rs.getString(item.getKeys()[i]);
-                }
-                item.readSQL(values);
-                items.add(item);
-                amount--;
+        while (rs.next()){
+            for (int i = 0; i <item.getKeys().length ; i++) {
+                values[i]= rs.getString(item.getKeys()[i]);
             }
+            Body temp = new Asteroid();
+            temp.readSQL(values);
+            items.add(temp);
         }
         rs.close();
         stmt.close();

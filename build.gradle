@@ -52,3 +52,10 @@ task buildDataBase(type: JavaExec) {
     description 'runs database builders'
     main = 'runables/BuildDB'
 }
+
+task WorldBuilder(type: JavaExec) {
+    standardInput = System.in
+    classpath = sourceSets.main.runtimeClasspath
+    description 'runs WorldBuilder'
+    main = 'runables/WorldBuilder'
+}

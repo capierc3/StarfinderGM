@@ -32,6 +32,7 @@ public class ShipWeapon extends Part {
         return toStringTop()
                 + "\nType: " + type
                 + "\nRange: " + range
+                + "\nDamage: " + dmg
                 + "\nSpeed: " + speed
                 + "\nSpecial: " + special
                 + toStringBTM();

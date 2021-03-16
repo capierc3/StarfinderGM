@@ -85,6 +85,10 @@ public abstract class Body implements Comparable,GalaxyDataBaseItem{
         return distanceSun;
     }
 
+    public double getTemp() {
+        return temp;
+    }
+
     /**
      * Compares the Bodies by the distance form sun value
      * @param o Body
@@ -108,7 +112,7 @@ public abstract class Body implements Comparable,GalaxyDataBaseItem{
                 "\nType: "+type+
                 "\nLocation: "+location+
                 "\nDistance to Sun: "+(distanceSun*498.66)+"ls"+
-                "\n                 "+distanceSun+"AU"+
+                "\n                 "+String.format("%.2f",distanceSun)+"AU"+
                 "\n                 "+(String.format("%.2f",SpaceTravel.TimeTo(distanceSun,1, SpaceTravel.distUnits.AU, SpaceTravel.timeUnits.Hours,false)))+" hours at 1g"+
                 "\n                 "+(String.format("%.2f",SpaceTravel.TimeTo(distanceSun,1, SpaceTravel.distUnits.AU, SpaceTravel.timeUnits.Days,false)))+" days at 1g"+
                 "\nTemperature: "+temp+"\u00B0" + "F"+

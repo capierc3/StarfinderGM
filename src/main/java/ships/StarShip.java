@@ -135,25 +135,6 @@ public class StarShip {
     public Drift getDriftEngine() {
         return driftEngine;
     }
-    public int getSizeMod(){
-        switch (size){
-            case " Tiny":
-                return 1;
-            case " Small":
-                return 2;
-            case " Medium":
-                return 3;
-            case " Large":
-                return 4;
-            case " Huge":
-                return 5;
-            case " Gargantuan":
-                return 6;
-            case " Colossal":
-                return 7;
-        }
-        return 0;
-    }
     public int getSizeACTL(){
         switch (size.replace(" ","")){
             case "Tiny":
@@ -344,7 +325,7 @@ public class StarShip {
         this.shields = shields;
         if (!shields.isDeflector()) {
             this.shieldTotal = Integer.parseInt(shields.getTotalSP());
-            this.regenPerMin = Integer.parseInt(shields.getRegen().replace("/min.", ""));
+            this.regenPerMin = Integer.parseInt(shields.getRegen().replace("_min.", ""));
         }
     }
 }

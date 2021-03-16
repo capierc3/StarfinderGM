@@ -292,17 +292,17 @@ public class Planet extends Body {
 
     @Override
     public String toString() {
-        return super.toString()+
+        return super.toString() +
                 "\nAtmosphere: "+atmosphere+
                 "\nAtmospheric Pressure: "+atmoThickness+"("+atmoRating+"APR)"+
                 "\nPlanet Density: "+ density+
-                "\nGravity: "+String.format("%.2f",gravity)+"g"+
+                "\nGravity: "+ gravity + "g" +
                 "\nCircumference: "+circumference+",000 km"+
                 "\nTilt: "+axilTilt+"("+tiltDegree+"*)"+
                 "\nRotation: "+rotation+" hr/day "+rotationDir+
                 "\nLiquid: "+liquidType+" ("+liquidAmt+"%)"+
-                "\nOrbiting Bodies: "+orbitingBodies.length+
-                "\n"+printOrbit();
+                "\nOrbiting Bodies: ";//+orbitingBodies.length+
+                //"\n"+printOrbit();
     }
 
     @Override
@@ -340,8 +340,8 @@ public class Planet extends Body {
         circumference = Long.parseLong(values[11]);
         axilTilt = values[12].split("\\(")[0];
         tiltDegree = Integer.parseInt(values[12].split("\\(")[1].replace("*)",""));
-        rotation = Integer.parseInt(values[13].split(" hr/day ")[0]);
-        rotationDir = values[13].split(" hr/day ")[1];
+        rotation = Integer.parseInt(values[13].split(" hr_day ")[0]);
+        rotationDir = values[13].split(" hr_day ")[1];
         liquidType = values[14].split(" \\(")[0];
         liquidAmt = Integer.parseInt(values[14].split(" \\(")[1].replace("%)",""));
         //find orbiting bodies//
