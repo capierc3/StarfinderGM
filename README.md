@@ -17,5 +17,14 @@ Currently can be usued to build a starship and to view equipment found in the ga
 new ship is the only working selection, used to buld a ship 
 ## file->Equipment
 current funchtions include searching through and reading the database by equipment type then filtering by sub type and levels
+## Galaxy bulder and vier
+Currently only useable in a CLI enviorment. lets you add sectors to the galaxy and view existing systems.
 ## rest
 function of other options still in development.
+
+# To run
+## Main GUI app
+gradle build -> gradle runApp
+
+## Galaxy CLI
+gradle build -> gradle worldbuilder
