@@ -15,14 +15,6 @@ import java.util.Scanner;
 /**Class used to run basic tests during development**/
 public class Test {
 
-    public static void main(String[] args) {
-        new GalaxyDataBase();
-        Sector sector = new Sector(Sector.Population.POPULATED,0,0,0);
-        Sector sector2 = new Sector(Sector.Population.POPULATED,0,0,1);
-        GalaxyDataBase.addEntry(sector);
-        GalaxyDataBase.addEntry(sector2);
-    }
-
     public static void buildSystem(){
 
         StarSystem system = new StarSystem("test",Sector.Population.POPULATED,0,0,0,0,0);
@@ -85,7 +77,7 @@ public class Test {
             e.printStackTrace();
         }
     }
-    private static void buildComputer(MicroCenter microCenter,String compName){
+    public static void buildComputer(MicroCenter microCenter,String compName){
         Scanner in = new Scanner(System.in);
         int choice;
         int price = 0;

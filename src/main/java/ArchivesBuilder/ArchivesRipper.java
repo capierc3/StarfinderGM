@@ -6,6 +6,7 @@ public class ArchivesRipper {
     /**
      * String[][] of the hard coded urls from Archives of Nethys and the file names to save them as.
      */
+    //DONE
     final String[][] weaponPages = {
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=AdvMelee","Advanced Melee"},
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=BasicMelee","Basic Melee"},
@@ -15,11 +16,13 @@ public class ArchivesRipper {
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=SmallArms","Small Arms"},
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=Sniper","Snipers"},
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=Special","Special"}};
+    //DONE
     final String[][] armorPages = {
             {"https://www.aonsrd.com/Armor.aspx?Category=Light","Light"},
             {"https://www.aonsrd.com/Armor.aspx?Category=Heavy","Heavy"},
             {"https://www.aonsrd.com/PoweredArmor.aspx?ItemName=All","Powered"},
     };
+    //DONE
     final String[][] augmentationsPages = {
             {"https://www.aonsrd.com/Biotech.aspx?ItemName=All&Family=None","Biotech"},
             {"https://www.aonsrd.com/Cybernetics.aspx?ItemName=All&Family=None","Cybernetics"},
@@ -27,6 +30,7 @@ public class ArchivesRipper {
             {"https://www.aonsrd.com/Necrografts.aspx?ItemName=All&Family=None","Necrografts"},
             {"https://www.aonsrd.com/PersonalUpgrades.aspx?ItemName=All&Family=None","Personal Upgrades"}
     };
+    //DONE
     final String[][] otherItemsPages = {
             {"https://www.aonsrd.com/OtherItems.aspx?Category=Food and Drinks","Food and Drink"},
             {"https://www.aonsrd.com/OtherItems.aspx?Category=Lodgings","Lodgings"},
@@ -38,19 +42,25 @@ public class ArchivesRipper {
             {"https://www.aonsrd.com/OtherItems.aspx?Category=Transportation","Transportation"}
 
     };
+    //DONE
+    final String [][] computerPages = {
+            {"https://www.aonsrd.com/ComputerMods.aspx?ItemName=All&Family=None","Computers"},
+            {"https://aonsrd.com/ComputerMods.aspx?ItemName=Security&Family=None", "Security"},
+            {"https://aonsrd.com/ComputerMods.aspx?ItemName=Shock%20Grid&Family=None", "Shock"}
+    };
+    //DONE (SOME SKIPPED)
     final String[][] miscPages = {
             {"https://www.aonsrd.com/WeaponAccessories.aspx?ItemName=All&Family=None","Weapon Accessories"},
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=Ammo","Ammunition"},
             {"https://www.aonsrd.com/WeaponFusions.aspx?ItemName=All","Weapon Fusions"},
             {"https://www.aonsrd.com/Weapons.aspx?Proficiency=Solarian","Solarian Weapon Crystals"},
-            {"https://www.aonsrd.com/Companions.aspx","Creature Companions"},
-            {"https://www.aonsrd.com/ComputerMods.aspx?ItemName=All&Family=None","Computers"},
+            {"https://www.aonsrd.com/Companions.aspx","Creature Companions"}, //skipped
             {"https://www.aonsrd.com/HybridItems.aspx?ItemName=All&Family=None","Hybrid Items"},
             {"https://www.aonsrd.com/MagicItems.aspx?ItemName=All&Family=None","Magic Items"},
             {"https://www.aonsrd.com/TechItems.aspx?ItemName=All&Family=None","Technological Items"},
             {"https://www.aonsrd.com/SpecialMaterials.aspx?ItemName=All&Family=None","Special Materials"},
-            {"https://www.aonsrd.com/Aliens.aspx?Letter=All","Aliens"},
-            {"https://www.aonsrd.com/Feats.aspx?Category=","Feats"},
+            {"https://www.aonsrd.com/Aliens.aspx?Letter=All","Aliens"}, //skipped
+            {"https://www.aonsrd.com/Feats.aspx?Category=","Feats"}, //skipped
             {"https://www.aonsrd.com/LandVehicles.aspx?ItemName=All","Land Vehicles"}
     };
     final String[][] rulePages = {
@@ -72,6 +82,7 @@ public class ArchivesRipper {
             {"https://www.aonsrd.com/Spells.aspx?Class=Mystic","Mystic"},
             {"https://www.aonsrd.com/Spells.aspx?Class=Technomancer","Technomancer"}
     };
+    //SHIP DB DONE
     final String[][] vehiclePages = {
             {"https://www.aonsrd.com/Starship_Armor.aspx","Armor"},
             {"https://www.aonsrd.com/Starship_BaseFrames.aspx?ItemName=All","Base Frames"},
@@ -88,6 +99,7 @@ public class ArchivesRipper {
             {"https://www.aonsrd.com/Starship_Thrusters.aspx","Thrusters"},
             {"https://www.aonsrd.com/Starship_Weapons.aspx","Weapons"},
     };
+    //DONE
     final String[][] stillNeed = {
             {"https://www.aonsrd.com/Shields.aspx","Shields"},
             {"https://www.aonsrd.com/ArmorUpgrades.aspx?ItemName=All&Family=None","Armor Upgrades"}
@@ -100,12 +112,12 @@ public class ArchivesRipper {
     public ArchivesRipper() {
         String[][][] site = {
             weaponPages, armorPages, augmentationsPages,
-            otherItemsPages, miscPages, rulePages, afflictionsPages,
+            otherItemsPages, computerPages, miscPages, rulePages, afflictionsPages,
             spellPages, vehiclePages
         };
         String[] folders = {
             "Weapons","Armor","Augmentations",
-            "Other Items","Misc","Rules","Afflictions",
+            "Other Items","Computers","Misc","Rules","Afflictions",
             "Spells","Vehicles"};
         for (int i = 0; i < site.length; i++) {
             for (int j = 0; j < site[i].length; j++) {

@@ -159,12 +159,14 @@ public class SQLite {
     public static void AddRecord(String dbName, ArrayList<String> sqls, String tableName) {
         Connection c = null;
         Statement stmt = null;
+        String current = "";
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".db");
             c.setAutoCommit(false);
             stmt = c.createStatement();
             for (String sql : sqls) {
+                current = sql;
                 if (sql.contains("/")) {
                     sql = sql.replaceAll("/","_");
                 }
@@ -177,6 +179,7 @@ public class SQLite {
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.out.println(tableName + " ERROR: SQLITE.ADDRECORD");
+            System.out.println(current);
         }
     }
 

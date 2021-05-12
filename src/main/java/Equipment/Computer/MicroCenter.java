@@ -12,13 +12,13 @@ public class MicroCenter {
     private Scanner in;
 
     public MicroCenter(){
-        try {
-            in = new Scanner(new File("txtFiles/Computer.txt"));
-            modules = new ArrayList<>();
-            readFile();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            in = new Scanner(new File("txtFiles/Computer.txt"));
+//            modules = new ArrayList<>();
+//            readFile();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 
     }

@@ -1,17 +1,17 @@
-import ships.*;
+import Equipment.Computer.MicroCenter;
+import Equipment.EquipmentDatabaseBuilder;
 
-import java.sql.Array;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import static runables.Test.buildComputer;
 
 public class TestingClass {
 
     public static void main(String[] args) {
 
-        for (Part p:ShipYard.getParts(new Shields())) {
-            System.out.println(p.getName() + ": " + ((Shields) p).isDeflector());
-        }
+        MicroCenter microCenter = new MicroCenter();
+        String name = "My PC";
+        buildComputer(microCenter,name);
+
 
     }
 
