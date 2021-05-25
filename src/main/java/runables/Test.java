@@ -77,98 +77,98 @@ public class Test {
             e.printStackTrace();
         }
     }
-    public static void buildComputer(MicroCenter microCenter,String compName){
-        Scanner in = new Scanner(System.in);
-        int choice;
-        int price = 0;
-        System.out.println("Welcome to Micro Center!");
-        System.out.println("What base system do you want to start with?");
-        for (int i = 0; i < microCenter.getComputers().size(); i++) {
-            System.out.println((i + 1) + ":");
-            System.out.println(microCenter.getComputers().get(i));
-        }
-        choice = in.nextInt();
-        Computer prisonSecurity = microCenter.getComputers().get(choice-1);
-        price = Integer.parseInt(prisonSecurity.getPrice());
-        System.out.println("Do you want any basic modules?");
-        System.out.println("Yes: 1, No: 0");
-        choice = in.nextInt();
-        while (choice>0) {
-            for (int i = 0; i < microCenter.getModules().size(); i++) {
-                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Basic")) {
-                    System.out.println((i + 1) + ": ");
-                    System.out.println(microCenter.getModules().get(i));
-                    System.out.println();
-                }
-            }
-            System.out.println("None: 0");
-            choice = in.nextInt();
-            if (choice>0) {
-                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
-                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
-                price = price+in.nextInt();
-            }
-            System.out.println("Any other Basics?");
-            System.out.println("Yes: 1, No: 0");
-            choice = in.nextInt();
-        }
-        System.out.println("Do you need any upgrades?\nYes:1,No:0");
-        choice = in.nextInt();
-        while (choice>0){
-            for (int i = 0; i < microCenter.getModules().size(); i++) {
-                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Upgrade")) {
-                    System.out.println((i + 1) + ": ");
-                    System.out.println(microCenter.getModules().get(i));
-                    System.out.println();
-                }
-            }
-            System.out.println("None: 0");
-            choice = in.nextInt();
-            if (choice>0) {
-                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
-                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
-                price = price+in.nextInt();
-            }
-            System.out.println("Any other Upgrades?");
-            System.out.println("Yes: 1, No: 0");
-            choice = in.nextInt();
-        }
-        System.out.println("What counter measures do you need?\nNone:0,Show them to me:1");
-        choice = in.nextInt();
-        while (choice>0){
-            for (int i = 0; i < microCenter.getModules().size(); i++) {
-                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Countermeasures")) {
-                    System.out.println((i + 1) + ": ");
-                    System.out.println(microCenter.getModules().get(i));
-                    System.out.println();
-                }
-            }
-            System.out.println("None: 0");
-            choice = in.nextInt();
-            if (choice>0) {
-                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
-                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
-                price = price+in.nextInt();
-            }
-            System.out.println("Any other Countermeasures?");
-            System.out.println("Yes: 1, No: 0");
-            choice = in.nextInt();
-        }
-        System.out.println("Okay here you go!");
-        try {
-            PrintWriter printWriter = new PrintWriter(new File(compName+".txt"));
-            printWriter.println(prisonSecurity);
-            for (int i = 0; i < prisonSecurity.getModules().size(); i++) {
-                printWriter.println(prisonSecurity.getModules().get(i));
-            }
-            printWriter.println("Final Price = "+price);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Your receipt is ready. Total price is "+price);
-        System.out.println("Thank you, come again!");
-    }
+//    public static void buildComputer(MicroCenter microCenter,String compName){
+//        Scanner in = new Scanner(System.in);
+//        int choice;
+//        int price = 0;
+//        System.out.println("Welcome to Micro Center!");
+//        System.out.println("What base system do you want to start with?");
+//        for (int i = 0; i < microCenter.getComputers().size(); i++) {
+//            System.out.println((i + 1) + ":");
+//            System.out.println(microCenter.getComputers().get(i));
+//        }
+//        choice = in.nextInt();
+//        Computer prisonSecurity = microCenter.getComputers().get(choice-1);
+//        price = Integer.parseInt(prisonSecurity.getPrice());
+//        System.out.println("Do you want any basic modules?");
+//        System.out.println("Yes: 1, No: 0");
+//        choice = in.nextInt();
+//        while (choice>0) {
+//            for (int i = 0; i < microCenter.getModules().size(); i++) {
+//                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Basic")) {
+//                    System.out.println((i + 1) + ": ");
+//                    System.out.println(microCenter.getModules().get(i));
+//                    System.out.println();
+//                }
+//            }
+//            System.out.println("None: 0");
+//            choice = in.nextInt();
+//            if (choice>0) {
+//                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
+//                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
+//                price = price+in.nextInt();
+//            }
+//            System.out.println("Any other Basics?");
+//            System.out.println("Yes: 1, No: 0");
+//            choice = in.nextInt();
+//        }
+//        System.out.println("Do you need any upgrades?\nYes:1,No:0");
+//        choice = in.nextInt();
+//        while (choice>0){
+//            for (int i = 0; i < microCenter.getModules().size(); i++) {
+//                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Upgrade")) {
+//                    System.out.println((i + 1) + ": ");
+//                    System.out.println(microCenter.getModules().get(i));
+//                    System.out.println();
+//                }
+//            }
+//            System.out.println("None: 0");
+//            choice = in.nextInt();
+//            if (choice>0) {
+//                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
+//                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
+//                price = price+in.nextInt();
+//            }
+//            System.out.println("Any other Upgrades?");
+//            System.out.println("Yes: 1, No: 0");
+//            choice = in.nextInt();
+//        }
+//        System.out.println("What counter measures do you need?\nNone:0,Show them to me:1");
+//        choice = in.nextInt();
+//        while (choice>0){
+//            for (int i = 0; i < microCenter.getModules().size(); i++) {
+//                if (microCenter.getModules().get(i).getType().equalsIgnoreCase("Countermeasures")) {
+//                    System.out.println((i + 1) + ": ");
+//                    System.out.println(microCenter.getModules().get(i));
+//                    System.out.println();
+//                }
+//            }
+//            System.out.println("None: 0");
+//            choice = in.nextInt();
+//            if (choice>0) {
+//                prisonSecurity.addModule(microCenter.getModules().get(choice - 1));
+//                System.out.println("input cost(base cost = "+prisonSecurity.getPrice()+"): "+microCenter.getModules().get(choice-1).getPrice());
+//                price = price+in.nextInt();
+//            }
+//            System.out.println("Any other Countermeasures?");
+//            System.out.println("Yes: 1, No: 0");
+//            choice = in.nextInt();
+//        }
+//        System.out.println("Okay here you go!");
+//        try {
+//            PrintWriter printWriter = new PrintWriter(new File(compName+".txt"));
+//            printWriter.println(prisonSecurity);
+//            for (int i = 0; i < prisonSecurity.getModules().size(); i++) {
+//                printWriter.println(prisonSecurity.getModules().get(i));
+//            }
+//            printWriter.println("Final Price = "+price);
+//            printWriter.close();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("Your receipt is ready. Total price is "+price);
+//        System.out.println("Thank you, come again!");
+//    }
     private static NPCBasic testNPCBasic(){
         System.out.println("\n\nNPCBasic");
         NPCBasic basic = new NPCBasic(1,NPCBasic.type.COMBATANT, NPCBasic.graft.ANDROID);

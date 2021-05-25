@@ -1,29 +1,31 @@
 package Equipment.Computer;
 
-import Equipment.Equipment;
 import java.util.ArrayList;
 
-public class Computer implements Equipment {
+public class Computer {
 
-    private String tier;
+    private int tier;
     private ArrayList<ComputerModule> modules;
-    private String price;
+    private int price;
     private Integer hackDC;
 
-    public Computer(String line){
-        String[] split = line.split("\\?");
-        tier = split[0];
-        price = split[1];
-        String baseDC = split[2];
+    public Computer(int tierNum){
+        tier = tierNum;
+        price = getTier(tier)[0];
+        hackDC = getTier(tier)[1];
         modules = new ArrayList<>();
-        hackDC = Integer.parseInt(baseDC);
     }
 
     public void addModule(ComputerModule module){
         modules.add(module);
-        if (module.getClass().equals(SecurityModule.class)){
-            SecurityModule mod = (SecurityModule) module;
-            hackDC = hackDC+Integer.parseInt(mod.getDcIncrease().replace("+",""));
+        String price = module.getPrice();
+        String value = price.split(" ")[0];
+        if (value.contains("%")) {
+            //TODO
+        } else if (value.equalsIgnoreCase("Varies")) {
+            //TODO
+        } else {
+            this.price += Integer.parseInt(value);
         }
     }
 
@@ -31,14 +33,11 @@ public class Computer implements Equipment {
         return modules;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
-    public String getLevel() {
+    public int getLevel() {
         return tier;
-    }
-    public String getType() {
-        return "Computer";
     }
     public String toString(){
         return "Tier: "+tier+
@@ -46,31 +45,11 @@ public class Computer implements Equipment {
                 "\nPrice: "+price+
                 "\nAmount of Modules: "+modules.size();
     }
-    public Integer getLevelInt() {
-        return Integer.parseInt(tier);
-    }
-    public Integer getPriceInt() {
-        return Integer.parseInt(price);
-    }
 
-    @Override
-    public void readSQL(String[] values) {
-
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public String getTableName() {
-        return null;
-    }
-
-    @Override
-    public String[] getKeys() {
-        return new String[0];
+    public static int[] getTier(int tierNum) {
+        int[] price = {50, 250, 1250, 5000, 10000, 20000, 40000, 80000, 160000, 320000};
+        int[] dc = {17,21,25,29,33,37,41,45,49,53};
+        return new int[] {price[tierNum - 1], dc[tierNum - 1]};
     }
 
 

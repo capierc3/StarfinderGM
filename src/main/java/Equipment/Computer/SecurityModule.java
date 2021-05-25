@@ -4,11 +4,9 @@ public class SecurityModule extends ComputerModule {
 
     private String dcIncrease;
 
-    public SecurityModule(String line) {
-        super(line, "Upgrade");
-        String[] split = line.split("\\?");
-        dcIncrease = split[1];
-        price = split[2];
+    public SecurityModule(String feature, String DC, String price, String type) {
+        super(feature,price,type);
+        dcIncrease = DC;
     }
 
     public String getDcIncrease() {

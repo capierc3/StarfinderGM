@@ -5,7 +5,7 @@ import static ArchivesBuilder.SQLite.connect;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Stack;
+
 
 
 /**
@@ -162,13 +162,13 @@ public class ShipYard {
         return items;
     }
 
-    
+
     private StarShip ship;
     private ArrayList<Part> shoppingCart;
     private int pcu;
     private int bp;
 
-//TODO: Ship building and shopping cart
+// Ship building and shopping cart
     /**
      * Starts a new ship builder
      * @param ship Starship object

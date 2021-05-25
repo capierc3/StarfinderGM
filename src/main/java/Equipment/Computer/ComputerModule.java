@@ -6,10 +6,9 @@ public class ComputerModule {
     protected String price;
     protected String type;
 
-    public ComputerModule(String line,String type){
-        String[] split = line.split("\\?");
-        this.feature = split[0];
-        this.price = split[1];
+    public ComputerModule(String feature, String price, String type){
+        this.feature = feature;
+        this.price = price;
         this.type = type;
     }
 
